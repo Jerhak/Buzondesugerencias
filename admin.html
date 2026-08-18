@@ -152,41 +152,7 @@
 </div>
 </section>
 <!-- Suggestions Stack -->
-<section class="flex flex-col gap-4 relative">
-<!-- Card 1: Pinned / Facilities -->
-<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-primary -rotate-1 hover:rotate-0 transition-transform duration-300 z-10">
-<div class="absolute top-4 right-4 text-tertiary-container">
-<span class="material-symbols-outlined" data-icon="push_pin" data-weight="fill" style="font-variation-settings: 'FILL' 1;">push_pin</span>
-</div>
-<div class="flex items-center gap-2 mb-3">
-<span class="bg-secondary-container text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Facilities</span>
-<span class="font-label-sm text-label-sm text-outline">2h ago</span>
-</div>
-<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Fix the library AC before midterms</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">The second floor is boiling and no one can study. We need maintenance to check the vents.</p>
-<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">142</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
-</article>
-<!-- Card 2: Events -->
-<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-tertiary rotate-1 hover:rotate-0 transition-transform duration-300 z-0">
-<div class="flex items-center gap-2 mb-3">
-<span class="bg-tertiary-container/20 text-tertiary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Events</span>
-<span class="font-label-sm text-label-sm text-outline">Yesterday</span>
-</div>
-<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Spring Fling Outdoor Festival Concept</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Instead of a gym dance, let's use the quad. Food trucks, local student bands, and carnival games. I have a rough budget spreadsheet.</p>
-<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">89</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
-</article>
-<!-- Card 3: Curriculum -->
-<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-primary/60 hover:-rotate-1 transition-transform duration-300 z-0">
-<div class="flex items-center gap-2 mb-3">
-<span class="bg-secondary-container text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Curriculum</span>
-<span class="font-label-sm text-label-sm text-outline">3 days ago</span>
-</div>
-<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Requesting an Intro to Coding elective</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Many freshmen want to learn Python or web dev, but it's only offered to juniors. Can we get a basic intro class?</p>
-<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">215</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
-</article>
-</section>
+<section class="flex flex-col gap-4 relative"><div class="flex flex-col gap-4" id="proposals-container"></div></section>
 </main>
 <!-- BottomNavBar -->
 <nav class="bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-xl">
@@ -212,4 +178,66 @@
 <span class="font-label-sm text-label-sm text-on-secondary-container">Historial</span>
 </button>
 </nav>
-</body></html>
+<script>
+const container = document.getElementById('proposals-container');
+
+function getProposals() {
+    const stored = localStorage.getItem('school_proposals');
+    return stored ? JSON.parse(stored) : [];
+}
+
+function deleteProposal(index) {
+    const proposals = getProposals();
+    proposals.splice(index, 1);
+    localStorage.setItem('school_proposals', JSON.stringify(proposals));
+    renderProposals();
+}
+
+function reviewProposal(index) {
+    const proposals = getProposals();
+    const p = proposals[index];
+    alert(`Detalles de la Propuesta:\n\nCategoría: ${p.category}\nTítulo: ${p.title}\n\n${p.description}`);
+}
+
+function renderProposals() {
+    const proposals = getProposals();
+    container.innerHTML = '';
+
+    if (proposals.length === 0) {
+        container.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-12 text-outline opacity-70">
+                <span class="material-symbols-outlined text-6xl mb-4">inbox</span>
+                <p class="font-body-lg">No hay propuestas todavía</p>
+            </div>`;
+        return;
+    }
+
+    proposals.forEach((p, index) => {
+        const article = document.createElement('article');
+        article.className = 'paper-texture rounded-xl p-5 relative border-l-4 border-l-primary transition-transform duration-300';
+        
+        // Alternate rotations for aesthetic
+        const rotation = index % 2 === 0 ? '-rotate-1' : 'rotate-1';
+        article.classList.add(rotation, 'hover:rotate-0');
+
+        article.innerHTML = `
+            <div class="flex items-center gap-2 mb-3">
+                <span class="bg-secondary-container text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">${p.category || 'General'}</span>
+                <span class="font-label-sm text-label-sm text-outline">${p.timestamp || 'Reciente'}</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">${p.title}</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">${p.description}</p>
+            <div class="flex items-center justify-end border-t border-outline-variant/20 pt-3">
+                <div class="flex gap-2">
+                    <button onclick="reviewProposal(${index})" class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm active:scale-95 transition-transform">Revisar</button>
+                    <button onclick="deleteProposal(${index})" class="text-error font-label-sm text-label-sm hover:underline active:scale-95 transition-transform">Eliminar</button>
+                </div>
+            </div>
+        `;
+        container.appendChild(article);
+    });
+}
+
+// Initial render
+document.addEventListener('DOMContentLoaded', renderProposals);
+</script></body></html>
