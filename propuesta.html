@@ -1,289 +1,317 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>perdónlademorajovenes</title>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Buzón de Sugerencias</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Mesh Gradient Background */
+        .mesh-bg {
+            background-color: #001B3E;
+            background-image: 
+                radial-gradient(at 40% 20%, rgba(0, 102, 204, 0.4) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(0, 219, 231, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(112, 0, 255, 0.2) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(170, 199, 255, 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(0, 92, 186, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(0, 116, 123, 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, #001B3E 0px, transparent 50%);
+            background-size: 200% 200%;
+            animation: mesh-shift 15s ease infinite;
+        }
+        
+        @keyframes mesh-shift {
+            0% { background-position: 0% 0%; }
+            25% { background-position: 50% 100%; }
+            50% { background-position: 100% 0%; }
+            75% { background-position: 50% 50%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .glass-card-elevated {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 60px 60px -10px rgba(0,0,0,0.3);
+        }
+
+        .glass-input {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #dfe8ff;
+        }
+        
+        .glass-input:focus {
+            outline: none;
+            border-color: #aac7ff;
+            box-shadow: 0 0 15px rgba(170, 199, 255, 0.2) inset;
+        }
+        
+        .glass-input::placeholder {
+            color: #8b919e;
+        }
+        
+        .glass-chip {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-chip.active {
+            background: rgba(0, 102, 204, 0.4);
+            border-color: #aac7ff;
+            box-shadow: 0 0 15px rgba(170, 199, 255, 0.4);
+            color: #aac7ff;
+        }
+    </style>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        "on-primary": "#ffffff",
-                        "outline-variant": "#c1c6d5",
-                        "on-primary-container": "#dfe8ff",
-                        "primary-container": "#0066cc",
-                        "inverse-primary": "#aac7ff",
-                        "on-secondary": "#ffffff",
-                        "error-container": "#ffdad6",
-                        "background": "#fbf9f8",
-                        "tertiary-fixed-dim": "#e9c400",
-                        "surface-container-low": "#f5f3f3",
-                        "inverse-surface": "#303030",
-                        "on-secondary-container": "#5e656c",
-                        "surface-variant": "#e4e2e2",
-                        "tertiary-container": "#c9a900",
-                        "primary-fixed": "#d7e3ff",
-                        "inverse-on-surface": "#f2f0f0",
-                        "error": "#ba1a1a",
-                        "secondary-container": "#dce3eb",
-                        "on-tertiary": "#ffffff",
-                        "on-background": "#1b1c1c",
-                        "surface": "#fbf9f8",
-                        "surface-tint": "#005cba",
-                        "secondary": "#585f66",
-                        "tertiary": "#705d00",
-                        "surface-container-high": "#eae8e7",
-                        "surface-bright": "#fbf9f8",
-                        "outline": "#727784",
-                        "on-error-container": "#93000a",
-                        "surface-container-lowest": "#ffffff",
-                        "primary-fixed-dim": "#aac7ff",
-                        "on-secondary-fixed-variant": "#40484e",
+                    "colors": {
+                        "primary": "#aac7ff",
+                        "on-tertiary-fixed": "#002022",
+                        "on-secondary": "#3c0090",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
                         "on-primary-fixed-variant": "#00458e",
-                        "secondary-fixed-dim": "#c0c7cf",
-                        "tertiary-fixed": "#ffe16d",
-                        "on-tertiary-container": "#4c3e00",
-                        "on-surface": "#1b1c1c",
-                        "on-tertiary-fixed": "#221b00",
-                        "on-secondary-fixed": "#151c22",
-                        "on-surface-variant": "#414753",
-                        "on-error": "#ffffff",
-                        "surface-container-highest": "#e4e2e2",
+                        "inverse-primary": "#005cba",
+                        "on-surface-variant": "#c1c6d5",
+                        "on-surface": "#e2e2e8",
+                        "primary-container": "#0066cc",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "surface-tint": "#aac7ff",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2f3035",
+                        "tertiary-fixed": "#74f5ff",
+                        "surface-container-lowest": "#0c0e12",
+                        "surface-container-low": "#1a1c20",
+                        "on-secondary-container": "#ddcdff",
+                        "on-tertiary-container": "#9bf7ff",
+                        "primary-fixed": "#d7e3ff",
                         "on-primary-fixed": "#001b3e",
-                        "surface-container": "#efeded",
-                        "surface-dim": "#dbd9d9",
-                        "secondary-fixed": "#dce3eb",
-                        "primary": "#004e9f",
-                        "on-tertiary-fixed-variant": "#544600"
+                        "outline-variant": "#414753",
+                        "surface-container-highest": "#333539",
+                        "surface-variant": "#333539",
+                        "surface-container": "#1e2024",
+                        "surface-dim": "#111318",
+                        "on-primary-container": "#dfe8ff",
+                        "outline": "#8b919e",
+                        "surface-container-high": "#282a2e",
+                        "tertiary": "#00dbe7",
+                        "glow-blue": "rgba(0, 102, 204, 0.4)",
+                        "tertiary-fixed-dim": "#00dbe7",
+                        "glass-border": "rgba(255, 255, 255, 0.15)",
+                        "tertiary-container": "#00747b",
+                        "inverse-surface": "#e2e2e8",
+                        "secondary": "#d1bcff",
+                        "on-tertiary": "#00363a",
+                        "secondary-container": "#7000ff",
+                        "surface": "#111318",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "on-secondary-fixed": "#23005b",
+                        "background": "#111318",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-bright": "#37393e",
+                        "on-background": "#e2e2e8",
+                        "glass-white": "rgba(255, 255, 255, 0.08)",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "mesh-deep-blue": "#001B3E",
+                        "on-primary": "#002f65",
+                        "primary-fixed-dim": "#aac7ff"
                     },
-                    borderRadius: {
-                        DEFAULT: "0.25rem",
-                        lg: "0.5rem",
-                        xl: "0.75rem",
-                        full: "9999px"
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
                     },
-                    spacing: {
-                        base: "8px",
-                        "container-padding-desktop": "40px",
-                        "container-padding-mobile": "20px",
-                        "section-gap": "64px",
-                        "gutter": "24px"
+                    "spacing": {
+                        "glass-margin": "12px",
+                        "container-padding-mobile": "24px",
+                        "base": "8px",
+                        "container-padding-desktop": "48px",
+                        "gutter": "32px"
                     },
-                    fontFamily: {
-                        "body-lg": ["Plus Jakarta Sans"],
-                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "fontFamily": {
                         "headline-lg": ["Plus Jakarta Sans"],
-                        "headline-xl": ["Plus Jakarta Sans"],
-                        "label-md": ["Space Grotesk"],
                         "label-sm": ["Space Grotesk"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
                         "body-md": ["Plus Jakarta Sans"],
-                        "headline-md": ["Plus Jakarta Sans"]
+                        "label-md": ["Space Grotesk"]
                     },
-                    fontSize: {
-                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
-                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
-                        "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
-                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
-                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600" }],
-                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }]
                     }
                 }
             }
         }
     </script>
 <style>
-        /* Paper-morphism Utility */
-        .paper-texture {
-            position: relative;
-        }
-        .paper-texture::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-            opacity: 0.5;
-            pointer-events: none;
-            border-radius: inherit;
-        }
-        .squishy:active {
-            transform: scale(0.98);
-        }
-    </style>
-<style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-</head>
-<body class="bg-background text-on-background min-h-screen flex flex-col md:hidden">
-<!-- TopAppBar (From JSON) -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile py-4 bg-surface dark:bg-surface-dim shadow-sm dark:shadow-none transition-all duration-300">
+  </head>
+<body class="mesh-bg min-h-screen text-on-surface font-body-md overflow-x-hidden selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-glass-white backdrop-blur-[20px] rounded-full mt-4 mx-4 border-[0.5px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
 <div class="flex items-center gap-3">
-<!-- Leading Avatar -->
-<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md-mobile">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border-[0.5px] border-glass-border">
+<img class="w-full h-full object-cover" data-alt="A sophisticated digital portrait of a student avatar in a sleek, glassmorphic style. The avatar features vibrant, translucent textures and a soft, luminous color palette with deep blues and crisp whites. Lighting is bright and even, giving the portrait a high-end, futuristic tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgDvSHnqXL-dQGV_Ha-CNdli2kU6G6VzkXNPNlDDic-UXBpLxn2f7TbaJs1jBbN8UaEWvmCUoduGHtQDseR7EMkc7iFF6Xb3d4AaHUIzze7TJNNbpKIDSU0ve6g1lYb87VjUHa48v5Py6pENz8oiqDR6s4KCQsyQvV8OU46xC-wWjrd3fUk8S6B7KA3drSyVLsXmckvK4sNb4unsn04KTT2a3RXz8TVZZf3QKhvfcgl-_gnlYqCmw"/>
 </div>
-<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim tracking-tight">Estudiante</h1>
+<span class="font-body-lg text-body-lg text-on-surface">Alex Santos</span>
 </div>
-<!-- Trailing Icon -->
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100" id="settings-button">
-<span class="material-symbols-outlined">settings</span>
+<div class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary">
+            Perdón La Demora
+        </div>
+<div class="relative" id="settings-menu-container">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-glass-white/20 transition-all scale-95 active:scale-90 transition-transform" id="settings-btn">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 0;">settings</span>
 </button>
+<!-- Dropdown Menu -->
+<div class="hidden absolute right-0 mt-2 w-48 glass-card-elevated rounded-xl py-2 flex flex-col gap-1 z-[60]" id="settings-dropdown">
+<button class="w-full px-4 py-2 text-left font-body-md text-on-surface hover:bg-glass-white/20 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span> Mi Perfil
+                </button>
+<div class="h-[1px] w-full bg-glass-border my-1"></div>
+<button class="w-full px-4 py-2 text-left font-body-md text-error hover:bg-error/10 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span> Cerrar Sesión
+                </button>
+</div>
+</div>
 </header>
 <!-- Main Content Canvas -->
-<main class="flex-grow pt-[88px] pb-[104px] px-container-padding-mobile flex flex-col gap-6">
-<!-- Screen Header -->
-<div class="flex flex-col gap-2">
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Noveno Grado - Buzón de Sugerencias</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Propuestas de hoy: <span class="font-bold text-primary">0/2</span></p>
+<main class="pt-[120px] pb-[120px] px-container-padding-mobile md:px-container-padding-desktop max-w-4xl mx-auto flex flex-col gap-gutter">
+<!-- Header Section -->
+<section class="flex flex-col gap-2 items-center text-center">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary drop-shadow-[0_0_15px_rgba(170,199,255,0.4)]">Buzón de Sugerencias</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">Redacta tu propuesta de forma clara. La comunidad escolar la evaluará para su posible implementación.</p>
+</section>
+<!-- Form Card -->
+<section class="glass-card-elevated rounded-xl p-6 md:p-8 flex flex-col gap-6">
+<!-- Category Selection -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface-variant">Categoría</label>
+<div class="flex flex-wrap gap-2" id="category-chips">
+<button class="glass-chip active px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">domain</span> Facilities
+                    </button>
+<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">event</span> Events
+                    </button>
+<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">menu_book</span> Curriculum
+                    </button>
+<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">category</span> General
+                    </button>
 </div>
-<!-- Proposal Form (Paper-morphism Container) -->
-<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] paper-texture p-6 flex flex-col gap-6 relative overflow-hidden">
-<!-- Left border accent -->
-<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+</div>
 <!-- Title Input -->
 <div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface" for="proposal-title">Título de la Propuesta</label>
-<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 font-body-md text-body-md text-on-surface rounded-t-md transition-colors placeholder:text-outline" id="proposal-title" placeholder="Ej. Nuevo torneo de futsal" type="text"/>
+<label class="font-label-md text-label-md text-on-surface-variant" for="propuesta-titulo">Título de la Propuesta</label>
+<input class="glass-input w-full rounded-lg px-4 py-3 font-body-md text-body-md transition-all" id="propuesta-titulo" placeholder="Ej: Renovación de la biblioteca" type="text"/>
 </div>
-<!-- Category Selector (Chips) -->
-<div class="flex flex-col gap-3">
-<label class="font-label-md text-label-md text-on-surface">Categoría</label>
-<div class="flex flex-wrap gap-2">
-<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md squishy transition-transform border border-transparent">Facilities</button>
-<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/20">Events</button>
-<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/20">Curriculum</button>
-<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/20">General</button>
-</div>
-</div>
-<!-- Idea Text Area -->
+<!-- Description Input -->
 <div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface" for="proposal-idea">Desarrolla tu idea</label>
-<textarea class="w-full bg-surface-container-low border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface resize-none transition-colors placeholder:text-outline" id="proposal-idea" placeholder="Describe qué quieres lograr y cómo beneficiaría al 9no grado..." rows="5"></textarea>
+<label class="font-label-md text-label-md text-on-surface-variant" for="propuesta-desc">Desarrolla tu idea</label>
+<textarea class="glass-input w-full rounded-lg px-4 py-3 font-body-md text-body-md transition-all resize-none" id="propuesta-desc" placeholder="Describe el problema y tu solución propuesta..." rows="6"></textarea>
+</div>
+<!-- Attachment/Extra (Optional visual interest) -->
+<div class="border-[1px] border-dashed border-glass-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-glass-white/20 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant">upload_file</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Adjuntar documento o imagen (Opcional)</span>
 </div>
 <!-- Submit Button -->
-<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 squishy transition-all shadow-[0_4px_12px_rgba(0,78,159,0.2)] hover:shadow-[0_6px_16px_rgba(0,78,159,0.3)] mt-2">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
-                Enviar Propuesta
-            </button>
+<div class="flex justify-end mt-4">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary-fixed rounded-full px-8 py-3 font-label-md text-label-md shadow-[0_0_20px_rgba(170,199,255,0.4)] hover:shadow-[0_0_30px_rgba(170,199,255,0.6)] transition-all scale-100 active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">send</span> Enviar Propuesta
+                </button>
 </div>
+</section>
 </main>
-<!-- BottomNavBar (From JSON) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest dark:bg-surface-container-low rounded-t-xl shadow-lg border-t border-outline-variant/30">
-<!-- Inactive: Home -->
-<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 rounded-xl p-2 transition-colors" href="#">
-<span class="material-symbols-outlined">home</span>
-<span class="font-label-sm text-label-sm mt-1">Home</span>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-20 px-8 bg-glass-white backdrop-blur-[20px] rounded-full mb-6 mx-4 border-t-[1px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-sm">Inicio</span>
 </a>
-<!-- Active: Propose (Semantic match for "Buzón de Sugerencias" / Drafting) -->
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 active:scale-[0.98] transition-transform duration-200" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
-<span class="font-label-sm text-label-sm mt-1">Propose</span>
+<a class="flex flex-col items-center justify-center text-primary font-bold drop-shadow-[0_0_8px_rgba(170,199,255,0.6)] animate-pulse-slow" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-md text-label-sm">Proponer</span>
 </a>
-<!-- Inactive: History -->
-<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 rounded-xl p-2 transition-colors" href="#">
-<span class="material-symbols-outlined">history</span>
-<span class="font-label-sm text-label-sm mt-1">History</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history" style="font-variation-settings: 'FILL' 0;">history</span>
+<span class="font-label-md text-label-sm">Historial</span>
 </a>
 </nav>
 <script>
-        // Simple chip selection interaction
-        document.addEventListener('DOMContentLoaded', () => {
-            const chips = document.querySelectorAll('.bg-secondary-container, .bg-primary');
-            chips.forEach(chip => {
-                chip.addEventListener('click', function(e) {
-                    if(e.target.tagName !== 'BUTTON') return;
-                    
-                    // Reset all chips to secondary
-                    chips.forEach(c => {
-                        c.classList.remove('bg-primary', 'text-on-primary', 'border-transparent');
-                        c.classList.add('bg-secondary-container', 'text-on-secondary-container', 'border-outline-variant/20');
-                    });
-                    
-                    // Set clicked chip to primary
-                    this.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'border-outline-variant/20');
-                    this.classList.add('bg-primary', 'text-on-primary', 'border-transparent');
-                });
+        // Settings Dropdown Logic
+        const settingsBtn = document.getElementById('settings-btn');
+        const settingsDropdown = document.getElementById('settings-dropdown');
+        
+        settingsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            settingsDropdown.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!settingsBtn.contains(e.target) && !settingsDropdown.contains(e.target)) {
+                settingsDropdown.classList.add('hidden');
+            }
+        });
+
+        // Category Chips Logic
+        const chips = document.querySelectorAll('.glass-chip');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
             });
         });
     </script>
-<script>
-        document.querySelector('button.bg-primary.text-on-primary.py-4').addEventListener('click', function() {
-            const title = document.getElementById('proposal-title').value.trim();
-            const category = document.querySelector('.flex.flex-wrap.gap-2 button.bg-primary').textContent.trim();
-            const description = document.getElementById('proposal-idea').value.trim();
-
-            if (!title || !description) {
-                alert('Por favor, completa todos los campos.');
-                return;
-            }
-
-            const today = new Date().toISOString().split('T')[0];
-            let dailyCount = JSON.parse(localStorage.getItem('proposal_count_day')) || { date: today, count: 0 };
-
-            if (dailyCount.date !== today) {
-                dailyCount = { date: today, count: 0 };
-            }
-
-            if (dailyCount.count >= 2) {
-                alert('Has alcanzado el límite de 2 propuestas por día.');
-                return;
-            }
-
-            const proposals = JSON.parse(localStorage.getItem('school_proposals')) || [];
-            const newProposal = {
-                title,
-                category,
-                description,
-                timestamp: new Date().toISOString()
-            };
-
-            proposals.push(newProposal);
-            localStorage.setItem('school_proposals', JSON.stringify(proposals));
-
-            dailyCount.count += 1;
-            localStorage.setItem('proposal_count_day', JSON.stringify(dailyCount));
-
-            window.location.href = 'exito.html';
-        });
-    </script><script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const userNameElement = document.querySelector('header h1');
-            const userData = JSON.parse(localStorage.getItem('userData'));
-            const userName = userData?.name || localStorage.getItem('userName') || 'Estudiante';
-            if (userNameElement) userNameElement.textContent = userName;
-
-            const settingsBtn = document.querySelector('header button');
-            settingsBtn.addEventListener('click', () => {
-                const menu = document.createElement('div');
-                menu.className = 'fixed top-16 right-4 bg-surface-container-lowest border border-outline-variant/30 rounded-xl shadow-lg p-2 z-[60] flex flex-col gap-1 min-w-[160px]';
-                menu.innerHTML = `
-                    <a href="perfil.html" class="flex items-center gap-2 px-4 py-2 hover:bg-surface-container-high rounded-lg text-on-surface font-label-md">
-                        <span class="material-symbols-outlined text-[20px]">person</span> Mi Perfil
-                    </a>
-                    <button onclick="localStorage.clear(); window.location.href='login.html'" class="flex items-center gap-2 px-4 py-2 hover:bg-error-container hover:text-on-error-container rounded-lg text-error font-label-md w-full text-left">
-                        <span class="material-symbols-outlined text-[20px]">logout</span> Cerrar Sesión
-                    </button>
-                `;
-                
-                const backdrop = document.createElement('div');
-                backdrop.className = 'fixed inset-0 z-[55]';
-                backdrop.onclick = () => { menu.remove(); backdrop.remove(); };
-                
-                document.body.appendChild(backdrop);
-                document.body.appendChild(menu);
-            });
-        });
-    </script></body></html>
+</body></html>
