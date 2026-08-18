@@ -126,11 +126,19 @@
 <div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
 <img alt="Student Avatar" class="w-full h-full object-cover" data-alt="A stylized, modern 3D avatar of a diverse 9th-grade student representative. They have a friendly, confident expression, wearing a casual but neat school-appropriate outfit. The lighting is soft and energetic studio lighting, casting a gentle rim light against a pristine white background. High-quality digital render aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGABCFMUhdh5nr4cRA2lMH3RsKMEUBVBPSbm4SE0iivUH1sR29Pv9bQ3U0OHOGLko2HYbxJyqcEktFWBpeLIBygRBYmvhJeAYoPEcfnEjQfIL6Y1Wv_926n47vAJhR761FBcQDobr-tu3-y499XaPrshGMui78skhesjvbZqulc1ArWtU5Ls4N7pNJoL-J15TIOwcLrKTWYiPOMoTz5CLCq2HdgdjkZT3MQUUrN0y2ebLwQFALUA"/>
 </div>
-<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Panel de Administración</h1>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Admin: Estudiante</h1>
 </div>
+<div class="relative group">
 <button class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="material-symbols-outlined">settings</span>
 </button>
+<div class="absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/30 hidden group-focus-within:block z-[60]">
+<button class="w-full text-left px-4 py-3 text-error font-label-md hover:bg-error-container/10 rounded-xl transition-colors flex items-center gap-2" onclick="localStorage.clear(); window.location.href='index.html'">
+<span class="material-symbols-outlined text-lg">logout</span>
+      Cerrar sesión
+    </button>
+</div>
+</div>
 </header>
 <!-- Main Canvas -->
 <main class="mt-[80px] px-container-padding-mobile max-w-md mx-auto">
