@@ -135,12 +135,20 @@
 <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md-mobile">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
 </div>
-<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim tracking-tight">Student Council</h1>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim tracking-tight"><span id="user-display-name">Student Council</span></h1>
 </div>
 <!-- Trailing Icon -->
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<div class="relative">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100" id="settings-btn">
 <span class="material-symbols-outlined">settings</span>
 </button>
+<div class="hidden absolute right-0 mt-2 w-48 bg-surface-container-lowest border border-outline-variant/30 rounded-xl shadow-lg z-[60] overflow-hidden" id="settings-dropdown">
+<button class="w-full px-4 py-3 text-left font-label-md text-label-md text-error hover:bg-error-container/10 flex items-center gap-2 transition-colors" id="logout-btn">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+      Cerrar sesión
+    </button>
+</div>
+</div>
 </header>
 <!-- Main Content Canvas -->
 <main class="flex-grow pt-[88px] pb-[104px] px-container-padding-mobile flex flex-col gap-6">
@@ -258,4 +266,36 @@
 
             window.location.href = 'exito.html';
         });
-    </script></body></html>
+    </script><script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Dynamic Name Display
+    const userName = localStorage.getItem('nombreCompleto') || localStorage.getItem('userName') || 'Usuario';
+    const displayEl = document.getElementById('user-display-name');
+    if (displayEl) displayEl.textContent = userName;
+
+    // 2. Dropdown Toggle
+    const settingsBtn = document.getElementById('settings-btn');
+    const dropdown = document.getElementById('settings-dropdown');
+    
+    if (settingsBtn && dropdown) {
+      settingsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('hidden');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', () => {
+        dropdown.classList.add('hidden');
+      });
+    }
+
+    // 3. Logout Logic
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        localStorage.clear();
+        window.location.href = 'index.html';
+      });
+    }
+  });
+</script></body></html>
