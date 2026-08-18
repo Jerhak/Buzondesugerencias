@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="es"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Selección de Rol - Academic Pulse</title>
+<title>Perdón La Demora - Selección de Rol</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -15,113 +13,131 @@
             darkMode: "class",
             theme: {
                 extend: {
-                    "colors": {
-                        "background": "#fbf9f8",
-                        "on-error-container": "#93000a",
-                        "on-surface": "#1b1c1c",
-                        "on-tertiary-fixed-variant": "#544600",
-                        "inverse-surface": "#303030",
-                        "on-primary-fixed-variant": "#00458e",
-                        "primary-container": "#0066cc",
-                        "tertiary-fixed": "#ffe16d",
-                        "secondary-fixed": "#dce3eb",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#dfe8ff",
-                        "on-tertiary": "#ffffff",
-                        "on-secondary-fixed": "#151c22",
-                        "on-background": "#1b1c1c",
-                        "on-secondary-container": "#5e656c",
-                        "outline": "#727784",
-                        "error": "#ba1a1a",
-                        "error-container": "#ffdad6",
-                        "inverse-primary": "#aac7ff",
-                        "on-secondary-fixed-variant": "#40484e",
-                        "surface": "#fbf9f8",
-                        "tertiary-container": "#c9a900",
-                        "surface-container": "#efeded",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container-highest": "#e4e2e2",
-                        "surface-container-high": "#eae8e7",
-                        "secondary": "#585f66",
-                        "on-tertiary-fixed": "#221b00",
-                        "surface-tint": "#005cba",
-                        "on-primary-fixed": "#001b3e",
-                        "surface-container-low": "#f5f3f3",
-                        "tertiary-fixed-dim": "#e9c400",
-                        "primary": "#004e9f",
-                        "secondary-container": "#dce3eb",
-                        "outline-variant": "#c1c6d5",
-                        "on-surface-variant": "#414753",
-                        "surface-dim": "#dbd9d9",
-                        "surface-variant": "#e4e2e2",
+                    colors: {
+                        "surface-container-highest": "#333539",
+                        "on-background": "#e2e2e8",
+                        "on-surface-variant": "#c1c6d5",
+                        "inverse-primary": "#005cba",
+                        "mesh-deep-blue": "#001B3E",
+                        "outline-variant": "#414753",
+                        "outline": "#8b919e",
+                        "surface-container-high": "#282a2e",
+                        "surface-tint": "#aac7ff",
+                        "tertiary-container": "#00747b",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "secondary-container": "#7000ff",
+                        "on-tertiary": "#00363a",
+                        "on-tertiary-container": "#9bf7ff",
+                        "glow-blue": "rgba(0, 102, 204, 0.4)",
+                        "inverse-surface": "#e2e2e8",
+                        "on-tertiary-fixed": "#002022",
+                        "surface-container-lowest": "#0c0e12",
                         "primary-fixed": "#d7e3ff",
-                        "on-tertiary-container": "#4c3e00",
+                        "on-primary-fixed": "#001b3e",
+                        "on-secondary-fixed": "#23005b",
+                        "inverse-on-surface": "#2f3035",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#00dbe7",
+                        "on-primary": "#002f65",
+                        "secondary": "#d1bcff",
+                        "primary": "#aac7ff",
+                        "surface-container": "#1e2024",
+                        "surface-container-low": "#1a1c20",
                         "primary-fixed-dim": "#aac7ff",
-                        "inverse-on-surface": "#f2f0f0",
-                        "on-error": "#ffffff",
-                        "surface-bright": "#fbf9f8",
-                        "on-secondary": "#ffffff",
-                        "tertiary": "#705d00",
-                        "secondary-fixed-dim": "#c0c7cf"
+                        "on-primary-container": "#dfe8ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#333539",
+                        "background": "#111318",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#ddcdff",
+                        "tertiary": "#00dbe7",
+                        "on-surface": "#e2e2e8",
+                        "surface-dim": "#111318",
+                        "primary-container": "#0066cc",
+                        "on-primary-fixed-variant": "#00458e",
+                        "glass-white": "rgba(255, 255, 255, 0.08)",
+                        "surface": "#111318",
+                        "tertiary-fixed": "#74f5ff",
+                        "glass-border": "rgba(255, 255, 255, 0.15)",
+                        "error-container": "#93000a",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "surface-bright": "#37393e"
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px",
-                        "2xl": "1rem"
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
                     },
-                    "spacing": {
-                        "container-padding-mobile": "20px",
+                    spacing: {
+                        "container-padding-desktop": "48px",
+                        "container-padding-mobile": "24px",
+                        "gutter": "32px",
                         "base": "8px",
-                        "gutter": "24px",
-                        "container-padding-desktop": "40px",
-                        "section-gap": "64px"
+                        "glass-margin": "12px"
                     },
-                    "fontFamily": {
-                        "headline-lg": ["Plus Jakarta Sans"],
-                        "headline-xl": ["Plus Jakarta Sans"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "label-md": ["Space Grotesk"],
-                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    fontFamily: {
                         "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
                         "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Space Grotesk"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
                         "label-sm": ["Space Grotesk"]
                     },
-                    "fontSize": {
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
-                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }]
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "34px", letterSpacing: "-0.03em", fontWeight: "700" }],
+                        "headline-xl": ["48px", { lineHeight: "52px", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "500" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "38px", letterSpacing: "-0.03em", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "30px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600" }]
                     }
                 }
             }
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .fill-icon {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        .mesh-bg {
+            background-color: #111318;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 102, 204, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(112, 0, 255, 0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 219, 231, 0.2) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(0, 27, 62, 0.8) 0px, transparent 50%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         
-        /* Subtle paper texture overlay */
-        .paper-texture {
-            position: relative;
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(255, 255, 255, 0.15);
         }
-        .paper-texture::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 10;
-            border-radius: inherit;
+        
+        .glass-card:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            box-shadow: 0 60px 60px -10px rgba(0,0,0,0.3), 0 0 20px rgba(170,199,255,0.2);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card-active {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            box-shadow: 0 60px 60px -10px rgba(0,0,0,0.3), 0 0 30px rgba(170,199,255,0.4);
+            border: 1px solid rgba(170, 199, 255, 0.5);
         }
     </style>
 <style>
@@ -129,115 +145,82 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-</head>
-<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
-<!-- Main Content Canvas -->
-<main class="flex-grow flex flex-col items-center justify-center p-container-padding-mobile md:p-container-padding-desktop">
-<!-- Brand / Header -->
-<div class="mb-12 flex flex-col items-center text-center space-y-4">
-<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined fill-icon text-4xl text-on-primary-container">campaign</span>
-</div>
-<div>
-<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary">Elige tu rol</h1>
-<p class="font-body-lg text-body-lg text-secondary mt-2 max-w-md">Bienvenido a Academic Pulse. ¿Cómo vas a participar en el consejo estudiantil hoy?</p>
-</div>
+  </head>
+<body class="mesh-bg text-on-background min-h-screen flex flex-col items-center justify-center p-container-padding-mobile md:p-container-padding-desktop">
+<!-- Top Navigation Hidden for Transactional/Onboarding Flow as per requirements -->
+<main class="w-full max-w-4xl mx-auto flex flex-col items-center z-10 relative">
+<!-- Header Section -->
+<div class="text-center mb-16 animate-fade-in-up">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4 drop-shadow-[0_0_15px_rgba(170,199,255,0.4)]">
+                Perdón La Demora
+            </h1>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                ¿Cuál es tu rol?
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-lg mx-auto">
+                Selecciona tu perfil para acceder al entorno correspondiente y comenzar a participar.
+            </p>
 </div>
 <!-- Role Selection Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full max-w-4xl relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter w-full max-w-3xl">
 <!-- Student Card -->
-<a class="paper-texture group relative w-full text-left bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/30 border-l-[6px] border-l-primary shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background block" href="propuesta.html">
-<div class="flex flex-col h-full space-y-6">
-<div class="flex justify-between items-start">
-<div class="w-24 h-24 rounded-full bg-secondary-container/50 overflow-hidden shadow-inner flex-shrink-0 border-2 border-surface">
-<img alt="Avatar de Estudiante" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC07pxwR-NfyR6HiMAD73EhnB--RR9ux5CCyNKesCUuj_c54mpgF_ynx4TfS7AHuJmwNrdbe4x_Z18zRM37jY_u0LDQn4F_NSRmdVw-akgJRBEDoVuMm1niaAhJd4MEZBh2Bn98UTdoPM7cPezLQhpX08Wz4boSvlmMHoKiLEwKnhjRw2-yscvfTWyTcwQsPGgFxr_G3RcZAQIbZjPdWshc1gwlMXvxgTRR5Hgk6v2VKHG9Ueu79Ys"/>
+<a class="glass-card rounded-xl p-8 flex flex-col items-center text-center group cursor-pointer transition-all duration-300" href="#estudiante">
+<div class="w-24 h-24 rounded-full bg-primary-container/20 flex items-center justify-center mb-6 group-hover:bg-primary-container/40 transition-colors duration-300 border border-primary/30">
+<span class="material-symbols-outlined text-primary text-5xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">
+                        school
+                    </span>
 </div>
-<div class="flex items-center space-x-2"><span class="text-label-md font-label-md text-secondary group-hover:text-primary transition-colors">Ingresar</span><div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary group-hover:bg-primary-container group-hover:text-primary transition-colors"><span class="material-symbols-outlined">login</span></div></div>
-</div>
-<div class="space-y-2 flex-grow">
-<div class="flex items-center space-x-2">
-<span class="material-symbols-outlined fill-icon text-primary">school</span>
-<h2 class="font-headline-md text-headline-md text-on-surface">Soy Estudiante</h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Acceso con ID institucional. Propón ideas, vota por las iniciativas de tus compañeros y mantente informado en el buzón oficial.</p>
-</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">
+                    Estudiante
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    Ingresa para proponer ideas, votar iniciativas y participar en la comunidad escolar.
+                </p>
+<div class="mt-auto">
+<span class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-[0_4px_14px_0_rgba(170,199,255,0.39)] hover:shadow-[0_6px_20px_rgba(170,199,255,0.23)] hover:bg-primary/90 transition-all">
+                        Ingresar como Estudiante
+                        <span class="material-symbols-outlined ml-2 text-[20px]">arrow_forward</span>
+</span>
 </div>
 </a>
 <!-- Representative Card -->
-<a class="paper-texture group relative w-full text-left bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/30 border-l-[6px] border-l-tertiary shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-tertiary focus:ring-offset-2 focus:ring-offset-background block" href="acceso-admin.html">
-<div class="flex flex-col h-full space-y-6">
-<div class="flex justify-between items-start">
-<div class="w-24 h-24 rounded-full bg-secondary-container/50 overflow-hidden shadow-inner flex-shrink-0 border-2 border-surface">
-<img alt="Avatar de Representante" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5mCLYC7qPj9T4MhUCEUwF39hhHkAUajGLN9yJ0AuihvF121LPSa6RqGuyIVx-LM0dPa1-psVwezOQfzbAAYUjwWBd88_pfLE91N4Z_4dYw7eZouHslQ184_0epPVnYe2vOsF6RuyE7iUJGNnbXN5qgODA1TUU6-UMkngysCYADBWaeDTOcweEhr6pfr_PzrOCUNcJhs4QJDA_SRR7baMQWIA_FCLjdzJUVlhGf2eEQEJjQRVY8us"/>
+<a class="glass-card rounded-xl p-8 flex flex-col items-center text-center group cursor-pointer transition-all duration-300" href="#representante">
+<div class="w-24 h-24 rounded-full bg-tertiary-container/20 flex items-center justify-center mb-6 group-hover:bg-tertiary-container/40 transition-colors duration-300 border border-tertiary/30">
+<span class="material-symbols-outlined text-tertiary text-5xl group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">
+                        admin_panel_settings
+                    </span>
 </div>
-<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-secondary group-hover:bg-tertiary-container group-hover:text-on-tertiary-container transition-colors">
-<span class="material-symbols-outlined">key</span>
-</div>
-</div>
-<div class="space-y-2 flex-grow">
-<div class="flex items-center space-x-2">
-<span class="material-symbols-outlined fill-icon text-tertiary">admin_panel_settings</span>
-<h2 class="font-headline-md text-headline-md text-on-surface">Soy Representante</h2>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-Gestiona las propuestas, organiza votaciones y comunícate con tu clase. <br/>
-<span class="text-tertiary font-medium text-sm inline-flex items-center mt-2">
-<span class="material-symbols-outlined text-[16px] mr-1">lock</span> Requiere código de acceso
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-tertiary transition-colors">
+                    Representante
+                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    Accede al panel administrativo para gestionar propuestas, revisar reportes y moderar la plataforma.
+                </p>
+<div class="mt-auto">
+<span class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-tertiary text-on-tertiary font-label-md text-label-md shadow-[0_4px_14px_0_rgba(0,219,231,0.39)] hover:shadow-[0_6px_20px_rgba(0,219,231,0.23)] hover:bg-tertiary/90 transition-all">
+                        Acceso Administrativo
+                        <span class="material-symbols-outlined ml-2 text-[20px]">login</span>
 </span>
-</p>
-</div>
 </div>
 </a>
 </div>
-<!-- Decorative subtle background elements -->
-<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-<div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-primary-container/20 blur-3xl"></div>
-<div class="absolute -bottom-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-tertiary-container/10 blur-3xl"></div>
-</div>
+<!-- Decorative Elements -->
+<div class="absolute top-1/4 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
 </main>
 <script>
-        function handleRoleSelection(role) {
-            if (role === 'student') {
-                // Animate button click
-                event.currentTarget.classList.add('scale-[0.98]');
+        // Simple entry animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
                 setTimeout(() => {
-                    event.currentTarget.classList.remove('scale-[0.98]');
-                    // Navigate to student dashboard (mock)
-                    console.log('Navigating to Student Dashboard...');
-                }, 150);
-            }
-        }
-
-        function toggleRepCodeInput() {
-            const defaultContent = document.getElementById('rep-default-content');
-            const inputContent = document.getElementById('rep-input-content');
-            const card = document.getElementById('rep-card');
-            
-            if (inputContent.classList.contains('hidden')) {
-                // Show input
-                defaultContent.style.opacity = '0';
-                setTimeout(() => {
-                    defaultContent.classList.add('hidden');
-                    inputContent.classList.remove('hidden');
-                    inputContent.style.display = 'flex';
-                    card.classList.add('ring-2', 'ring-tertiary', 'ring-offset-2', 'ring-offset-background');
-                }, 200);
-            } else {
-                // Hide input, show default
-                card.classList.remove('ring-2', 'ring-tertiary', 'ring-offset-2', 'ring-offset-background');
-                inputContent.classList.add('hidden');
-                inputContent.style.display = 'none';
-                defaultContent.classList.remove('hidden');
-                setTimeout(() => {
-                    defaultContent.style.opacity = '1';
-                }, 10);
-            }
-        }
+                    card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 + (index * 150));
+            });
+        });
     </script>
-<style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
 </body></html>
