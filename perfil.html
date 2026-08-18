@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Academic Pulse - My Profile</title>
+<title>perdónlademorajovenes</title>
 <!-- Material Symbols Outlined -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -148,10 +148,10 @@
 <main class="flex-1 px-container-padding-mobile py-gutter flex flex-col items-center">
 <!-- Header Actions & Title -->
 <div class="w-full max-w-md flex items-center gap-4 mb-6">
-<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container-high text-primary transition-colors shadow-sm">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container-high text-primary transition-colors shadow-sm" onclick="const role = JSON.parse(localStorage.getItem('userData'))?.role; window.location.href = role === 'admin' ? 'admin.html' : 'propuesta.html';">
 <span class="material-symbols-outlined">arrow_back</span>
 </button>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Mi Perfil</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Volver</h2>
 </div>
 <!-- Profile Card (Paper-morphism style) -->
 <section class="w-full max-w-md bg-surface-container-lowest border border-outline-variant/40 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] paper-grain overflow-hidden relative">
