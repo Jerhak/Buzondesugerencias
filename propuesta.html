@@ -195,7 +195,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+</head>
 <body class="mesh-bg min-h-screen text-on-surface font-body-md overflow-x-hidden selection:bg-primary/30 selection:text-primary">
 <!-- TopAppBar -->
 <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-glass-white backdrop-blur-[20px] rounded-full mt-4 mx-4 border-[0.5px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
@@ -203,7 +203,7 @@
 <div class="w-10 h-10 rounded-full overflow-hidden border-[0.5px] border-glass-border">
 <img class="w-full h-full object-cover" data-alt="A sophisticated digital portrait of a student avatar in a sleek, glassmorphic style. The avatar features vibrant, translucent textures and a soft, luminous color palette with deep blues and crisp whites. Lighting is bright and even, giving the portrait a high-end, futuristic tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgDvSHnqXL-dQGV_Ha-CNdli2kU6G6VzkXNPNlDDic-UXBpLxn2f7TbaJs1jBbN8UaEWvmCUoduGHtQDseR7EMkc7iFF6Xb3d4AaHUIzze7TJNNbpKIDSU0ve6g1lYb87VjUHa48v5Py6pENz8oiqDR6s4KCQsyQvV8OU46xC-wWjrd3fUk8S6B7KA3drSyVLsXmckvK4sNb4unsn04KTT2a3RXz8TVZZf3QKhvfcgl-_gnlYqCmw"/>
 </div>
-<span class="font-body-lg text-body-lg text-on-surface">Alex Santos</span>
+<span class="font-body-lg text-body-lg text-on-surface" id="user-name-display">Estudiante</span>
 </div>
 <div class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary">
             Perdón La Demora
@@ -237,16 +237,16 @@
 <div class="flex flex-col gap-3">
 <label class="font-label-md text-label-md text-on-surface-variant">Categoría</label>
 <div class="flex flex-wrap gap-2" id="category-chips">
-<button class="glass-chip active px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<button class="glass-chip active px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2" data-category="Facilities">
 <span class="material-symbols-outlined text-[16px]">domain</span> Facilities
                     </button>
-<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2" data-category="Events">
 <span class="material-symbols-outlined text-[16px]">event</span> Events
                     </button>
-<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2" data-category="Curriculum">
 <span class="material-symbols-outlined text-[16px]">menu_book</span> Curriculum
                     </button>
-<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2">
+<button class="glass-chip px-4 py-2 rounded-full font-label-sm text-label-sm text-on-surface cursor-pointer flex items-center gap-2" data-category="General">
 <span class="material-symbols-outlined text-[16px]">category</span> General
                     </button>
 </div>
@@ -268,7 +268,7 @@
 </div>
 <!-- Submit Button -->
 <div class="flex justify-end mt-4">
-<button class="bg-gradient-to-r from-primary to-secondary text-on-primary-fixed rounded-full px-8 py-3 font-label-md text-label-md shadow-[0_0_20px_rgba(170,199,255,0.4)] hover:shadow-[0_0_30px_rgba(170,199,255,0.6)] transition-all scale-100 active:scale-95 flex items-center gap-2">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary-fixed rounded-full px-8 py-3 font-label-md text-label-md shadow-[0_0_20px_rgba(170,199,255,0.4)] hover:shadow-[0_0_30px_rgba(170,199,255,0.6)] transition-all scale-100 active:scale-95 flex items-center gap-2" id="submit-proposal-btn">
 <span class="material-symbols-outlined text-[20px]">send</span> Enviar Propuesta
                 </button>
 </div>
@@ -276,7 +276,7 @@
 </main>
 <!-- BottomNavBar (Mobile Only) -->
 <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-20 px-8 bg-glass-white backdrop-blur-[20px] rounded-full mb-6 mx-4 border-t-[1px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="index.html">
 <span class="material-symbols-outlined mb-1" data-icon="home" style="font-variation-settings: 'FILL' 0;">home</span>
 <span class="font-label-md text-label-sm">Inicio</span>
 </a>
@@ -284,12 +284,19 @@
 <span class="material-symbols-outlined mb-1" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
 <span class="font-label-md text-label-sm">Proponer</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="perfil.html">
 <span class="material-symbols-outlined mb-1" data-icon="history" style="font-variation-settings: 'FILL' 0;">history</span>
 <span class="font-label-md text-label-sm">Historial</span>
 </a>
 </nav>
 <script>
+        // Dynamic User
+        const userNameDisplay = document.getElementById('user-name-display');
+        const storedUserName = localStorage.getItem('userName') || 'Estudiante';
+        if (userNameDisplay) {
+            userNameDisplay.textContent = storedUserName;
+        }
+
         // Settings Dropdown Logic
         const settingsBtn = document.getElementById('settings-btn');
         const settingsDropdown = document.getElementById('settings-dropdown');
@@ -312,6 +319,44 @@
                 chips.forEach(c => c.classList.remove('active'));
                 chip.classList.add('active');
             });
+        });
+
+        // Form Submission Logic
+        const submitBtn = document.getElementById('submit-proposal-btn');
+        submitBtn.addEventListener('click', () => {
+            const activeChip = document.querySelector('.glass-chip.active');
+            const category = activeChip ? activeChip.getAttribute('data-category') : 'General';
+            const title = document.getElementById('propuesta-titulo').value.trim();
+            const description = document.getElementById('propuesta-desc').value.trim();
+            
+            if (!title || !description) {
+                alert('Por favor, completa el título y la descripción.');
+                return;
+            }
+
+            const newProposal = {
+                id: Date.now().toString(),
+                category: category,
+                title: title,
+                description: description,
+                author: storedUserName,
+                date: new Date().toISOString()
+            };
+
+            let proposals = [];
+            try {
+                const existingProposals = localStorage.getItem('studentProposals');
+                if (existingProposals) {
+                    proposals = JSON.parse(existingProposals);
+                }
+            } catch (e) {
+                console.error("Error parsing proposals", e);
+            }
+            
+            proposals.push(newProposal);
+            localStorage.setItem('studentProposals', JSON.stringify(proposals));
+            
+            window.location.href = 'exito.html';
         });
     </script>
 </body></html>
