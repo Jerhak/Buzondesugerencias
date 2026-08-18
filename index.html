@@ -1,259 +1,241 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-<title>9th Grade Portal - Welcome</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perdón La Demora - Inicio</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<style>
-.material-symbols-outlined {
-font-variation-settings: 'FILL' 1;
-}
-/* Hide scrollbar for a more native feel */
-::-webkit-scrollbar {
-display: none;
-}
-body {
--ms-overflow-style: none;
-scrollbar-width: none;
--webkit-tap-highlight-color: transparent;
-}
-</style>
+<!-- Tailwind Configuration -->
 <script id="tailwind-config">
-tailwind.config = {
-darkMode: "class",
-theme: {
-extend: {
-"colors": {
-"error-container": "#ffdad6",
-"inverse-surface": "#303030",
-"inverse-primary": "#aac7ff",
-"secondary-fixed-dim": "#c0c7cf",
-"surface-container-highest": "#e4e2e2",
-"on-tertiary-fixed": "#221b00",
-"primary-fixed": "#d7e3ff",
-"on-error-container": "#93000a",
-"surface-dim": "#dbd9d9",
-"outline": "#727784",
-"surface-container-high": "#eae8e7",
-"on-surface": "#1b1c1c",
-"on-tertiary-container": "#4c3e00",
-"error": "#ba1a1a",
-"primary-fixed-dim": "#aac7ff",
-"tertiary-fixed": "#ffe16d",
-"on-secondary-fixed-variant": "#40484e",
-"on-tertiary-fixed-variant": "#544600",
-"primary": "#004e9f",
-"tertiary-fixed-dim": "#e9c400",
-"surface-variant": "#e4e2e2",
-"on-primary-container": "#dfe8ff",
-"outline-variant": "#c1c6d5",
-"background": "#fbf9f8",
-"on-primary-fixed": "#001b3e",
-"secondary-container": "#dce3eb",
-"inverse-on-surface": "#f2f0f0",
-"secondary-fixed": "#dce3eb",
-"on-error": "#ffffff",
-"on-background": "#1b1c1c",
-"surface-container": "#efeded",
-"on-primary-fixed-variant": "#00458e",
-"tertiary-container": "#c9a900",
-"surface-container-low": "#f5f3f3",
-"tertiary": "#705d00",
-"on-tertiary": "#ffffff",
-"on-secondary-fixed": "#151c22",
-"surface-bright": "#fbf9f8",
-"on-surface-variant": "#414753",
-"surface": "#fbf9f8",
-"primary-container": "#0066cc",
-"surface-container-lowest": "#ffffff",
-"on-secondary-container": "#5e656c",
-"surface-tint": "#005cba",
-"on-primary": "#ffffff",
-"secondary": "#585f66",
-"on-secondary": "#ffffff"
-},
-"borderRadius": {
-"DEFAULT": "0.25rem",
-"lg": "0.5rem",
-"xl": "0.75rem",
-"full": "9999px"
-},
-"spacing": {
-"container-padding-desktop": "40px",
-"container-padding-mobile": "20px",
-"gutter": "24px",
-"section-gap": "64px",
-"base": "8px"
-},
-"fontFamily": {
-"headline-md": [
-"Plus Jakarta Sans"
- ],
-"label-sm": [
-"Space Grotesk"
- ],
-"headline-lg-mobile": [
-"Plus Jakarta Sans"
- ],
-"label-md": [
-"Space Grotesk"
- ],
-"body-md": [
-"Plus Jakarta Sans"
- ],
-"headline-lg": [
-"Plus Jakarta Sans"
- ],
-"body-lg": [
-"Plus Jakarta Sans"
- ],
-"headline-xl": [
-"Plus Jakarta Sans"
- ]
-},
-"fontSize": {
-"headline-md": [
-"24px",
-{
-"lineHeight": "32px",
-"fontWeight": "600"
-}
- ],
-"label-sm": [
-"12px",
-{
-"lineHeight": "16px",
-"letterSpacing": "0.03em",
-"fontWeight": "600"
-}
- ],
-"headline-lg-mobile": [
-"28px",
-{
-"lineHeight": "36px",
-"fontWeight": "700"
-}
- ],
-"label-md": [
-"14px",
-{
-"lineHeight": "20px",
-"letterSpacing": "0.05em",
-"fontWeight": "500"
-}
- ],
-"body-md": [
-"16px",
-{
-"lineHeight": "24px",
-"fontWeight": "400"
-}
- ],
-"headline-lg": [
-"32px",
-{
-"lineHeight": "40px",
-"fontWeight": "700"
-}
- ],
-"body-lg": [
-"18px",
-{
-"lineHeight": "28px",
-"fontWeight": "400"
-}
- ],
-"headline-xl": [
-"48px",
-{
-"lineHeight": "56px",
-"letterSpacing": "-0.02em",
-"fontWeight": "800"
-}
- ]
-}
-},
-},
-}
-</script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#333539",
+                        "on-background": "#e2e2e8",
+                        "on-surface-variant": "#c1c6d5",
+                        "inverse-primary": "#005cba",
+                        "mesh-deep-blue": "#001B3E",
+                        "outline-variant": "#414753",
+                        "outline": "#8b919e",
+                        "surface-container-high": "#282a2e",
+                        "surface-tint": "#aac7ff",
+                        "tertiary-container": "#00747b",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "secondary-container": "#7000ff",
+                        "on-tertiary": "#00363a",
+                        "on-tertiary-container": "#9bf7ff",
+                        "glow-blue": "rgba(0, 102, 204, 0.4)",
+                        "inverse-surface": "#e2e2e8",
+                        "on-tertiary-fixed": "#002022",
+                        "surface-container-lowest": "#0c0e12",
+                        "primary-fixed": "#d7e3ff",
+                        "on-primary-fixed": "#001b3e",
+                        "on-secondary-fixed": "#23005b",
+                        "inverse-on-surface": "#2f3035",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#00dbe7",
+                        "on-primary": "#002f65",
+                        "secondary": "#d1bcff",
+                        "primary": "#aac7ff",
+                        "surface-container": "#1e2024",
+                        "surface-container-low": "#1a1c20",
+                        "primary-fixed-dim": "#aac7ff",
+                        "on-primary-container": "#dfe8ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#333539",
+                        "background": "#111318",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#ddcdff",
+                        "tertiary": "#00dbe7",
+                        "on-surface": "#e2e2e8",
+                        "surface-dim": "#111318",
+                        "primary-container": "#0066cc",
+                        "on-primary-fixed-variant": "#00458e",
+                        "glass-white": "rgba(255, 255, 255, 0.08)",
+                        "surface": "#111318",
+                        "tertiary-fixed": "#74f5ff",
+                        "glass-border": "rgba(255, 255, 255, 0.15)",
+                        "error-container": "#93000a",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "surface-bright": "#37393e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding-desktop": "48px",
+                        "container-padding-mobile": "24px",
+                        "gutter": "32px",
+                        "base": "8px",
+                        "glass-margin": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Space Grotesk"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Animations & Liquid Glass Utilities */
+        @keyframes liquidFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.02); }
+        }
+        .animate-liquid-float {
+            animation: liquidFloat 6s ease-in-out infinite;
+        }
+        @keyframes pulseSlow {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        .animate-pulse-slow {
+            animation: pulseSlow 4s ease-in-out infinite;
+        }
+        .glass-panel {
+            @apply bg-glass-white backdrop-blur-[20px] border-[0.5px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)];
+        }
+        .glass-recessed {
+            @apply bg-black/20 backdrop-blur-[10px] border border-white/5 inset-shadow-sm;
+        }
+        
+        /* Entrance Animations */
+        .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
 </head>
-<body class="bg-surface-container-low text-on-background min-h-screen flex flex-col font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-<!-- Top App Bar (Native App Style) -->
-<header class="fixed top-0 left-0 w-full z-50 flex justify-center items-center px-4 h-16 bg-surface/90 backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
-<div class="flex items-center gap-3">
-<img alt="School Crest" class="w-8 h-8 object-contain rounded-full border border-outline-variant shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrPv351SS1J66_QZ6eYVfZSE3SWCI-UyyKM5tuyUqY5skONNCK6wIzMwvhUSzSgJm-OKsSYgazaAGXK0h4_DEEFJxlAVMNHA05qvOAuFgIX3VlZGKbvKZUYMzzQXzVVRRGxW0VKZ6XYliQYa_-eZZEgAm5tLgI-x8NH3o2kfrSZOY9JlC8hcqDfD2vWrdluevn-zZZETbsD0Y3U6UOKuisgaHboF5__bi3DcBFpCogj714k_xeHCQ0ckn4Ev0giYkn"/>
-<h1 class="font-headline-md text-[18px] leading-snug font-bold text-on-surface">
-9th Grade Portal
-</h1>
+<body class="bg-background text-on-background relative min-h-screen overflow-x-hidden font-body-md antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Level 0: The Liquid (Mesh Gradient Background) -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-mesh-deep-blue">
+<div class="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-primary-container blur-[100px] opacity-40 mix-blend-screen animate-pulse-slow" style="animation-duration: 10s;"></div>
+<div class="absolute bottom-[-10%] right-[-20%] w-[60vw] h-[60vw] rounded-full bg-tertiary-container blur-[120px] opacity-30 mix-blend-screen animate-pulse-slow" style="animation-duration: 12s; animation-delay: -5s;"></div>
+<div class="absolute top-[40%] left-[30%] w-[50vw] h-[50vw] rounded-full bg-secondary-container blur-[90px] opacity-20 mix-blend-screen animate-liquid-float"></div>
 </div>
+<!-- TopAppBar (Shared Component) -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-glass-white backdrop-blur-[20px] rounded-full mt-4 mx-4 border-[0.5px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
+<div class="w-10 h-10 rounded-full overflow-hidden border-[1.5px] border-glass-border shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+<img class="w-full h-full object-cover" data-alt="A futuristic close-up portrait of a student avatar character for a liquid glass interface. The character has stylized, vibrant hair and glowing accents, set against a dark, moody background with neon blue and teal rim lighting. The style is modern 3D digital art, high quality, and cohesive with a sophisticated dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgvifM8psvxaHqZsGCzoidgCiIEbxW4tG-5cmstugV588esl-BM9xJkBEr8WLnvMzSYSEvU5LliTdWAelEPLHXxDCY3xEuUYRCUkB4KZUCMj6eM7hwC0a_rP7qqidZ5s_-DBRmrpUW3_GmxMwgnIO1tmS9uabNnCqRGw3U4SugZxebcUIBij_um4BTUCUCzuccVuyiXA_-VfNuZqJhgm9HAXh4Q5lyK1H4MOnE3iuTu9LEgDh__1g"/>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary tracking-tight truncate px-4">Perdón La Demora</h1>
+<button class="w-10 h-10 flex flex-shrink-0 items-center justify-center rounded-full text-on-surface-variant hover:bg-glass-white/20 hover:text-primary transition-all scale-95 active:scale-90 relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full animate-pulse"></span>
+</button>
+</nav>
+<!-- Main Canvas -->
+<main class="relative z-10 pt-28 pb-32 px-container-padding-mobile md:px-container-padding-desktop max-w-4xl mx-auto min-h-screen flex flex-col justify-center gap-glass-margin">
+<!-- Welcome Header -->
+<header class="text-center mb-8 fade-in-up">
+<p class="font-label-md text-label-md text-tertiary mb-2 uppercase tracking-widest opacity-80">Portal Principal</p>
+<h2 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface font-extrabold mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                Bienvenido al <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">Siguiente Nivel</span>
+</h2>
 </header>
-<!-- Main Content Canvas (Conversation List) -->
-<main class="flex-grow pt-20 pb-[320px] px-4 w-full flex flex-col gap-6 md:px-container-padding-desktop md:max-w-3xl md:mx-auto">
-<!-- Left Column: The Narrative (Structured Cards) -->
-<div class="w-full flex flex-col gap-6 relative z-10">
-<!-- Jerhak's First Bubble -->
-<div class="flex items-end gap-3 w-full">
-<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 shadow-sm bg-surface-container-high relative flex items-center justify-center mb-1">
-<!-- Jerhak Avatar Placeholder (Crop for Icon) -->
-<div class="absolute inset-0 bg-cover bg-top" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUaBhTZnnFwdOo451EFBf8kSjJo5nZnumqlWILPc2w6CizK1qFLShNl8Gc4skjzOsWpQQOz8KuVyO1KFqfFDvGdmz18e8MSSkMOFZ1-pFn6EQrS3YyIiM04YObPRur3WfEqzOZcqzf6Q9nUp1DFTOKW6opAyjWSxXyPzcWYj_UQvV3T7TxKZ24_o5kWU0LrzR-FJxOew1mvYt59fkekD4T5onhdZtlM8IpSwpeAewqqkxij55MEX51lkyqTUKPG9dn');"></div>
+<!-- Conversational UI area (Bento style stacked cards) -->
+<div class="flex flex-col gap-6 w-full">
+<!-- Dialogue Card 1: Jerhak -->
+<div class="glass-panel rounded-[2rem] p-5 md:p-6 w-full max-w-[90%] mr-auto fade-in-up delay-100 flex gap-4 md:gap-6 items-start animate-liquid-float relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-[2px] border-primary/50 shrink-0 shadow-[0_0_20px_rgba(170,199,255,0.3)]">
+<img class="w-full h-full object-cover" data-alt="A stylized, modern 3D digital portrait of a male character named Jerhak for a premium dark mode user interface. He has a cool, sophisticated demeanor, with neon blue and silver accents in his futuristic clothing. The lighting is cinematic, featuring soft backdrop blurs and refractive light-catching edges that perfectly complement a liquid glassmorphism design system. The background is a deep mesh gradient." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB22-7AyCIfaRywuo0L5bgVMgCHPyUO9OTwt7pIT8GLoSwVQappyl2IoAFS-y6KXLjYUmVqycULAtX6Qm46-KkgdqK2ZVnGld4BKirKVHiqc0z89WGJskOsWUu5K0QUIiLKm3S5hXPvtPcZh_F-qNWQBTG-umKAdeR2APZqlSEcRSGyb7HCrwMEUSWyjshhhy-VaDSqha1kgyGuhmSVi4wx43uBMduoFCV5F8QmLOeg1tFvuWj2vfj6lH6WQV2oLRaJ"/>
 </div>
-<div class="bg-surface border border-outline-variant/30 rounded-[20px] rounded-bl-sm px-4 py-3.5 shadow-sm max-w-[85%]">
-<p class="font-label-sm text-outline mb-1">Jerhak</p>
-<p class="font-body-md text-[15px] leading-relaxed text-on-surface">
-"Hola, mucho gusto por sino me conoce mi nombre es <strong>Jerhak</strong>. Representante de noveno grado junto a Thaliana."
-</p>
+<div class="flex-1 relative z-10">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-label-md text-label-md text-primary font-bold">Jerhak</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant/60">10:42 AM</span>
 </div>
-</div>
-<!-- Thaliana's Bubble -->
-<div class="flex items-end gap-3 flex-row-reverse self-end w-full">
-<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 shadow-sm bg-surface-container-high relative flex items-center justify-center mb-1">
-<!-- Thaliana Avatar Placeholder (Crop for Icon) -->
-<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO1K3qs7rNRqW2Yo3ounqSwF55oJUua4BIzFNv24y7Kzx1uvEA4VkNRmKl529HDVPl4NO7JVOJlou5KA4irEKstTLNj86aI_U6pVxa49VUtDkaOyhHKyy37o-Yowub3fxSWWdBDTAOa9_68lQMXbQfTd1qdHS0acrC9-eWZhm4p7nUiIIoOEPN0yg9oANDmRAocxzQWWyDEyWy_lm-cRIU_z9w4QRpT8upyWrI6jubMOUwM_Rx8T8Q63HJSWfOEz5I');"></div>
-</div>
-<div class="bg-primary text-on-primary rounded-[20px] rounded-br-sm px-4 py-3.5 shadow-md max-w-[85%]">
-<p class="font-label-sm text-primary-fixed-dim mb-1 text-right">Thaliana</p>
-<p class="font-body-md text-[15px] leading-relaxed">
-"Hola, soy <strong>Thaliana</strong> y es un gusto que estés usando esta web para dejar tus sugerencias, recuerda que está página fue creada luego de ser escogido como representante del consejo Estudiantil  con la intención de conecer tus inquietudes e ideas, haciendo usos de una página web donde todos podamos participar."
-</p>
+<div class="glass-recessed rounded-2xl rounded-tl-none p-4 text-on-surface font-body-md text-body-md leading-relaxed shadow-inner">
+<p>¡Hey! Bienvenido a <span class="text-primary font-medium">Perdón La Demora</span>. Sabíamos que llegarías eventualmente. El sistema está calibrado y listo.</p>
 </div>
 </div>
-<!-- Jerhak's Second Bubble -->
-<div class="flex items-end gap-3 w-full">
-<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 shadow-sm bg-surface-container-high relative flex items-center justify-center mb-1">
-<div class="absolute inset-0 bg-cover bg-top" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1XrbmqpzUeYZ0I9c3VC1g3XYg1gsNC4yJ4RBxnafL-3dvoyaSTnpmotLSKkvkUKfUhE2kL6mbMCQU-5xI2KZ0JcXOGxJfeBUutjUP0dyjA7lE4fSthqn0G_eDJZC4ZuNO53NhAnQxCZYJCEfFfHbinvI5xt8JcvjwGD_E8_MPiFCSiAsDP916PnG03zVYZcuZoKuULw8F1LLp6jxFAWnMEVQ1Ou0t1vrVqz4TWB3GU--jEaU0xvQ9nADuS5jI42ei');"></div>
 </div>
-<div class="bg-surface border border-outline-variant/30 rounded-[20px] rounded-bl-sm px-4 py-3.5 shadow-sm max-w-[85%]">
-<p class="font-label-sm text-outline mb-1">Jerhak</p>
-<p class="font-body-md text-[15px] leading-relaxed text-on-surface">
-"Gracias Thaliana, la página funciona de la siguiente manera: No podrás dar más de 2 propuestas diariamente. Las propuestas que pensemos que estén bien las tomaremos en cuenta e intentaremos cumplirlas lo más que podamos. <strong>Usa tu imaginación y piensa en grande como un verdadero representante.</strong>"
-</p>
+<!-- Dialogue Card 2: Thaliana -->
+<div class="glass-panel rounded-[2rem] p-5 md:p-6 w-full max-w-[90%] ml-auto fade-in-up delay-200 flex gap-4 md:gap-6 items-start flex-row-reverse text-right animate-liquid-float relative overflow-hidden group" style="animation-delay: -3s;">
+<div class="absolute inset-0 bg-gradient-to-bl from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-[2px] border-tertiary/50 shrink-0 shadow-[0_0_20px_rgba(0,219,231,0.3)]">
+<img class="w-full h-full object-cover" data-alt="A stylized, modern 3D digital portrait of a female character named Thaliana designed for a high-end dark mode application interface. She exudes warmth and intelligence, featuring glowing teal and purple accents in her futuristic attire. The scene is lit with dramatic, soft rim lighting against a deep, shifting mesh gradient background, perfectly integrating with a sophisticated liquid glassmorphism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGGV44_ALQHl_ERpOp1dNbegL3jGilSX5x9jGHsnLK4aVA2PnksQ-VfeY3wS6l9kcHMSdQcAOx1zUIgf6gpcFHN_EAp9l_Fr3WGD80kQGz22SGEjLeIPomnrTO3VoMFKd601_Wo7trz3FYD2fk35wZd_g2iT3FePrkbdm7lsQjEq4R-EMFLAS_ehBOS6Db8r4zqe7uPpX6tMi9lEZFp8zWFmvvBFRU9piIJYgYHC0rIXqQdB3O18tfYdmYAq_kH4mr"/>
+</div>
+<div class="flex-1 relative z-10">
+<div class="flex items-center gap-2 mb-1 justify-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant/60">10:43 AM</span>
+<h3 class="font-label-md text-label-md text-tertiary font-bold">Thaliana</h3>
+</div>
+<div class="glass-recessed rounded-2xl rounded-tr-none p-4 text-on-surface font-body-md text-body-md leading-relaxed shadow-inner text-left">
+<p>Estamos listos para empezar a organizar todo. Hay mucho por hacer hoy, pero no te preocupes, la interfaz fluirá contigo. ¿Qué tienes en mente?</p>
 </div>
 </div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="mt-8 md:mt-12 w-full fade-in-up delay-300">
+<button class="w-full md:w-auto md:min-w-[280px] mx-auto py-5 px-8 rounded-full bg-gradient-to-r from-primary-container via-primary to-secondary-container text-white font-label-md text-label-md md:text-body-lg md:font-body-lg font-bold shadow-[0_20px_40px_-10px_rgba(170,199,255,0.5)] hover:shadow-[0_20px_60px_-5px_rgba(170,199,255,0.8)] hover:scale-[1.02] active:scale-95 transition-all duration-300 flex justify-center items-center gap-3 relative overflow-hidden group">
+<span class="relative z-10 drop-shadow-md">Comenzar</span>
+<span class="material-symbols-outlined relative z-10 group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+<!-- Button internal glow effect -->
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full blur-[10px]"></div>
+</button>
 </div>
 </main>
-<!-- Bottom Sheet Style Login Area -->
-<div class="fixed bottom-0 left-0 w-full z-40 bg-surface rounded-t-[32px] shadow-[0_-8px_32px_rgba(0,0,0,0.08)] border-t border-outline-variant/20 md:relative md:rounded-3xl md:w-[90%] md:max-w-md md:mx-auto md:mb-12 md:shadow-xl">
-<div class="flex justify-center pt-3 pb-2 md:hidden">
-<div class="w-12 h-1.5 bg-surface-variant rounded-full"></div>
-</div>
-<div class="flex flex-col items-center text-center p-8 pt-4 space-y-6">
-<div class="space-y-2">
-<h2 class="font-headline-lg-mobile text-on-surface">
-Tu Voz Importa
-</h2>
-<p class="font-body-md text-on-surface-variant">
-Únete al portal del Consejo Estudiantil para dejar tus propuestas y mejorar nuestro noveno grado juntos.
-</p>
-</div>
-<div class="w-full space-y-4 pt-2">
-<a class="w-full h-14 bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-base rounded-[20px] shadow-sm flex items-center justify-center gap-3 transition-colors active:scale-[0.98]" href="registro.html"><span class="material-symbols-outlined">login</span>Comenzar Registro</a>
-<p class="font-label-sm text-outline pb-safe">
-Acceso exclusivo para estudiantes con cuenta institucional.
-</p>
-</div>
-</div>
-</div>
+<!-- BottomNavBar (Shared Component) -->
+<!-- Logic: Mobile only (md:hidden), active state mapped to "Inicio" -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-20 px-8 bg-glass-white backdrop-blur-[20px] rounded-full mb-6 mx-4 border-t-[1px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
+<!-- Tab 1: Inicio (Active) -->
+<button class="flex flex-col items-center justify-center text-primary font-bold drop-shadow-[0_0_8px_rgba(170,199,255,0.6)] animate-pulse-slow w-16 group relative">
+<!-- Active indicator glow -->
+<div class="absolute -top-4 w-12 h-1 bg-primary rounded-full blur-[2px] opacity-80"></div>
+<span class="material-symbols-outlined mb-1 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-[10px] tracking-wide">Inicio</span>
+</button>
+<!-- Tab 2: Proponer (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors w-16 group">
+<span class="material-symbols-outlined mb-1 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 0;">add_circle</span>
+<span class="font-label-sm text-[10px] tracking-wide">Proponer</span>
+</button>
+<!-- Tab 3: Historial (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors w-16 group">
+<span class="material-symbols-outlined mb-1 transition-transform group-hover:scale-110" style="font-variation-settings: 'FILL' 0;">history</span>
+<span class="font-label-sm text-[10px] tracking-wide">Historial</span>
+</button>
+</nav>
 </body></html>
