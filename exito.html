@@ -125,11 +125,32 @@
     }
   </style>
 </head>
-<body class="bg-secondary-container min-h-screen flex flex-col items-center justify-center font-body-lg text-on-surface overflow-hidden relative">
+<body class="bg-secondary-container min-h-screen flex flex-col items-center justify-center font-body-lg text-on-surface overflow-hidden relative"><header class="w-full absolute top-0 left-0 p-4 flex justify-between items-center z-20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-md">
+            JD
+        </div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Juan Delgado</span>
+<span class="text-[12px] text-on-surface-variant opacity-80">Estudiante</span>
+</div>
+</div>
+<div class="relative group">
+<button class="w-10 h-10 rounded-full hover:bg-surface-variant/50 flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+<div class="absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/20 py-2 hidden group-hover:block">
+<a class="flex items-center gap-3 px-4 py-2 hover:bg-surface-variant text-on-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-label-md">Cerrar sesión</span>
+</a>
+</div>
+</div>
+</header>
 <!-- Ambient background gradient effect -->
 <div class="absolute inset-0 bg-gradient-to-br from-surface to-secondary-container opacity-80 pointer-events-none z-0"></div>
 <!-- Main Content Card (Paper Morphism) -->
-<main class="w-[90%] max-w-sm bg-surface-container-lowest paper-texture rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.05),0_1px_3px_rgba(0,0,0,0.02)] border border-outline-variant/20 p-8 flex flex-col items-center text-center relative z-10 squishy-hover" style="transform: rotate(-1deg); transition: transform 0.3s ease;">
+<main class="w-[90%] max-w-sm bg-surface-container-lowest paper-texture rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.05),0_1px_3px_rgba(0,0,0,0.02)] border border-outline-variant/20 p-8 flex flex-col items-center text-center relative z-10 squishy-hover mt-16" style="transform: rotate(-1deg); transition: transform 0.3s ease;">
 <!-- Icon Container -->
 <div class="w-24 h-24 bg-primary-container rounded-full flex items-center justify-center mb-6 shadow-md animate-bounce-in">
 <span class="material-symbols-outlined text-on-primary-container" style="font-size: 48px; font-variation-settings: 'FILL' 1;">
