@@ -152,17 +152,51 @@
 <label class="font-label-md text-label-md text-on-surface-variant" for="rep-code">Código de Acceso</label>
 <div class="relative">
 <input class="w-full bg-surface text-center font-body-lg text-body-lg text-on-surface border-b-2 border-primary focus:outline-none focus:border-primary pb-2" id="rep-code" placeholder="Ingresa la palabra secreta" type="text" value=""/>
-<!-- Example Error State (hidden by default) -->
+<!-- Error State (hidden by default) -->
 <div class="absolute -bottom-6 left-0 flex items-center gap-1 text-error hidden" id="error-message">
 <span class="material-symbols-outlined text-sm" data-icon="error">error</span>
 <span class="font-label-sm text-label-sm">Código incorrecto. Intenta de nuevo.</span>
+</div>
+<!-- Success State (hidden by default) -->
+<div class="absolute -bottom-6 left-0 flex items-center gap-1 text-primary hidden" id="success-message">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-label-sm text-label-sm">Acceso concedido. Redirigiendo...</span>
 </div>
 </div>
 </div>
 <!-- Action Area -->
 <div class="mt-4">
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full shadow-md hover:scale-[0.98] transition-transform active:scale-95 flex items-center justify-center gap-2" onclick="if(document.getElementById('rep-code').value.trim().toLowerCase() === 'thalianaesperra') { alert('Acceso concedido'); document.getElementById('error-message').classList.add('hidden'); window.location.href = 'admin.html'; } else { document.getElementById('error-message').classList.remove('hidden'); }">Verificar y Entrar <span class="material-symbols-outlined text-sm" data-icon="login">login</span></button>
-<button class="w-full mt-4 text-on-secondary font-label-sm text-label-sm py-2 opacity-80 hover:opacity-100 transition-opacity">Volver al inicio de sesión</button>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full shadow-md hover:scale-[0.98] transition-transform active:scale-95 flex items-center justify-center gap-2" id="verify-btn" onclick="verificarAcceso()" type="button">Verificar y Entrar <span class="material-symbols-outlined text-sm" data-icon="login">login</span></button>
+<button class="w-full mt-4 text-on-secondary font-label-sm text-label-sm py-2 opacity-80 hover:opacity-100 transition-opacity" type="button">Volver al inicio de sesión</button>
 </div>
 </main>
+<script>
+    function verificarAcceso() {
+        const input = document.getElementById('rep-code');
+        const code = input.value.trim().toLowerCase();
+        const errorMsg = document.getElementById('error-message');
+        const successMsg = document.getElementById('success-message');
+        const btn = document.getElementById('verify-btn');
+
+        if (code === 'thalianaesperra') {
+            // Hide error, show success
+            errorMsg.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            
+            // Disable inputs to prevent multiple submissions
+            input.disabled = true;
+            btn.disabled = true;
+            btn.classList.add('opacity-80', 'cursor-not-allowed');
+            
+            // Redirect after a short delay for visual feedback
+            setTimeout(() => {
+                window.location.href = 'admin.html';
+            }, 1000);
+        } else {
+            // Show error, hide success
+            successMsg.classList.add('hidden');
+            errorMsg.classList.remove('hidden');
+        }
+    }
+</script>
 </body></html>
