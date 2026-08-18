@@ -1,133 +1,116 @@
 <!DOCTYPE html>
 
-<html lang="es"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Ingresar Código de Representante</title>
+<title>Dashboard - Student Council</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "background": "#fbf9f8",
-                    "on-error-container": "#93000a",
-                    "on-surface": "#1b1c1c",
-                    "on-tertiary-fixed-variant": "#544600",
-                    "inverse-surface": "#303030",
-                    "on-primary-fixed-variant": "#00458e",
-                    "primary-container": "#0066cc",
-                    "tertiary-fixed": "#ffe16d",
-                    "secondary-fixed": "#dce3eb",
-                    "on-primary": "#ffffff",
-                    "on-primary-container": "#dfe8ff",
-                    "on-tertiary": "#ffffff",
-                    "on-secondary-fixed": "#151c22",
-                    "on-background": "#1b1c1c",
-                    "on-secondary-container": "#5e656c",
-                    "outline": "#727784",
-                    "error": "#ba1a1a",
-                    "error-container": "#ffdad6",
-                    "inverse-primary": "#aac7ff",
-                    "on-secondary-fixed-variant": "#40484e",
-                    "surface": "#fbf9f8",
-                    "tertiary-container": "#c9a900",
-                    "surface-container": "#efeded",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-container-highest": "#e4e2e2",
-                    "surface-container-high": "#eae8e7",
-                    "secondary": "#585f66",
-                    "on-tertiary-fixed": "#221b00",
-                    "surface-tint": "#005cba",
-                    "on-primary-fixed": "#001b3e",
-                    "surface-container-low": "#f5f3f3",
-                    "tertiary-fixed-dim": "#e9c400",
-                    "primary": "#004e9f",
-                    "secondary-container": "#dce3eb",
-                    "outline-variant": "#c1c6d5",
-                    "on-surface-variant": "#414753",
-                    "surface-dim": "#dbd9d9",
-                    "surface-variant": "#e4e2e2",
-                    "primary-fixed": "#d7e3ff",
-                    "on-tertiary-container": "#4c3e00",
-                    "primary-fixed-dim": "#aac7ff",
-                    "inverse-on-surface": "#f2f0f0",
-                    "on-error": "#ffffff",
-                    "surface-bright": "#fbf9f8",
-                    "on-secondary": "#ffffff",
-                    "tertiary": "#705d00",
-                    "secondary-fixed-dim": "#c0c7cf"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "container-padding-mobile": "20px",
-                    "base": "8px",
-                    "gutter": "24px",
-                    "container-padding-desktop": "40px",
-                    "section-gap": "64px"
-            },
-            "fontFamily": {
-                    "headline-lg": ["Plus Jakarta Sans"],
-                    "headline-xl": ["Plus Jakarta Sans"],
-                    "headline-md": ["Plus Jakarta Sans"],
-                    "label-md": ["Space Grotesk"],
-                    "headline-lg-mobile": ["Plus Jakarta Sans"],
-                    "body-md": ["Plus Jakarta Sans"],
-                    "body-lg": ["Plus Jakarta Sans"],
-                    "label-sm": ["Space Grotesk"]
-            },
-            "fontSize": {
-                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}]
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fbf9f8",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#00458e",
+                        "primary-container": "#0066cc",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed": "#dce3eb",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#dfe8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#151c22",
+                        "on-background": "#1b1c1c",
+                        "on-secondary-container": "#5e656c",
+                        "outline": "#727784",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#aac7ff",
+                        "on-secondary-fixed-variant": "#40484e",
+                        "surface": "#fbf9f8",
+                        "tertiary-container": "#c9a900",
+                        "surface-container": "#efeded",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "surface-container-high": "#eae8e7",
+                        "secondary": "#585f66",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-tint": "#005cba",
+                        "on-primary-fixed": "#001b3e",
+                        "surface-container-low": "#f5f3f3",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "primary": "#004e9f",
+                        "secondary-container": "#dce3eb",
+                        "outline-variant": "#c1c6d5",
+                        "on-surface-variant": "#414753",
+                        "surface-dim": "#dbd9d9",
+                        "surface-variant": "#e4e2e2",
+                        "primary-fixed": "#d7e3ff",
+                        "on-tertiary-container": "#4c3e00",
+                        "primary-fixed-dim": "#aac7ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#705d00",
+                        "secondary-fixed-dim": "#c0c7cf"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding-mobile": "20px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-padding-desktop": "40px",
+                        "section-gap": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }]
+                    }
+                }
             }
-          },
-        },
-      }
+        }
     </script>
 <style>
-        body {
-            background-color: theme('colors.secondary');
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        .paper-card {
-            background: theme('colors.surface-container-lowest');
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border: 1px solid theme('colors.outline-variant');
-            position: relative;
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-        .paper-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: theme('colors.primary');
-            border-top-left-radius: theme('borderRadius.xl');
-            border-bottom-left-radius: theme('borderRadius.xl');
-        }
-        
-        /* Floating Avatar Container */
-        .avatar-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .paper-texture {
+            /* Simulated subtle tactile feel without background images */
+            background-color: var(--color-surface-container-lowest);
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(193, 198, 213, 0.3);
         }
     </style>
 <style>
@@ -136,67 +119,97 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-container-padding-mobile">
-<!-- Transactional Screen - No Global Nav Shells -->
-<main class="w-full max-w-[400px] flex flex-col gap-gutter z-10 relative">
-<!-- Header / Avatar Area -->
-<div class="flex flex-col items-center text-center gap-base mb-4 relative">
-<div class="avatar-float w-24 h-24 rounded-full border-4 border-surface-container-lowest shadow-lg overflow-hidden bg-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-4xl text-on-primary-container" data-icon="school">school</span>
+<body class="bg-background text-on-surface antialiased pb-28">
+<!-- TopAppBar -->
+<header class="bg-surface fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile shadow-sm py-4 h-[72px]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="Student Avatar" class="w-full h-full object-cover" data-alt="A stylized, modern 3D avatar of a diverse 9th-grade student representative. They have a friendly, confident expression, wearing a casual but neat school-appropriate outfit. The lighting is soft and energetic studio lighting, casting a gentle rim light against a pristine white background. High-quality digital render aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGABCFMUhdh5nr4cRA2lMH3RsKMEUBVBPSbm4SE0iivUH1sR29Pv9bQ3U0OHOGLko2HYbxJyqcEktFWBpeLIBygRBYmvhJeAYoPEcfnEjQfIL6Y1Wv_926n47vAJhR761FBcQDobr-tu3-y499XaPrshGMui78skhesjvbZqulc1ArWtU5Ls4N7pNJoL-J15TIOwcLrKTWYiPOMoTz5CLCq2HdgdjkZT3MQUUrN0y2ebLwQFALUA"/>
 </div>
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-secondary">Acceso Administrativo</h1>
-<p class="font-body-md text-body-md text-on-secondary opacity-90">Ingresa el código de seguridad para acceder al panel de control.</p>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Panel de Administración</h1>
 </div>
-<!-- Input Area (Paper Card Style) -->
-<div class="paper-card rounded-xl p-gutter flex flex-col gap-base">
-<label class="font-label-md text-label-md text-on-surface-variant" for="rep-code">Código de Acceso</label>
-<div class="relative">
-<input class="w-full bg-surface text-center font-body-lg text-body-lg text-on-surface border-b-2 border-primary focus:outline-none focus:border-primary pb-2" id="rep-code" placeholder="Ingresa la palabra secreta" type="text" value=""/>
-<!-- Error State (hidden by default) -->
-<div class="absolute -bottom-6 left-0 flex items-center gap-1 text-error hidden" id="error-message">
-<span class="material-symbols-outlined text-sm" data-icon="error">error</span>
-<span class="font-label-sm text-label-sm">Código incorrecto. Intenta de nuevo.</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="mt-[80px] px-container-padding-mobile max-w-md mx-auto">
+<!-- Welcome & Search -->
+<section class="mb-6">
+<h2 class="font-body-lg text-body-lg text-on-surface-variant mb-4">Gestión de Propuestas Recibidas</h2>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-lowest border-b-2 border-transparent border-b-outline-variant focus:border-b-primary focus:ring-0 px-4 py-4 pl-12 rounded-t-lg shadow-sm font-body-md text-body-md text-on-surface outline-none transition-all placeholder:text-outline/70" placeholder="Search ideas..." type="text"/>
 </div>
-<!-- Success State (hidden by default) -->
-<div class="absolute -bottom-6 left-0 flex items-center gap-1 text-primary hidden" id="success-message">
-<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
-<span class="font-label-sm text-label-sm">Acceso concedido. Redirigiendo...</span>
+</section>
+<!-- Filters (Chips) -->
+<section class="mb-6">
+<div class="flex overflow-x-auto gap-2 pb-2 no-scrollbar">
+<button class="bg-primary text-on-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-md transition-transform active:scale-95">All Ideas</button>
+<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Facilities</button>
+<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Events</button>
+<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Curriculum</button>
 </div>
+</section>
+<!-- Suggestions Stack -->
+<section class="flex flex-col gap-4 relative">
+<!-- Card 1: Pinned / Facilities -->
+<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-primary -rotate-1 hover:rotate-0 transition-transform duration-300 z-10">
+<div class="absolute top-4 right-4 text-tertiary-container">
+<span class="material-symbols-outlined" data-icon="push_pin" data-weight="fill" style="font-variation-settings: 'FILL' 1;">push_pin</span>
 </div>
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-secondary-container text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Facilities</span>
+<span class="font-label-sm text-label-sm text-outline">2h ago</span>
 </div>
-<!-- Action Area -->
-<div class="mt-4">
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full shadow-md hover:scale-[0.98] transition-transform active:scale-95 flex items-center justify-center gap-2" id="verify-btn" onclick="verificarAcceso()" type="button">Verificar y Entrar <span class="material-symbols-outlined text-sm" data-icon="login">login</span></button>
-<button class="w-full mt-4 text-on-secondary font-label-sm text-label-sm py-2 opacity-80 hover:opacity-100 transition-opacity" type="button">Volver al inicio de sesión</button>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Fix the library AC before midterms</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">The second floor is boiling and no one can study. We need maintenance to check the vents.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">142</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
+</article>
+<!-- Card 2: Events -->
+<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-tertiary rotate-1 hover:rotate-0 transition-transform duration-300 z-0">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-tertiary-container/20 text-tertiary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Events</span>
+<span class="font-label-sm text-label-sm text-outline">Yesterday</span>
 </div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Spring Fling Outdoor Festival Concept</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Instead of a gym dance, let's use the quad. Food trucks, local student bands, and carnival games. I have a rough budget spreadsheet.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">89</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
+</article>
+<!-- Card 3: Curriculum -->
+<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-primary/60 hover:-rotate-1 transition-transform duration-300 z-0">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-secondary-container text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Curriculum</span>
+<span class="font-label-sm text-label-sm text-outline">3 days ago</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Requesting an Intro to Coding elective</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Many freshmen want to learn Python or web dev, but it's only offered to juniors. Can we get a basic intro class?</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">215</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
+</article>
+</section>
 </main>
-<script>
-    function verificarAcceso() {
-        const input = document.getElementById('rep-code');
-        const code = input.value.trim().toLowerCase();
-        const errorMsg = document.getElementById('error-message');
-        const successMsg = document.getElementById('success-message');
-        const btn = document.getElementById('verify-btn');
-
-        if (code === 'thalianaesperra') {
-            // Hide error, show success
-            errorMsg.classList.add('hidden');
-            successMsg.classList.remove('hidden');
-            
-            // Disable inputs to prevent multiple submissions
-            input.disabled = true;
-            btn.disabled = true;
-            btn.classList.add('opacity-80', 'cursor-not-allowed');
-            
-            // Redirect after a short delay for visual feedback
-            setTimeout(() => {
-                window.location.href = 'admin.html';
-            }, 1000);
-        } else {
-            // Show error, hide success
-            successMsg.classList.add('hidden');
-            errorMsg.classList.remove('hidden');
-        }
-    }
-</script>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-xl">
+<!-- Home (Active) -->
+<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 mb-1">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Inicio</span>
+</button>
+<!-- Propose (Inactive) -->
+<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-70 hover:opacity-100">
+<div class="flex flex-col items-center justify-center text-on-secondary-container rounded-2xl px-4 py-1 mb-1 group-hover:bg-secondary-container/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Propuestas</span>
+</button>
+<!-- History (Inactive) -->
+<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-70 hover:opacity-100">
+<div class="flex flex-col items-center justify-center text-on-secondary-container rounded-2xl px-4 py-1 mb-1 group-hover:bg-secondary-container/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Historial</span>
+</button>
+</nav>
 </body></html>
