@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dashboard - Student Council</title>
+<title>perdónlademorajovenes</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -128,9 +128,7 @@
 </div>
 <h1 class="font-headline-md text-headline-md text-primary tracking-tight">Panel de <span id="admin-name-display">Administración</span></h1>
 </div>
-<a class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-100" href="perfil.html" title="Mi Perfil">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</a>
+<div class="relative group"><button class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-100"><span class="material-symbols-outlined">settings</span></button><div class="absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/30 hidden group-focus-within:block z-50"><a class="block px-4 py-3 text-label-md text-on-surface hover:bg-surface-container-high rounded-t-xl" href="perfil.html">Mi Perfil</a><a class="block px-4 py-3 text-label-md text-error hover:bg-surface-container-high rounded-b-xl" href="index.html">Cerrar sesión</a></div></div>
 </header>
 <!-- Main Canvas -->
 <main class="mt-[80px] px-container-padding-mobile max-w-md mx-auto">
@@ -152,41 +150,43 @@
 </div>
 </section>
 <!-- Suggestions Stack -->
-<section class="flex flex-col gap-4 relative">
-<!-- Card 1: Pinned / Facilities -->
-<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-primary -rotate-1 hover:rotate-0 transition-transform duration-300 z-10">
-<div class="absolute top-4 right-4 text-tertiary-container">
-<span class="material-symbols-outlined" data-icon="push_pin" data-weight="fill" style="font-variation-settings: 'FILL' 1;">push_pin</span>
-</div>
-<div class="flex items-center gap-2 mb-3">
-<span class="bg-secondary-container text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Facilities</span>
-<span class="font-label-sm text-label-sm text-outline">2h ago</span>
-</div>
-<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Fix the library AC before midterms</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">The second floor is boiling and no one can study. We need maintenance to check the vents.</p>
-<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">142</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
-</article>
-<!-- Card 2: Events -->
-<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-tertiary rotate-1 hover:rotate-0 transition-transform duration-300 z-0">
-<div class="flex items-center gap-2 mb-3">
-<span class="bg-tertiary-container/20 text-tertiary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Events</span>
-<span class="font-label-sm text-label-sm text-outline">Yesterday</span>
-</div>
-<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Spring Fling Outdoor Festival Concept</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Instead of a gym dance, let's use the quad. Food trucks, local student bands, and carnival games. I have a rough budget spreadsheet.</p>
-<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">89</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
-</article>
-<!-- Card 3: Curriculum -->
-<article class="paper-texture rounded-xl p-5 relative border-l-4 border-l-primary/60 hover:-rotate-1 transition-transform duration-300 z-0">
-<div class="flex items-center gap-2 mb-3">
-<span class="bg-secondary-container text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">Curriculum</span>
-<span class="font-label-sm text-label-sm text-outline">3 days ago</span>
-</div>
-<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">Requesting an Intro to Coding elective</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Many freshmen want to learn Python or web dev, but it's only offered to juniors. Can we get a basic intro class?</p>
-<div class="flex items-center justify-between border-t border-outline-variant/20 pt-3"><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[20px]">thumb_up</span><span class="font-label-md text-label-md">215</span></div><div class="flex gap-2"><button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button><button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button></div></div>
-</article>
-</section>
+<section class="flex flex-col gap-4 relative"><div class="flex flex-col gap-4" id="proposals-container"></div><script>
+(function() {
+  const container = document.getElementById('proposals-container');
+  const proposals = JSON.parse(localStorage.getItem('proposals') || '[]');
+  
+  if (proposals.length === 0) {
+    container.innerHTML = `<div class="text-center py-12"><span class="material-symbols-outlined text-outline text-6xl mb-4">inbox</span><p class="font-body-lg text-on-surface-variant">No hay propuestas todavía</p></div>`;
+    return;
+  }
+
+  container.innerHTML = proposals.map((p, index) => {
+    const rotation = index % 2 === 0 ? '-rotate-1' : 'rotate-1';
+    const borderColor = index % 3 === 0 ? 'border-l-primary' : (index % 3 === 1 ? 'border-l-tertiary' : 'border-l-primary/60');
+    const categoryBg = p.category === 'Events' ? 'bg-tertiary-container/20 text-tertiary' : 'bg-secondary-container text-primary';
+    
+    return `
+      <article class="paper-texture rounded-xl p-5 relative border-l-4 ${borderColor} ${rotation} hover:rotate-0 transition-transform duration-300">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="${categoryBg} rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">${p.category || 'General'}</span>
+          <span class="font-label-sm text-label-sm text-outline">Reciente</span>
+        </div>
+        <h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">${p.title}</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">${p.description || p.content || ''}</p>
+        <div class="flex items-center justify-between border-t border-outline-variant/20 pt-3">
+          <div class="flex items-center gap-1 text-primary">
+            <span class="material-symbols-outlined text-[20px]">thumb_up</span>
+            <span class="font-label-md text-label-md">0</span>
+          </div>
+          <div class="flex gap-2">
+            <button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button>
+            <button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button>
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+})();
+</script></section>
 </main>
 <!-- BottomNavBar -->
 <nav class="bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-xl">
