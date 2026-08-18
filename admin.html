@@ -1,223 +1,282 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>perdónlademorajovenes</title>
+<title>Panel de Administración</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "background": "#fbf9f8",
-                        "on-error-container": "#93000a",
-                        "on-surface": "#1b1c1c",
-                        "on-tertiary-fixed-variant": "#544600",
-                        "inverse-surface": "#303030",
-                        "on-primary-fixed-variant": "#00458e",
-                        "primary-container": "#0066cc",
-                        "tertiary-fixed": "#ffe16d",
-                        "secondary-fixed": "#dce3eb",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#dfe8ff",
-                        "on-tertiary": "#ffffff",
-                        "on-secondary-fixed": "#151c22",
-                        "on-background": "#1b1c1c",
-                        "on-secondary-container": "#5e656c",
-                        "outline": "#727784",
-                        "error": "#ba1a1a",
-                        "error-container": "#ffdad6",
-                        "inverse-primary": "#aac7ff",
-                        "on-secondary-fixed-variant": "#40484e",
-                        "surface": "#fbf9f8",
-                        "tertiary-container": "#c9a900",
-                        "surface-container": "#efeded",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container-highest": "#e4e2e2",
-                        "surface-container-high": "#eae8e7",
-                        "secondary": "#585f66",
-                        "on-tertiary-fixed": "#221b00",
-                        "surface-tint": "#005cba",
-                        "on-primary-fixed": "#001b3e",
-                        "surface-container-low": "#f5f3f3",
-                        "tertiary-fixed-dim": "#e9c400",
-                        "primary": "#004e9f",
-                        "secondary-container": "#dce3eb",
-                        "outline-variant": "#c1c6d5",
-                        "on-surface-variant": "#414753",
-                        "surface-dim": "#dbd9d9",
-                        "surface-variant": "#e4e2e2",
-                        "primary-fixed": "#d7e3ff",
-                        "on-tertiary-container": "#4c3e00",
-                        "primary-fixed-dim": "#aac7ff",
-                        "inverse-on-surface": "#f2f0f0",
-                        "on-error": "#ffffff",
-                        "surface-bright": "#fbf9f8",
-                        "on-secondary": "#ffffff",
-                        "tertiary": "#705d00",
-                        "secondary-fixed-dim": "#c0c7cf"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "container-padding-mobile": "20px",
-                        "base": "8px",
-                        "gutter": "24px",
-                        "container-padding-desktop": "40px",
-                        "section-gap": "64px"
-                    },
-                    "fontFamily": {
-                        "headline-lg": ["Plus Jakarta Sans"],
-                        "headline-xl": ["Plus Jakarta Sans"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "label-md": ["Space Grotesk"],
-                        "headline-lg-mobile": ["Plus Jakarta Sans"],
-                        "body-md": ["Plus Jakarta Sans"],
-                        "body-lg": ["Plus Jakarta Sans"],
-                        "label-sm": ["Space Grotesk"]
-                    },
-                    "fontSize": {
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
-                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }]
-                    }
-                }
-            }
-        }
-    </script>
 <style>
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
         }
-        .paper-texture {
-            /* Simulated subtle tactile feel without background images */
-            background-color: var(--color-surface-container-lowest);
-            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(193, 198, 213, 0.3);
+        
+        /* Mesh Gradient Background */
+        .mesh-bg {
+            background-color: #001B3E;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(210,100%,40%,0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(190,100%,40%,0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, hsla(280,100%,50%,0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(240,100%,60%,0.3) 0px, transparent 50%);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .glass-panel-elevated {
+            background-color: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 60px 60px -10px rgba(0,0,0,0.3);
+        }
+
+        .glass-input {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Primary Gradient Button */
+        .btn-primary {
+            background: linear-gradient(135deg, #aac7ff 0%, #d1bcff 100%);
+            color: #002f65;
+            box-shadow: 0 10px 20px -5px rgba(170, 199, 255, 0.4);
+        }
+        
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
         }
     </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#aac7ff",
+                      "on-tertiary-fixed": "#002022",
+                      "on-secondary": "#3c0090",
+                      "on-error": "#690005",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#00458e",
+                      "inverse-primary": "#005cba",
+                      "on-surface-variant": "#c1c6d5",
+                      "on-surface": "#e2e2e8",
+                      "primary-container": "#0066cc",
+                      "secondary-fixed-dim": "#d1bcff",
+                      "surface-tint": "#aac7ff",
+                      "error-container": "#93000a",
+                      "inverse-on-surface": "#2f3035",
+                      "tertiary-fixed": "#74f5ff",
+                      "surface-container-lowest": "#0c0e12",
+                      "surface-container-low": "#1a1c20",
+                      "on-secondary-container": "#ddcdff",
+                      "on-tertiary-container": "#9bf7ff",
+                      "primary-fixed": "#d7e3ff",
+                      "on-primary-fixed": "#001b3e",
+                      "outline-variant": "#414753",
+                      "surface-container-highest": "#333539",
+                      "surface-variant": "#333539",
+                      "surface-container": "#1e2024",
+                      "surface-dim": "#111318",
+                      "on-primary-container": "#dfe8ff",
+                      "outline": "#8b919e",
+                      "surface-container-high": "#282a2e",
+                      "tertiary": "#00dbe7",
+                      "glow-blue": "rgba(0, 102, 204, 0.4)",
+                      "tertiary-fixed-dim": "#00dbe7",
+                      "glass-border": "rgba(255, 255, 255, 0.15)",
+                      "tertiary-container": "#00747b",
+                      "inverse-surface": "#e2e2e8",
+                      "secondary": "#d1bcff",
+                      "on-tertiary": "#00363a",
+                      "secondary-container": "#7000ff",
+                      "surface": "#111318",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#5700c9",
+                      "on-secondary-fixed": "#23005b",
+                      "background": "#111318",
+                      "secondary-fixed": "#e9ddff",
+                      "surface-bright": "#37393e",
+                      "on-background": "#e2e2e8",
+                      "glass-white": "rgba(255, 255, 255, 0.08)",
+                      "on-tertiary-fixed-variant": "#004f54",
+                      "mesh-deep-blue": "#001B3E",
+                      "on-primary": "#002f65",
+                      "primary-fixed-dim": "#aac7ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "glass-margin": "12px",
+                      "container-padding-mobile": "24px",
+                      "base": "8px",
+                      "container-padding-desktop": "48px",
+                      "gutter": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Space Grotesk"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "label-md": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "headline-xl": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
 <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-</head>
-<body class="bg-background text-on-surface antialiased pb-28">
+  </head>
+<body class="mesh-bg text-on-surface min-h-screen font-body-md overflow-x-hidden pt-24 pb-32 md:pt-32 md:pb-12">
 <!-- TopAppBar -->
-<header class="bg-surface fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile shadow-sm py-4 h-[72px]">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30">
-<img alt="Student Avatar" class="w-full h-full object-cover" data-alt="A stylized, modern 3D avatar of a diverse 9th-grade student representative. They have a friendly, confident expression, wearing a casual but neat school-appropriate outfit. The lighting is soft and energetic studio lighting, casting a gentle rim light against a pristine white background. High-quality digital render aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGABCFMUhdh5nr4cRA2lMH3RsKMEUBVBPSbm4SE0iivUH1sR29Pv9bQ3U0OHOGLko2HYbxJyqcEktFWBpeLIBygRBYmvhJeAYoPEcfnEjQfIL6Y1Wv_926n47vAJhR761FBcQDobr-tu3-y499XaPrshGMui78skhesjvbZqulc1ArWtU5Ls4N7pNJoL-J15TIOwcLrKTWYiPOMoTz5CLCq2HdgdjkZT3MQUUrN0y2ebLwQFALUA"/>
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-glass-white backdrop-blur-[20px] rounded-full mt-4 mx-4 border-[0.5px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-glass-border">
+<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A sophisticated abstract 3D avatar featuring translucent liquid glass spheres swirling around a central glowing core in shades of deep blue and bright teal. The lighting is dramatic and studio-quality, emphasizing the refractive properties of the glass material against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc3B-UmwIu7piZR_9YJGIe7F0uBL2sOqJS8zEBW39vOhSUuaLJKtK1IM-s8Cu2BVn_Z46bhjwDpwRVq7kLzjY-3Y61mRcOfR3WfaDwHzuB88mnFbjtUjPc-jQBbwo184RdIhJz4mXjYpuJVzbaGQ_nZ8lxsceicPos5REyCwdVoI2KHiZP2Uokbe6Bt83-5BM3MLcjO5JHS1WGbD_5fx0L5L45KKRW6BgDVBrk-LTUENVYYARx56M"/>
 </div>
-<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Panel de <span id="admin-name-display">Administración</span></h1>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary md:font-headline-lg md:text-headline-lg">Perdón La Demora</h1>
 </div>
-<div class="relative group"><button class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-100"><span class="material-symbols-outlined">settings</span></button><div class="absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-lg border border-outline-variant/30 hidden group-focus-within:block z-50"><a class="block px-4 py-3 text-label-md text-on-surface hover:bg-surface-container-high rounded-t-xl" href="perfil.html">Mi Perfil</a><a class="block px-4 py-3 text-label-md text-error hover:bg-surface-container-high rounded-b-xl" href="index.html">Cerrar sesión</a></div></div>
+<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-glass-white/20 transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
 </header>
-<!-- Main Canvas -->
-<main class="mt-[80px] px-container-padding-mobile max-w-md mx-auto">
-<!-- Welcome & Search -->
-<section class="mb-6">
-<h2 class="font-body-lg text-body-lg text-on-surface-variant mb-4">Gestión de Propuestas Recibidas</h2>
-<div class="relative group">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
-<input class="w-full bg-surface-container-lowest border-b-2 border-transparent border-b-outline-variant focus:border-b-primary focus:ring-0 px-4 py-4 pl-12 rounded-t-lg shadow-sm font-body-md text-body-md text-on-surface outline-none transition-all placeholder:text-outline/70" placeholder="Search ideas..." type="text"/>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 md:px-12 flex flex-col gap-8">
+<!-- Page Title & Search -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Panel de Administración</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Gestiona y revisa las sugerencias de la comunidad.</p>
 </div>
-</section>
-<!-- Filters (Chips) -->
-<section class="mb-6">
-<div class="flex overflow-x-auto gap-2 pb-2 no-scrollbar">
-<button class="bg-primary text-on-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-md transition-transform active:scale-95">All Ideas</button>
-<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Facilities</button>
-<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Events</button>
-<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Curriculum</button>
+<div class="w-full md:w-96 glass-panel rounded-full p-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant ml-3" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none text-on-surface focus:ring-0 placeholder-on-surface-variant font-body-md text-body-md py-2" placeholder="Buscar sugerencias..." type="text"/>
 </div>
-</section>
-<!-- Suggestions Stack -->
-<section class="flex flex-col gap-4 relative"><div class="flex flex-col gap-4" id="proposals-container"></div><script>
-(function() {
-  const container = document.getElementById('proposals-container');
-  const proposals = JSON.parse(localStorage.getItem('proposals') || '[]');
-  
-  if (proposals.length === 0) {
-    container.innerHTML = `<div class="text-center py-12"><span class="material-symbols-outlined text-outline text-6xl mb-4">inbox</span><p class="font-body-lg text-on-surface-variant">No hay propuestas todavía</p></div>`;
-    return;
-  }
-
-  container.innerHTML = proposals.map((p, index) => {
-    const rotation = index % 2 === 0 ? '-rotate-1' : 'rotate-1';
-    const borderColor = index % 3 === 0 ? 'border-l-primary' : (index % 3 === 1 ? 'border-l-tertiary' : 'border-l-primary/60');
-    const categoryBg = p.category === 'Events' ? 'bg-tertiary-container/20 text-tertiary' : 'bg-secondary-container text-primary';
-    
-    return `
-      <article class="paper-texture rounded-xl p-5 relative border-l-4 ${borderColor} ${rotation} hover:rotate-0 transition-transform duration-300">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="${categoryBg} rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">${p.category || 'General'}</span>
-          <span class="font-label-sm text-label-sm text-outline">Reciente</span>
-        </div>
-        <h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">${p.title}</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">${p.description || p.content || ''}</p>
-        <div class="flex items-center justify-between border-t border-outline-variant/20 pt-3">
-          <div class="flex items-center gap-1 text-primary">
-            <span class="material-symbols-outlined text-[20px]">thumb_up</span>
-            <span class="font-label-md text-label-md">0</span>
-          </div>
-          <div class="flex gap-2">
-            <button class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Revisar</button>
-            <button class="text-error font-label-sm text-label-sm hover:underline">Eliminar</button>
-          </div>
-        </div>
-      </article>`;
-  }).join('');
-})();
-</script></section>
+</div>
+<!-- Bento Grid / Dynamic List -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Suggestion Card 1 -->
+<article class="glass-panel-elevated rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full border border-tertiary text-tertiary font-label-sm text-label-sm glass-panel">Infraestructura</span>
+<span class="text-on-surface-variant text-sm">Hace 2 horas</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Reparación de Bancas en Patio Central</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Las bancas de madera en el patio central están astilladas y algunas rotas. Sugiero reemplazarlas por unas de material más duradero antes del invierno.</p>
+</div>
+<div class="mt-auto pt-4 flex gap-3 border-t border-glass-border">
+<button class="flex-1 btn-primary rounded-full py-2 font-label-md text-label-md font-bold transition-all hover:opacity-90">Revisar</button>
+<button aria-label="Eliminar" class="p-2 rounded-full glass-panel text-error hover:bg-error/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</article>
+<!-- Suggestion Card 2 -->
+<article class="glass-panel-elevated rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full border border-secondary text-secondary font-label-sm text-label-sm glass-panel">Académico</span>
+<span class="text-on-surface-variant text-sm">Ayer</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Más Horarios para Tutorías de Física</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Actualmente solo hay un bloque de tutorías los viernes. Sería ideal agregar uno los miércoles, ya que muchos tenemos topes de horario.</p>
+</div>
+<div class="mt-auto pt-4 flex gap-3 border-t border-glass-border">
+<button class="flex-1 btn-primary rounded-full py-2 font-label-md text-label-md font-bold transition-all hover:opacity-90">Revisar</button>
+<button aria-label="Eliminar" class="p-2 rounded-full glass-panel text-error hover:bg-error/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</article>
+<!-- Suggestion Card 3 -->
+<article class="glass-panel-elevated rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start">
+<span class="px-3 py-1 rounded-full border border-[#74f5ff] text-[#74f5ff] font-label-sm text-label-sm glass-panel">Eventos</span>
+<span class="text-on-surface-variant text-sm">Hace 3 días</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Feria de Clubes Estudiantiles</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Propongo organizar una feria al inicio del próximo semestre para que los nuevos estudiantes conozcan todos los clubes disponibles y se inscriban.</p>
+</div>
+<div class="mt-auto pt-4 flex gap-3 border-t border-glass-border">
+<button class="flex-1 btn-primary rounded-full py-2 font-label-md text-label-md font-bold transition-all hover:opacity-90">Revisar</button>
+<button aria-label="Eliminar" class="p-2 rounded-full glass-panel text-error hover:bg-error/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</article>
+</div>
 </main>
-<!-- BottomNavBar -->
-<nav class="bg-surface-container-lowest border-t border-outline-variant/30 shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-xl">
-<!-- Home (Active) -->
-<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200">
-<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 mb-1">
-<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
-</div>
-<span class="font-label-sm text-label-sm text-on-surface">Inicio</span>
-</button>
-<!-- Propose (Inactive) -->
-<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-70 hover:opacity-100">
-<div class="flex flex-col items-center justify-center text-on-secondary-container rounded-2xl px-4 py-1 mb-1 group-hover:bg-secondary-container/50 transition-colors">
-<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
-</div>
-<span class="font-label-sm text-label-sm text-on-secondary-container">Propuestas</span>
-</button>
-<!-- History (Inactive) -->
-<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-70 hover:opacity-100">
-<div class="flex flex-col items-center justify-center text-on-secondary-container rounded-2xl px-4 py-1 mb-1 group-hover:bg-secondary-container/50 transition-colors">
-<span class="material-symbols-outlined" data-icon="history">history</span>
-</div>
-<span class="font-label-sm text-label-sm text-on-secondary-container">Historial</span>
-</button>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-20 px-8 bg-glass-white backdrop-blur-[20px] rounded-full mb-6 mx-4 border-t-[1px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-label-md">Proponer</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold drop-shadow-[0_0_8px_rgba(170,199,255,0.6)] animate-pulse-slow" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history" data-weight="fill">history</span>
+<span class="font-label-md text-label-md">Historial</span>
+</a>
 </nav>
-<script>
-  (function() {
-    const userData = JSON.parse(localStorage.getItem('user_registration') || '{}');
-    const adminNameDisplay = document.getElementById('admin-name-display');
-    if (adminNameDisplay && userData.fullName) {
-      adminNameDisplay.textContent = userData.fullName;
-    }
-  })();
-</script></body></html>
+<!-- Desktop Sidebar Navigation Integration (Hidden on mobile, visible on desktop to satisfy the "fully functional navigation" requirement while adapting to the Liquid Glass system's floating paradigm) -->
+<nav class="hidden md:flex fixed top-1/2 -translate-y-1/2 left-6 z-40 flex-col gap-6 glass-panel rounded-full py-8 px-4 border-[0.5px] border-glass-border">
+<a class="w-12 h-12 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-glass-white/20 transition-all group" href="#" title="Inicio">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="home">home</span>
+</a>
+<a class="w-12 h-12 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-glass-white/20 transition-all group" href="#" title="Proponer">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="add_circle">add_circle</span>
+</a>
+<a class="w-12 h-12 rounded-full flex items-center justify-center text-primary bg-glass-white/20 shadow-[0_0_15px_rgba(170,199,255,0.4)] transition-all group" href="#" title="Historial / Admin">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="history" data-weight="fill">history</span>
+</a>
+</nav>
+</body></html>
