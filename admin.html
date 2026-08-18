@@ -1,282 +1,239 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Panel de Administración</title>
+<title>Dashboard - Student Council</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .material-symbols-outlined[data-weight="fill"] {
-            font-variation-settings: 'FILL' 1;
-        }
-        
-        /* Mesh Gradient Background */
-        .mesh-bg {
-            background-color: #001B3E;
-            background-image: 
-                radial-gradient(at 0% 0%, hsla(210,100%,40%,0.3) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(190,100%,40%,0.3) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, hsla(280,100%,50%,0.3) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, hsla(240,100%,60%,0.3) 0px, transparent 50%);
-            background-attachment: fixed;
-            background-size: cover;
-        }
-
-        /* Glassmorphism Utilities */
-        .glass-panel {
-            background-color: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 0.5px solid rgba(255, 255, 255, 0.15);
-        }
-        
-        .glass-panel-elevated {
-            background-color: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 0.5px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 60px 60px -10px rgba(0,0,0,0.3);
-        }
-
-        .glass-input {
-            background-color: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        /* Primary Gradient Button */
-        .btn-primary {
-            background: linear-gradient(135deg, #aac7ff 0%, #d1bcff 100%);
-            color: #002f65;
-            box-shadow: 0 10px 20px -5px rgba(170, 199, 255, 0.4);
-        }
-        
-        /* Hide scrollbar for clean look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-    </style>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "primary": "#aac7ff",
-                      "on-tertiary-fixed": "#002022",
-                      "on-secondary": "#3c0090",
-                      "on-error": "#690005",
-                      "on-error-container": "#ffdad6",
-                      "on-primary-fixed-variant": "#00458e",
-                      "inverse-primary": "#005cba",
-                      "on-surface-variant": "#c1c6d5",
-                      "on-surface": "#e2e2e8",
-                      "primary-container": "#0066cc",
-                      "secondary-fixed-dim": "#d1bcff",
-                      "surface-tint": "#aac7ff",
-                      "error-container": "#93000a",
-                      "inverse-on-surface": "#2f3035",
-                      "tertiary-fixed": "#74f5ff",
-                      "surface-container-lowest": "#0c0e12",
-                      "surface-container-low": "#1a1c20",
-                      "on-secondary-container": "#ddcdff",
-                      "on-tertiary-container": "#9bf7ff",
-                      "primary-fixed": "#d7e3ff",
-                      "on-primary-fixed": "#001b3e",
-                      "outline-variant": "#414753",
-                      "surface-container-highest": "#333539",
-                      "surface-variant": "#333539",
-                      "surface-container": "#1e2024",
-                      "surface-dim": "#111318",
-                      "on-primary-container": "#dfe8ff",
-                      "outline": "#8b919e",
-                      "surface-container-high": "#282a2e",
-                      "tertiary": "#00dbe7",
-                      "glow-blue": "rgba(0, 102, 204, 0.4)",
-                      "tertiary-fixed-dim": "#00dbe7",
-                      "glass-border": "rgba(255, 255, 255, 0.15)",
-                      "tertiary-container": "#00747b",
-                      "inverse-surface": "#e2e2e8",
-                      "secondary": "#d1bcff",
-                      "on-tertiary": "#00363a",
-                      "secondary-container": "#7000ff",
-                      "surface": "#111318",
-                      "error": "#ffb4ab",
-                      "on-secondary-fixed-variant": "#5700c9",
-                      "on-secondary-fixed": "#23005b",
-                      "background": "#111318",
-                      "secondary-fixed": "#e9ddff",
-                      "surface-bright": "#37393e",
-                      "on-background": "#e2e2e8",
-                      "glass-white": "rgba(255, 255, 255, 0.08)",
-                      "on-tertiary-fixed-variant": "#004f54",
-                      "mesh-deep-blue": "#001B3E",
-                      "on-primary": "#002f65",
-                      "primary-fixed-dim": "#aac7ff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "1rem",
-                      "lg": "2rem",
-                      "xl": "3rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "glass-margin": "12px",
-                      "container-padding-mobile": "24px",
-                      "base": "8px",
-                      "container-padding-desktop": "48px",
-                      "gutter": "32px"
-              },
-              "fontFamily": {
-                      "headline-lg": ["Plus Jakarta Sans"],
-                      "label-sm": ["Space Grotesk"],
-                      "headline-md": ["Plus Jakarta Sans"],
-                      "headline-lg-mobile": ["Plus Jakarta Sans"],
-                      "body-lg": ["Plus Jakarta Sans"],
-                      "headline-xl": ["Plus Jakarta Sans"],
-                      "body-md": ["Plus Jakarta Sans"],
-                      "label-md": ["Space Grotesk"]
-              },
-              "fontSize": {
-                      "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
-                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
-                      "headline-md": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                      "headline-xl": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
-                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}]
-              }
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg-start': '#0f172a',
+                        'brand-bg-end': '#1e1b4b',
+                        'glass-panel': 'rgba(255, 255, 255, 0.05)',
+                        'glass-border': 'rgba(255, 255, 255, 0.1)',
+                        'neon-cyan': '#06b6d4',
+                        'neon-purple': '#a855f7',
+                        'neon-blue': '#3b82f6',
+                        'text-primary': '#f8fafc',
+                        'text-secondary': '#94a3b8',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
             }
-          }
         }
     </script>
 <style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="mesh-bg text-on-surface min-h-screen font-body-md overflow-x-hidden pt-24 pb-32 md:pt-32 md:pb-12">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glow-border-cyan {
+            border: 1px solid rgba(6, 182, 212, 0.5);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+        }
+        .glow-border-purple {
+            border: 1px solid rgba(168, 85, 247, 0.5);
+            box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-brand-bg-start to-brand-bg-end text-text-primary antialiased pb-28 min-h-[100dvh] font-sans">
 <!-- TopAppBar -->
-<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 bg-glass-white backdrop-blur-[20px] rounded-full mt-4 mx-4 border-[0.5px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full overflow-hidden border border-glass-border">
-<img alt="Student Profile Avatar" class="w-full h-full object-cover" data-alt="A sophisticated abstract 3D avatar featuring translucent liquid glass spheres swirling around a central glowing core in shades of deep blue and bright teal. The lighting is dramatic and studio-quality, emphasizing the refractive properties of the glass material against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc3B-UmwIu7piZR_9YJGIe7F0uBL2sOqJS8zEBW39vOhSUuaLJKtK1IM-s8Cu2BVn_Z46bhjwDpwRVq7kLzjY-3Y61mRcOfR3WfaDwHzuB88mnFbjtUjPc-jQBbwo184RdIhJz4mXjYpuJVzbaGQ_nZ8lxsceicPos5REyCwdVoI2KHiZP2Uokbe6Bt83-5BM3MLcjO5JHS1WGbD_5fx0L5L45KKRW6BgDVBrk-LTUENVYYARx56M"/>
+<header class="fixed top-0 w-full z-50 glass-card border-b-0 border-glass-border px-5 py-4 h-[72px] flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-neon-cyan/50 shadow-[0_0_10px_rgba(6,182,212,0.3)]">
+<img alt="Student Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGABCFMUhdh5nr4cRA2lMH3RsKMEUBVBPSbm4SE0iivUH1sR29Pv9bQ3U0OHOGLko2HYbxJyqcEktFWBpeLIBygRBYmvhJeAYoPEcfnEjQfIL6Y1Wv_926n47vAJhR761FBcQDobr-tu3-y499XaPrshGMui78skhesjvbZqulc1ArWtU5Ls4N7pNJoL-J15TIOwcLrKTWYiPOMoTz5CLCq2HdgdjkZT3MQUUrN0y2ebLwQFALUA"/>
 </div>
-<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary md:font-headline-lg md:text-headline-lg">Perdón La Demora</h1>
+<div>
+<h1 class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple tracking-tight leading-tight">Admin Panel</h1>
+<p class="text-xs text-text-secondary" id="userNameDisplay">Loading...</p>
 </div>
-<button aria-label="Notifications" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-glass-white/20 transition-all scale-95 active:scale-90">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<div class="relative">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-neon-cyan hover:bg-glass-panel transition-colors active:scale-95 duration-100" id="settingsBtn">
+<span class="material-symbols-outlined">settings</span>
 </button>
+<div class="hidden absolute right-0 mt-2 w-48 glass-card rounded-xl py-2 z-50 border border-neon-purple/30 shadow-[0_0_15px_rgba(168,85,247,0.15)]" id="settingsMenu">
+<a class="block px-4 py-2 text-sm text-text-primary hover:bg-glass-panel transition-colors" href="#">Mi Perfil</a>
+<a class="block px-4 py-2 text-sm text-red-400 hover:bg-glass-panel transition-colors" href="index.html">Cerrar sesión</a>
+</div>
+</div>
 </header>
-<!-- Main Content -->
-<main class="max-w-7xl mx-auto px-4 md:px-12 flex flex-col gap-8">
-<!-- Page Title & Search -->
-<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-<div>
-<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Panel de Administración</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Gestiona y revisa las sugerencias de la comunidad.</p>
+<!-- Main Canvas -->
+<main class="mt-[80px] px-5 max-w-md mx-auto relative z-10">
+<!-- Welcome & Search -->
+<section class="mb-6">
+<h2 class="text-sm font-medium text-text-secondary mb-4 uppercase tracking-wider">Gestión de Propuestas Recibidas</h2>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary group-focus-within:text-neon-cyan transition-colors">search</span>
+<input class="w-full bg-glass-panel border border-glass-border focus:border-neon-cyan focus:ring-0 px-4 py-3 pl-12 rounded-xl shadow-inner text-sm text-text-primary outline-none transition-all placeholder:text-text-secondary" placeholder="Search ideas..." type="text"/>
 </div>
-<div class="w-full md:w-96 glass-panel rounded-full p-2 flex items-center gap-3">
-<span class="material-symbols-outlined text-on-surface-variant ml-3" data-icon="search">search</span>
-<input class="w-full bg-transparent border-none text-on-surface focus:ring-0 placeholder-on-surface-variant font-body-md text-body-md py-2" placeholder="Buscar sugerencias..." type="text"/>
+</section>
+<!-- Filters (Chips) -->
+<section class="mb-6">
+<div class="flex overflow-x-auto gap-3 pb-2 no-scrollbar">
+<button class="bg-gradient-to-r from-neon-cyan to-neon-blue text-white rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap shadow-[0_0_10px_rgba(6,182,212,0.4)] transition-transform active:scale-95">All Ideas</button>
+<button class="glass-card text-neon-cyan rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap hover:bg-glass-panel hover:text-white transition-colors active:scale-95 border border-neon-cyan/30">Facilities</button>
+<button class="glass-card text-neon-purple rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap hover:bg-glass-panel hover:text-white transition-colors active:scale-95 border border-neon-purple/30">Events</button>
+<button class="glass-card text-neon-blue rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap hover:bg-glass-panel hover:text-white transition-colors active:scale-95 border border-neon-blue/30">Curriculum</button>
 </div>
-</div>
-<!-- Bento Grid / Dynamic List -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Suggestion Card 1 -->
-<article class="glass-panel-elevated rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
-<div class="flex justify-between items-start">
-<span class="px-3 py-1 rounded-full border border-tertiary text-tertiary font-label-sm text-label-sm glass-panel">Infraestructura</span>
-<span class="text-on-surface-variant text-sm">Hace 2 horas</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Reparación de Bancas en Patio Central</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Las bancas de madera en el patio central están astilladas y algunas rotas. Sugiero reemplazarlas por unas de material más duradero antes del invierno.</p>
-</div>
-<div class="mt-auto pt-4 flex gap-3 border-t border-glass-border">
-<button class="flex-1 btn-primary rounded-full py-2 font-label-md text-label-md font-bold transition-all hover:opacity-90">Revisar</button>
-<button aria-label="Eliminar" class="p-2 rounded-full glass-panel text-error hover:bg-error/10 transition-colors">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</article>
-<!-- Suggestion Card 2 -->
-<article class="glass-panel-elevated rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
-<div class="flex justify-between items-start">
-<span class="px-3 py-1 rounded-full border border-secondary text-secondary font-label-sm text-label-sm glass-panel">Académico</span>
-<span class="text-on-surface-variant text-sm">Ayer</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Más Horarios para Tutorías de Física</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Actualmente solo hay un bloque de tutorías los viernes. Sería ideal agregar uno los miércoles, ya que muchos tenemos topes de horario.</p>
-</div>
-<div class="mt-auto pt-4 flex gap-3 border-t border-glass-border">
-<button class="flex-1 btn-primary rounded-full py-2 font-label-md text-label-md font-bold transition-all hover:opacity-90">Revisar</button>
-<button aria-label="Eliminar" class="p-2 rounded-full glass-panel text-error hover:bg-error/10 transition-colors">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</article>
-<!-- Suggestion Card 3 -->
-<article class="glass-panel-elevated rounded-xl p-6 flex flex-col gap-4 group hover:-translate-y-1 transition-transform duration-300">
-<div class="flex justify-between items-start">
-<span class="px-3 py-1 rounded-full border border-[#74f5ff] text-[#74f5ff] font-label-sm text-label-sm glass-panel">Eventos</span>
-<span class="text-on-surface-variant text-sm">Hace 3 días</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Feria de Clubes Estudiantiles</h3>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">Propongo organizar una feria al inicio del próximo semestre para que los nuevos estudiantes conozcan todos los clubes disponibles y se inscriban.</p>
-</div>
-<div class="mt-auto pt-4 flex gap-3 border-t border-glass-border">
-<button class="flex-1 btn-primary rounded-full py-2 font-label-md text-label-md font-bold transition-all hover:opacity-90">Revisar</button>
-<button aria-label="Eliminar" class="p-2 rounded-full glass-panel text-error hover:bg-error/10 transition-colors">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</article>
-</div>
+</section>
+<!-- Suggestions Stack -->
+<section class="flex flex-col gap-4 relative" id="proposalsContainer">
+<p class="hidden text-center text-text-secondary text-sm py-8" id="emptyState">No hay propuestas todavía</p>
+<!-- Dynamic cards will be injected here -->
+</section>
 </main>
-<!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-20 px-8 bg-glass-white backdrop-blur-[20px] rounded-full mb-6 mx-4 border-t-[1px] border-glass-border shadow-[0_60px_60px_-10px_rgba(0,0,0,0.3)]">
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
-<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
-<span class="font-label-md text-label-md">Inicio</span>
+<!-- BottomNavBar -->
+<nav class="glass-card border-t-0 border-glass-border fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 rounded-t-2xl">
+<a class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200" href="index.html">
+<div class="flex flex-col items-center justify-center text-neon-cyan rounded-2xl px-4 py-1 mb-1 shadow-[0_0_15px_rgba(6,182,212,0.2)] bg-glass-panel border border-neon-cyan/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<span class="text-[10px] font-semibold text-neon-cyan mt-1">Inicio</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary/80 transition-colors" href="#">
-<span class="material-symbols-outlined mb-1" data-icon="add_circle">add_circle</span>
-<span class="font-label-md text-label-md">Proponer</span>
+<a class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-60 hover:opacity-100" href="#">
+<div class="flex flex-col items-center justify-center text-text-secondary rounded-2xl px-4 py-1 mb-1 group-hover:text-neon-purple transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<span class="text-[10px] font-medium text-text-secondary group-hover:text-neon-purple mt-1 transition-colors">Propuestas</span>
 </a>
-<a class="flex flex-col items-center justify-center text-primary font-bold drop-shadow-[0_0_8px_rgba(170,199,255,0.6)] animate-pulse-slow" href="#">
-<span class="material-symbols-outlined mb-1" data-icon="history" data-weight="fill">history</span>
-<span class="font-label-md text-label-md">Historial</span>
-</a>
-</nav>
-<!-- Desktop Sidebar Navigation Integration (Hidden on mobile, visible on desktop to satisfy the "fully functional navigation" requirement while adapting to the Liquid Glass system's floating paradigm) -->
-<nav class="hidden md:flex fixed top-1/2 -translate-y-1/2 left-6 z-40 flex-col gap-6 glass-panel rounded-full py-8 px-4 border-[0.5px] border-glass-border">
-<a class="w-12 h-12 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-glass-white/20 transition-all group" href="#" title="Inicio">
-<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="home">home</span>
-</a>
-<a class="w-12 h-12 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-glass-white/20 transition-all group" href="#" title="Proponer">
-<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="add_circle">add_circle</span>
-</a>
-<a class="w-12 h-12 rounded-full flex items-center justify-center text-primary bg-glass-white/20 shadow-[0_0_15px_rgba(170,199,255,0.4)] transition-all group" href="#" title="Historial / Admin">
-<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="history" data-weight="fill">history</span>
+<a class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-60 hover:opacity-100" href="#">
+<div class="flex flex-col items-center justify-center text-text-secondary rounded-2xl px-4 py-1 mb-1 group-hover:text-neon-blue transition-colors">
+<span class="material-symbols-outlined">history</span>
+</div>
+<span class="text-[10px] font-medium text-text-secondary group-hover:text-neon-blue mt-1 transition-colors">Historial</span>
 </a>
 </nav>
+<!-- Ambient Background Elements -->
+<div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-neon-purple/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-96 h-96 bg-neon-cyan/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
+<script>
+        // Mock data initialization
+        if (!localStorage.getItem('studentProposals')) {
+            const mockData = [
+                { id: 1, title: 'Fix the library AC before midterms', category: 'Facilities', time: '2h ago', description: 'The second floor is boiling and no one can study. We need maintenance to check the vents.', upvotes: 142, pinned: true },
+                { id: 2, title: 'Spring Fling Outdoor Festival Concept', category: 'Events', time: 'Yesterday', description: 'Instead of a gym dance, let\'s use the quad. Food trucks, local student bands, and carnival games. I have a rough budget spreadsheet.', upvotes: 89, pinned: false },
+                { id: 3, title: 'Requesting an Intro to Coding elective', category: 'Curriculum', time: '3 days ago', description: 'Many freshmen want to learn Python or web dev, but it\'s only offered to juniors. Can we get a basic intro class?', upvotes: 215, pinned: false }
+            ];
+            localStorage.setItem('studentProposals', JSON.stringify(mockData));
+        }
+
+        // Initialize User Name
+        const userName = localStorage.getItem('userName') || 'Admin User';
+        document.getElementById('userNameDisplay').textContent = userName;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Settings Menu Toggle
+            const settingsBtn = document.getElementById('settingsBtn');
+            const settingsMenu = document.getElementById('settingsMenu');
+            
+            settingsBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                settingsMenu.classList.toggle('hidden');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!settingsBtn.contains(e.target) && !settingsMenu.contains(e.target)) {
+                    settingsMenu.classList.add('hidden');
+                }
+            });
+
+            renderProposals();
+        });
+
+        function getProposals() {
+            const proposalsJSON = localStorage.getItem('studentProposals');
+            return proposalsJSON ? JSON.parse(proposalsJSON) : [];
+        }
+
+        function renderProposals() {
+            const container = document.getElementById('proposalsContainer');
+            const emptyState = document.getElementById('emptyState');
+            const proposals = getProposals();
+
+            Array.from(container.children).forEach(child => {
+                if (child.id !== 'emptyState') {
+                    child.remove();
+                }
+            });
+
+            if (proposals.length === 0) {
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+
+            proposals.forEach((proposal, index) => {
+                const isFacilities = proposal.category.toLowerCase() === 'facilities';
+                const isEvents = proposal.category.toLowerCase() === 'events';
+                const isCurriculum = proposal.category.toLowerCase() === 'curriculum';
+                
+                let glowClass = 'glow-border-blue';
+                let tagColorClass = 'text-neon-blue border-neon-blue/40 bg-neon-blue/10';
+                
+                if (isFacilities) {
+                    glowClass = 'glow-border-cyan';
+                    tagColorClass = 'text-neon-cyan border-neon-cyan/40 bg-neon-cyan/10';
+                }
+                if (isEvents) {
+                    glowClass = 'glow-border-purple';
+                    tagColorClass = 'text-neon-purple border-neon-purple/40 bg-neon-purple/10';
+                }
+
+                const card = document.createElement('article');
+                card.className = `glass-card rounded-2xl p-5 relative ${glowClass} transition-all duration-300 hover:shadow-lg backdrop-blur-md`;
+                
+                card.innerHTML = `
+                    ${proposal.pinned ? `
+                    <div class="absolute top-4 right-4 text-neon-purple drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+                    </div>
+                    ` : ''}
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="border rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${tagColorClass}">${proposal.category}</span>
+                        <span class="text-[11px] text-text-secondary">${proposal.time}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-text-primary mb-2 leading-tight">${proposal.title}</h3>
+                    <p class="text-sm text-text-secondary line-clamp-2 mb-5 leading-relaxed">${proposal.description}</p>
+                    <div class="flex items-center justify-between border-t border-glass-border pt-4 mt-2">
+                        <div class="flex items-center gap-1.5 text-neon-cyan">
+                            <span class="material-symbols-outlined text-[18px]">thumb_up</span>
+                            <span class="text-sm font-semibold">${proposal.upvotes || 0}</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="bg-glass-panel border border-glass-border text-text-primary hover:bg-neon-cyan/20 hover:border-neon-cyan/50 px-4 py-1.5 rounded-full text-xs font-semibold transition-all">Revisar</button>
+                            <button onclick="deleteProposal(${proposal.id})" class="text-red-400 text-xs font-semibold hover:text-red-300 transition-colors">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        window.deleteProposal = function(id) {
+            let proposals = getProposals();
+            proposals = proposals.filter(p => p.id !== id);
+            localStorage.setItem('studentProposals', JSON.stringify(proposals));
+            renderProposals();
+        };
+    </script>
 </body></html>
