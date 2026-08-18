@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Noveno Grado - Buzón de Sugerencias</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"on-primary": "#ffffff",
+"outline-variant": "#c1c6d5",
+"on-primary-container": "#dfe8ff",
+"primary-container": "#0066cc",
+"inverse-primary": "#aac7ff",
+"on-secondary": "#ffffff",
+"error-container": "#ffdad6",
+"background": "#fbf9f8",
+"tertiary-fixed-dim": "#e9c400",
+"surface-container-low": "#f5f3f3",
+"inverse-surface": "#303030",
+"on-secondary-container": "#5e656c",
+"surface-variant": "#e4e2e2",
+"tertiary-container": "#c9a900",
+"primary-fixed": "#d7e3ff",
+"inverse-on-surface": "#f2f0f0",
+"error": "#ba1a1a",
+"secondary-container": "#dce3eb",
+"on-tertiary": "#ffffff",
+"on-background": "#1b1c1c",
+"surface": "#fbf9f8",
+"surface-tint": "#005cba",
+"secondary": "#585f66",
+"tertiary": "#705d00",
+"surface-container-high": "#eae8e7",
+"surface-bright": "#fbf9f8",
+"outline": "#727784",
+"on-error-container": "#93000a",
+"surface-container-lowest": "#ffffff",
+"primary-fixed-dim": "#aac7ff",
+"on-secondary-fixed-variant": "#40484e",
+"on-primary-fixed-variant": "#00458e",
+"secondary-fixed-dim": "#c0c7cf",
+"tertiary-fixed": "#ffe16d",
+"on-tertiary-container": "#4c3e00",
+"on-surface": "#1b1c1c",
+"on-tertiary-fixed": "#221b00",
+"on-secondary-fixed": "#151c22",
+"on-surface-variant": "#414753",
+"on-error": "#ffffff",
+"surface-container-highest": "#e4e2e2",
+"on-primary-fixed": "#001b3e",
+"surface-container": "#efeded",
+"surface-dim": "#dbd9d9",
+"secondary-fixed": "#dce3eb",
+"primary": "#004e9f",
+"on-tertiary-fixed-variant": "#544600"
+},
+borderRadius: {
+DEFAULT: "0.25rem",
+lg: "0.5rem",
+xl: "0.75rem",
+full: "9999px"
+},
+spacing: {
+base: "8px",
+"container-padding-desktop": "40px",
+"container-padding-mobile": "20px",
+"section-gap": "64px",
+"gutter": "24px"
+},
+fontFamily: {
+"body-lg": ["Plus Jakarta Sans"],
+"headline-lg-mobile": ["Plus Jakarta Sans"],
+"headline-lg": ["Plus Jakarta Sans"],
+"headline-xl": ["Plus Jakarta Sans"],
+"label-md": ["Space Grotesk"],
+"label-sm": ["Space Grotesk"],
+"body-md": ["Plus Jakarta Sans"],
+"headline-md": ["Plus Jakarta Sans"]
+},
+fontSize: {
+"body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+"headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+"headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+"headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+"label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+"label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600" }],
+"body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+"headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+}
+}
+}
+}
+</script>
+<style>
+/* Paper-morphism Utility */
+.paper-texture {
+position: relative;
+}
+.paper-texture::before {
+content: "";
+position: absolute;
+inset: 0;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+opacity: 0.5;
+pointer-events: none;
+border-radius: inherit;
+}
+.squishy:active {
+transform: scale(0.98);
+}
+</style>
+<style>
+body {
+min-height: max(884px, 100dvh);
+}
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:hidden">
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile py-4 bg-surface dark:bg-surface-dim shadow-sm dark:shadow-none transition-all duration-300">
+<div class="flex items-center gap-3">
+<!-- Leading Avatar -->
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md-mobile">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim tracking-tight">Student Council</h1>
+</div>
+<!-- Trailing Icon -->
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[88px] pb-[104px] px-container-padding-mobile flex flex-col gap-6">
+<!-- Screen Header -->
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Noveno Grado - Buzón de Sugerencias</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Propuestas de hoy: <span class="font-bold text-primary">0/2</span></p>
+</div>
+<!-- Proposal Form (Paper-morphism Container) -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] paper-texture p-6 flex flex-col gap-6 relative overflow-hidden">
+<!-- Left border accent -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<!-- Title Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="proposal-title">Título de la Propuesta</label>
+<input class="w-full bg-surface-container-low border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 font-body-md text-body-md text-on-surface rounded-t-md transition-colors placeholder:text-outline" id="proposal-title" placeholder="Ej. Nuevo torneo de futsal" type="text"/>
+</div>
+<!-- Category Selector (Chips) -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface">Categoría</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md squishy transition-transform border border-transparent">Facilities</button>
+<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/20">Events</button>
+<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/20">Curriculum</button>
+<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/20">General</button>
+</div>
+</div>
+<!-- Idea Text Area -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="proposal-idea">Desarrolla tu idea</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface resize-none transition-colors placeholder:text-outline" id="proposal-idea" placeholder="Describe qué quieres lograr y cómo beneficiaría al 9no grado..." rows="5"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 squishy transition-all shadow-[0_4px_12px_rgba(0,78,159,0.2)] hover:shadow-[0_6px_16px_rgba(0,78,159,0.3)] mt-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+Enviar Propuesta
+</button>
+</div>
+</main>
+<!-- BottomNavBar (From JSON) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest dark:bg-surface-container-low rounded-t-xl shadow-lg border-t border-outline-variant/30">
+<!-- Inactive: Home -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 rounded-xl p-2 transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<!-- Active: Propose (Semantic match for "Buzón de Sugerencias" / Drafting) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 active:scale-[0.98] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Propose</span>
+</a>
+<!-- Inactive: History -->
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 rounded-xl p-2 transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-sm text-label-sm mt-1">History</span>
+</a>
+</nav>
+<script>
+// Simple chip selection interaction
+document.addEventListener('DOMContentLoaded', () => {
+const chips = document.querySelectorAll('.bg-secondary-container, .bg-primary');
+chips.forEach(chip => {
+chip.addEventListener('click', function(e) {
+if(e.target.tagName !== 'BUTTON') return;
+
+// Reset all chips to secondary
+chips.forEach(c => {
+c.classList.remove('bg-primary', 'text-on-primary', 'border-transparent');
+c.classList.add('bg-secondary-container', 'text-on-secondary-container', 'border-outline-variant/20');
+});
+
+// Set clicked chip to primary
+this.classList.remove('bg-secondary-container', 'text-on-secondary-container', 'border-outline-variant/20');
+this.classList.add('bg-primary', 'text-on-primary', 'border-transparent');
+});
+});
+});
+</script>
+</body></html>
