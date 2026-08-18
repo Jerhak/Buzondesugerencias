@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 
-<html lang="es"><head>
+<html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Crear Perfil - Academic Pulse</title>
+<title>Registro - Perdón La Demora</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Space+Grotesk:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -15,86 +14,89 @@
             theme: {
                 extend: {
                     "colors": {
-                        "background": "#fbf9f8",
-                        "on-error-container": "#93000a",
-                        "on-surface": "#1b1c1c",
-                        "on-tertiary-fixed-variant": "#544600",
-                        "inverse-surface": "#303030",
-                        "on-primary-fixed-variant": "#00458e",
-                        "primary-container": "#0066cc",
-                        "tertiary-fixed": "#ffe16d",
-                        "secondary-fixed": "#dce3eb",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#dfe8ff",
-                        "on-tertiary": "#ffffff",
-                        "on-secondary-fixed": "#151c22",
-                        "on-background": "#1b1c1c",
-                        "on-secondary-container": "#5e656c",
-                        "outline": "#727784",
-                        "error": "#ba1a1a",
-                        "error-container": "#ffdad6",
-                        "inverse-primary": "#aac7ff",
-                        "on-secondary-fixed-variant": "#40484e",
-                        "surface": "#fbf9f8",
-                        "tertiary-container": "#c9a900",
-                        "surface-container": "#efeded",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container-highest": "#e4e2e2",
-                        "surface-container-high": "#eae8e7",
-                        "secondary": "#585f66",
-                        "on-tertiary-fixed": "#221b00",
-                        "surface-tint": "#005cba",
-                        "on-primary-fixed": "#001b3e",
-                        "surface-container-low": "#f5f3f3",
-                        "tertiary-fixed-dim": "#e9c400",
-                        "primary": "#004e9f",
-                        "secondary-container": "#dce3eb",
-                        "outline-variant": "#c1c6d5",
-                        "on-surface-variant": "#414753",
-                        "surface-dim": "#dbd9d9",
-                        "surface-variant": "#e4e2e2",
+                        "surface-container-highest": "#333539",
+                        "on-background": "#e2e2e8",
+                        "on-surface-variant": "#c1c6d5",
+                        "inverse-primary": "#005cba",
+                        "mesh-deep-blue": "#001B3E",
+                        "outline-variant": "#414753",
+                        "outline": "#8b919e",
+                        "surface-container-high": "#282a2e",
+                        "surface-tint": "#aac7ff",
+                        "tertiary-container": "#00747b",
+                        "secondary-fixed-dim": "#d1bcff",
+                        "secondary-fixed": "#e9ddff",
+                        "on-secondary-fixed-variant": "#5700c9",
+                        "secondary-container": "#7000ff",
+                        "on-tertiary": "#00363a",
+                        "on-tertiary-container": "#9bf7ff",
+                        "glow-blue": "rgba(0, 102, 204, 0.4)",
+                        "inverse-surface": "#e2e2e8",
+                        "on-tertiary-fixed": "#002022",
+                        "surface-container-lowest": "#0c0e12",
                         "primary-fixed": "#d7e3ff",
-                        "on-tertiary-container": "#4c3e00",
+                        "on-primary-fixed": "#001b3e",
+                        "on-secondary-fixed": "#23005b",
+                        "inverse-on-surface": "#2f3035",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#00dbe7",
+                        "on-primary": "#002f65",
+                        "secondary": "#d1bcff",
+                        "primary": "#aac7ff",
+                        "surface-container": "#1e2024",
+                        "surface-container-low": "#1a1c20",
                         "primary-fixed-dim": "#aac7ff",
-                        "inverse-on-surface": "#f2f0f0",
-                        "on-error": "#ffffff",
-                        "surface-bright": "#fbf9f8",
-                        "on-secondary": "#ffffff",
-                        "tertiary": "#705d00",
-                        "secondary-fixed-dim": "#c0c7cf"
+                        "on-primary-container": "#dfe8ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#333539",
+                        "background": "#111318",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#ddcdff",
+                        "tertiary": "#00dbe7",
+                        "on-surface": "#e2e2e8",
+                        "surface-dim": "#111318",
+                        "primary-container": "#0066cc",
+                        "on-primary-fixed-variant": "#00458e",
+                        "glass-white": "rgba(255, 255, 255, 0.08)",
+                        "surface": "#111318",
+                        "tertiary-fixed": "#74f5ff",
+                        "glass-border": "rgba(255, 255, 255, 0.15)",
+                        "error-container": "#93000a",
+                        "on-secondary": "#3c0090",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "surface-bright": "#37393e"
                     },
                     "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px",
-                        "2xl": "1rem"
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
                     },
                     "spacing": {
-                        "container-padding-mobile": "20px",
+                        "container-padding-desktop": "48px",
+                        "container-padding-mobile": "24px",
+                        "gutter": "32px",
                         "base": "8px",
-                        "gutter": "24px",
-                        "container-padding-desktop": "40px",
-                        "section-gap": "64px"
+                        "glass-margin": "12px"
                     },
                     "fontFamily": {
-                        "headline-lg": ["Plus Jakarta Sans"],
-                        "headline-xl": ["Plus Jakarta Sans"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "label-md": ["Space Grotesk"],
-                        "headline-lg-mobile": ["Plus Jakarta Sans"],
                         "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
                         "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Space Grotesk"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
                         "label-sm": ["Space Grotesk"]
                     },
                     "fontSize": {
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
-                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
                         "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }]
                     }
                 }
@@ -102,25 +104,49 @@
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        .mesh-bg {
+            background-color: #001B3E;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 102, 204, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(112, 0, 255, 0.3) 0px, transparent 50%);
+            background-attachment: fixed;
         }
-        .fill-icon {
-            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 60px 60px -10px rgba(0,0,0,0.3);
         }
-        
-        /* Subtle paper texture overlay */
-        .paper-texture {
-            position: relative;
+        .glass-input {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .paper-texture::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 10;
-            border-radius: inherit;
+        .glass-input:focus {
+            border-color: rgba(170, 199, 255, 0.5);
+            outline: none;
+            box-shadow: 0 0 15px rgba(170, 199, 255, 0.2);
+        }
+        .btn-primary-glow {
+            background: linear-gradient(135deg, #0066cc 0%, #7000ff 100%);
+            box-shadow: 0 8px 32px rgba(0, 102, 204, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-primary-glow:hover {
+            box-shadow: 0 12px 48px rgba(0, 102, 204, 0.6);
+            transform: translateY(-2px);
+        }
+        /* Custom Select Styles */
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e2e2e8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+        option {
+            background-color: #1e2024;
+            color: #e2e2e8;
         }
     </style>
 <style>
@@ -128,75 +154,70 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-</head>
-<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
-<!-- Main Content Canvas -->
-<main class="flex-grow flex flex-col items-center justify-center p-container-padding-mobile md:p-container-padding-desktop">
-<!-- Brand / Header -->
-<div class="mb-12 flex flex-col items-center text-center space-y-4">
-<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center shadow-sm">
-<span class="material-symbols-outlined fill-icon text-4xl text-on-primary-container">person_add</span>
+  </head>
+<body class="mesh-bg min-h-screen text-on-surface antialiased flex flex-col items-center justify-center p-4 md:p-container-padding-desktop">
+<!-- Top Navigation Anchor (Suppressed nav links for transactional page, keeping brand) -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-6 py-4">
+<div class="glass-panel rounded-full px-8 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">Perdón La Demora</span>
 </div>
-<div>
-<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary">Crear Perfil</h1>
-<p class="font-body-lg text-body-lg text-secondary mt-2 max-w-md">Completa tus datos para unirte a Academic Pulse y participar en el consejo estudiantil.</p>
+</header>
+<main class="w-full max-w-md mt-20 relative z-10">
+<!-- Welcome Header -->
+<div class="text-center mb-10">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-2 tracking-tight">Crear Perfil</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Únete a la comunidad de gestión escolar transparente.</p>
 </div>
-</div>
-<!-- Profile Creation Form -->
-<form action="seleccion.html" class="paper-texture w-full max-w-md bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/30 shadow-sm relative z-10 flex flex-col space-y-6" onsubmit="event.preventDefault(); window.location.href='seleccion.html';">
-<!-- Name Input -->
-<div class="space-y-2">
-<label class="block font-label-md text-label-md text-on-surface">Nombre Completo</label>
+<!-- Registration Form Card -->
+<div class="glass-panel rounded-[2rem] p-8">
+<form action="#" class="flex flex-col gap-6" method="POST">
+<!-- Nombre Completo -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="fullName">Nombre Completo</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">person</span>
-<input class="w-full bg-surface-container border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary pl-12 pr-4 py-3 font-body-md text-body-md text-on-surface rounded-lg transition-colors outline-none" placeholder="Ej: Ana Pérez" required="" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">person</span>
+<input class="glass-input w-full rounded-xl py-3 pl-12 pr-4 font-body-md text-body-md text-on-surface placeholder-outline transition-all" id="fullName" name="fullName" placeholder="Ej. Juan Pérez" required="" type="text"/>
 </div>
 </div>
-<!-- Institutional ID Input -->
-<div class="space-y-2">
-<label class="block font-label-md text-label-md text-on-surface">ID Institucional</label>
+<!-- ID Institucional -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="studentId">ID Institucional</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">badge</span>
-<input class="w-full bg-surface-container border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary pl-12 pr-4 py-3 font-body-md text-body-md text-on-surface rounded-lg transition-colors outline-none" oninput="this.setCustomValidity('')" oninvalid="this.setCustomValidity('Por favor, ingresa tu ID Institucional')" placeholder="Ej: 2024-12345" required="" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">badge</span>
+<input class="glass-input w-full rounded-xl py-3 pl-12 pr-4 font-body-md text-body-md text-on-surface placeholder-outline transition-all" id="studentId" name="studentId" placeholder="Número de identificación" required="" type="text"/>
 </div>
 </div>
-<!-- Grade Selection -->
-<div class="space-y-2">
-<label class="block font-label-md text-label-md text-on-surface">Grado</label>
+<!-- Selector de Grado -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="gradeLevel">Grado</label>
 <div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">school</span>
-<select class="w-full bg-surface-container border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary pl-12 pr-10 py-3 font-body-md text-body-md text-on-surface rounded-lg transition-colors outline-none appearance-none" required=""><option disabled="" selected="" value="">Selecciona tu grado</option><option value="901">901</option><option value="902">902</option><option value="903">903</option><option value="904">904</option><option value="905">905</option><option value="906">906</option></select>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">groups</span>
+<select class="glass-input w-full rounded-xl py-3 pl-12 pr-10 font-body-md text-body-md text-on-surface transition-all cursor-pointer" id="gradeLevel" name="gradeLevel" required="">
+<option disabled="" selected="" value="">Selecciona tu grado</option>
+<option value="901">901</option>
+<option value="902">902</option>
+<option value="903">903</option>
+<option value="904">904</option>
+<option value="905">905</option>
+<option value="906">906</option>
+</select>
 </div>
 </div>
-<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 px-4 rounded-full shadow-sm hover:scale-[0.98] hover:bg-primary/90 transition-all active:scale-95 flex items-center justify-center space-x-2 mt-4" onclick="window.location.href='seleccion.html';" type="submit">
-<span>Continuar a Selección de Rol</span>
-<span class="material-symbols-outlined">arrow_forward</span>
+<!-- Botón Crear Perfil -->
+<button class="btn-primary-glow w-full rounded-full py-4 mt-4 flex items-center justify-center gap-2 group" type="submit">
+<span class="font-label-md text-label-md text-white">Crear Perfil</span>
+<span class="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </button>
 </form>
-<!-- Decorative subtle background elements -->
-<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-<div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-primary-container/20 blur-3xl"></div>
-<div class="absolute -bottom-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-tertiary-container/10 blur-3xl"></div>
+<div class="mt-8 text-center border-t border-glass-border pt-6">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                    ¿Ya tienes una cuenta? <a class="text-primary hover:text-primary-fixed transition-colors font-medium" href="#">Inicia sesión</a>
+</p>
+</div>
 </div>
 </main>
-<script>
-        function handleProfileCreation() {
-            // Animate form submission
-            const btn = document.querySelector('button[type="submit"]');
-            btn.classList.add('scale-[0.98]');
-            setTimeout(() => {
-                btn.classList.remove('scale-[0.98]');
-                // Navigate to role selection (mock)
-                console.log('Profile created. Navigating to Role Selection...');
-                alert('Perfil creado exitosamente. Redirigiendo a la selección de rol...');
-            }, 150);
-        }
-    </script>
-<style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+<!-- Decorative floating elements -->
+<div class="fixed top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-[60px] -z-10 pointer-events-none"></div>
+<div class="fixed bottom-20 right-10 w-48 h-48 bg-secondary-container/20 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
 </body></html>
