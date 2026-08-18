@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic Pulse - My Profile</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+"colors": {
+"on-tertiary-fixed": "#221b00",
+"error-container": "#ffdad6",
+"tertiary-container": "#c9a900",
+"error": "#ba1a1a",
+"outline": "#727784",
+"surface-container-low": "#f5f3f3",
+"tertiary-fixed": "#ffe16d",
+"on-secondary-fixed-variant": "#40484e",
+"on-surface": "#1b1c1c",
+"inverse-on-surface": "#f2f0f0",
+"on-tertiary-fixed-variant": "#544600",
+"secondary": "#585f66",
+"on-error-container": "#93000a",
+"surface": "#fbf9f8",
+"surface-bright": "#fbf9f8",
+"outline-variant": "#c1c6d5",
+"surface-container": "#efeded",
+"on-primary-container": "#dfe8ff",
+"on-primary": "#ffffff",
+"secondary-fixed": "#dce3eb",
+"surface-variant": "#e4e2e2",
+"background": "#fbf9f8",
+"secondary-container": "#dce3eb",
+"inverse-surface": "#303030",
+"on-primary-fixed-variant": "#00458e",
+"on-tertiary-container": "#4c3e00",
+"tertiary": "#705d00",
+"surface-container-high": "#eae8e7",
+"on-tertiary": "#ffffff",
+"tertiary-fixed-dim": "#e9c400",
+"on-secondary": "#ffffff",
+"primary-fixed-dim": "#aac7ff",
+"primary": "#004e9f",
+"secondary-fixed-dim": "#c0c7cf",
+"surface-tint": "#005cba",
+"on-surface-variant": "#414753",
+"on-secondary-fixed": "#151c22",
+"surface-container-highest": "#e4e2e2",
+"surface-dim": "#dbd9d9",
+"on-background": "#1b1c1c",
+"inverse-primary": "#aac7ff",
+"surface-container-lowest": "#ffffff",
+"primary-fixed": "#d7e3ff",
+"on-error": "#ffffff",
+"primary-container": "#0066cc",
+"on-secondary-container": "#5e656c",
+"on-primary-fixed": "#001b3e"
+},
+"borderRadius": {
+"DEFAULT": "0.25rem",
+"lg": "0.5rem",
+"xl": "0.75rem",
+"full": "9999px"
+},
+"spacing": {
+"container-padding-mobile": "20px",
+"section-gap": "64px",
+"container-padding-desktop": "40px",
+"base": "8px",
+"gutter": "24px"
+},
+"fontFamily": {
+"body-lg": ["Plus Jakarta Sans"],
+"headline-md": ["Plus Jakarta Sans"],
+"headline-lg-mobile": ["Plus Jakarta Sans"],
+"headline-lg": ["Plus Jakarta Sans"],
+"label-sm": ["Space Grotesk"],
+"body-md": ["Plus Jakarta Sans"],
+"label-md": ["Space Grotesk"],
+"headline-xl": ["Plus Jakarta Sans"]
+},
+"fontSize": {
+"body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+"headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+"headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+"headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+"label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+"body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+"label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+"headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+}
+}
+}
+}
+</script>
+<style>
+/* Base styles from design system */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;600&display=swap');
+
+body {
+font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Subtle paper grain texture for cards */
+.paper-grain {
+position: relative;
+}
+.paper-grain::before {
+content: '';
+position: absolute;
+top: 0; left: 0; right: 0; bottom: 0;
+opacity: 0.03;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+pointer-events: none;
+z-index: 1;
+border-radius: inherit;
+}
+</style>
+<style>
+body {
+min-height: max(884px, 100dvh);
+}
+</style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col pb-[80px] pt-[64px]">
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile h-[64px] bg-surface shadow-sm transition-colors duration-200">
+<!-- Leading Avatar -->
+<div class="w-10 h-10 rounded-full bg-secondary-container border border-outline-variant/30 flex items-center justify-center overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A small circular 3D rendered avatar icon of a young student smiling warmly, presented in a clean, modern vector-like 3D style suitable for a school portal UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDIvuRC5PHpQWoiBnPmhgBHk7nzUhEkbfPImcDS6n-OXixD1Yh_wa-dUSNGUV9n6cBgQ5FU7UtgcPoFJRKb6Jnjf9dxmgklwjcjfxIC2McK_eh3wHEr555QDI_u_yWh04P3JLdrQkw8XGo9kVPGbvQT_hq2pbcP0zpytGH8M234TB6e92iukE6pXk_PHexaRBYe6IIX-laKu2QWdBVh4QLGoNF5Oc2nZxmDDZVNfqZPTjRP9JHusQ"/>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-md text-headline-md text-primary truncate px-4">Student Council</h1>
+<!-- Trailing Icon -->
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-container-padding-mobile py-gutter flex flex-col items-center">
+<!-- Header Actions & Title -->
+<div class="w-full max-w-md flex items-center gap-4 mb-6">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container-high text-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Mi Perfil</h2>
+</div>
+<!-- Profile Card (Paper-morphism style) -->
+<section class="w-full max-w-md bg-surface-container-lowest border border-outline-variant/40 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] paper-grain overflow-hidden relative">
+<!-- Decorative Header Accent -->
+<div class="h-24 w-full bg-primary-container relative">
+<!-- Abstract subtle pattern in header -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.4) 1px, transparent 0); background-size: 16px 16px;"></div>
+</div>
+<div class="px-6 pb-8 relative z-10">
+<!-- Avatar Floating Over Accent -->
+<!-- Primary Info -->
+<div class="text-center mb-8 pt-8">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Alejandro Silva</h3>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">school</span>
+<span class="font-label-sm text-label-sm">Grade 903</span>
+</div>
+</div>
+<!-- Details List -->
+<div class="space-y-5 bg-surface rounded-xl p-4 border border-surface-variant">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Full Name</span>
+<span class="font-body-md text-body-md text-on-surface">Alejandro David Silva Gómez</span>
+</div>
+<div class="w-full h-[1px] bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Institutional ID</span>
+<span class="font-body-lg text-body-lg text-primary font-medium tracking-wide">STU-903-4821</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-8">
+<button class="w-full py-3.5 rounded-xl border-2 border-primary text-primary font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-container/20 hover:scale-[0.98] transition-all duration-200 active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">edit_square</span>
+Edit Profile
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component) -->
+<!-- Note: As a sub-page, items are rendered in inactive state per semantic routing rules, but nav is present per user request -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest border-t border-outline-variant/30 shadow-[0_-4px_16px_rgba(0,0,0,0.05)] rounded-t-xl transition-colors">
+<!-- Home (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 px-4 py-1 rounded-2xl transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</button>
+<!-- Propose (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 px-4 py-1 rounded-2xl transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="add_circle">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Propose</span>
+</button>
+<!-- History (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 px-4 py-1 rounded-2xl transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform" data-icon="history">history</span>
+<span class="font-label-sm text-label-sm mt-1">History</span>
+</button>
+</nav>
+</body></html>
