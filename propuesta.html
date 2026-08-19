@@ -233,11 +233,11 @@
 <!-- Category Selector (Chips) -->
 <div class="flex flex-col gap-3">
 <label class="font-label-md text-label-md text-on-surface">Categoría</label>
-<div class="flex flex-wrap gap-2">
-<button class="px-4 py-2 rounded-full bg-primary-container text-white font-label-md text-label-md squishy transition-transform border border-transparent shadow-[0_0_12px_rgba(0,102,204,0.4)]">Facilities</button>
-<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low">Events</button>
-<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low">Curriculum</button>
-<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low">General</button>
+<div class="flex flex-wrap gap-2" id="category-container">
+<button class="category-btn active px-4 py-2 rounded-full bg-primary-container text-white font-label-md text-label-md squishy transition-transform border border-transparent shadow-[0_0_12px_rgba(0,102,204,0.4)]" data-value="Facilities">Facilities</button>
+<button class="category-btn px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low" data-value="Events">Events</button>
+<button class="category-btn px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low" data-value="Curriculum">Curriculum</button>
+<button class="category-btn px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low" data-value="General">General</button>
 </div>
 </div>
 <!-- Idea Text Area -->
@@ -248,8 +248,8 @@
 <!-- Submit Button -->
 <button class="w-full bg-primary-container text-white py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 squishy transition-all shadow-[0_0_16px_rgba(0,102,204,0.4)] hover:shadow-[0_0_24px_rgba(0,102,204,0.6)] mt-2" id="submit-proposal">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
-                Enviar Propuesta
-            </button>
+<span id="submit-text">Enviar Propuesta</span>
+</button>
 </div>
 </main>
 <!-- BottomNavBar -->
@@ -280,59 +280,77 @@
         // Initialize Supabase
         const supabaseUrl = 'https://onjqxbyrtaknrirqulik.supabase.co';
         const supabaseKey = 'sb_publishable_v4IUYnEKDTckE6hFIKJBcg_nb1wZjbW';
-        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+        const supabase = supabasejs.createClient(supabaseUrl, supabaseKey);
 
         // Simple chip selection interaction
         document.addEventListener('DOMContentLoaded', () => {
-            const chips = document.querySelectorAll('.flex.flex-wrap.gap-2 button');
+            const chips = document.querySelectorAll('.category-btn');
             chips.forEach(chip => {
                 chip.addEventListener('click', function(e) {
                     // Reset all chips
                     chips.forEach(c => {
-                        c.classList.remove('bg-primary-container', 'text-white', 'border-transparent', 'shadow-[0_0_12px_rgba(0,102,204,0.4)]');
+                        c.classList.remove('active', 'bg-primary-container', 'text-white', 'border-transparent', 'shadow-[0_0_12px_rgba(0,102,204,0.4)]');
                         c.classList.add('bg-surface-container-lowest/50', 'text-on-surface-variant', 'border-glass-border', 'hover:bg-surface-container-low');
                     });
                     
                     // Set clicked chip to active
                     this.classList.remove('bg-surface-container-lowest/50', 'text-on-surface-variant', 'border-glass-border', 'hover:bg-surface-container-low');
-                    this.classList.add('bg-primary-container', 'text-white', 'border-transparent', 'shadow-[0_0_12px_rgba(0,102,204,0.4)]');
+                    this.classList.add('active', 'bg-primary-container', 'text-white', 'border-transparent', 'shadow-[0_0_12px_rgba(0,102,204,0.4)]');
                 });
             });
         });
 
         // Submit to Supabase
-        document.getElementById('submit-proposal').addEventListener('click', async function() {
+        document.getElementById('submit-proposal').addEventListener('click', async function(e) {
+            e.preventDefault();
             const title = document.getElementById('proposal-title').value.trim();
-            const categoryElement = document.querySelector('.flex.flex-wrap.gap-2 button.bg-primary-container');
-            const category = categoryElement ? categoryElement.textContent.trim() : '';
+            const categoryElement = document.querySelector('.category-btn.active');
+            const category = categoryElement ? categoryElement.getAttribute('data-value') : '';
             const description = document.getElementById('proposal-idea').value.trim();
-            const student_name = 'Anonymous'; // Default or fetch from auth if implemented
+            const student_name = localStorage.getItem('userName') || 'Usuario Anónimo';
+            
+            const submitBtn = document.getElementById('submit-proposal');
+            const submitText = document.getElementById('submit-text');
+            const originalText = submitText.textContent;
+            const originalIcon = submitBtn.querySelector('.material-symbols-outlined').textContent;
 
             if (!title || !description) {
                 alert('Por favor, completa todos los campos.');
                 return;
             }
 
+            // Set loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            submitBtn.querySelector('.material-symbols-outlined').textContent = 'hourglass_empty';
+            submitText.textContent = 'Enviando...';
+
             try {
                 const { data, error } = await supabase
                     .from('propuestas')
                     .insert([
-                        { title: title, category: category, description: description, student_name: student_name }
+                        { titulo: title, categoria: category, descripcion: description, nombre_usuario: student_name }
                     ]);
 
                 if (error) {
                     console.error('Error inserting data:', error);
                     alert('Hubo un error al enviar la propuesta. Inténtalo de nuevo.');
+                    // Reset button state on error
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                    submitBtn.querySelector('.material-symbols-outlined').textContent = originalIcon;
+                    submitText.textContent = originalText;
                 } else {
-                    alert('Propuesta enviada con éxito!');
-                    // Optionally redirect or clear form
-                    // window.location.href = 'exito.html';
-                    document.getElementById('proposal-title').value = '';
-                    document.getElementById('proposal-idea').value = '';
+                    window.location.href = 'exito.html';
                 }
             } catch (err) {
                 console.error('Unexpected error:', err);
                 alert('Ocurrió un error inesperado.');
+                // Reset button state on error
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+                submitBtn.querySelector('.material-symbols-outlined').textContent = originalIcon;
+                submitText.textContent = originalText;
             }
         });
     </script>
