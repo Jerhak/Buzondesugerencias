@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
+<html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Noveno Grado - Buzón de Sugerencias</title>
@@ -9,185 +9,109 @@
 <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Supabase CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-                "inverse-surface": "#e2e2e8",
-                "tertiary-fixed": "#74f5ff",
-                "on-tertiary": "#00363a",
-                "surface-container-highest": "#333539",
-                "on-secondary-fixed-variant": "#5700c9",
-                "primary-fixed-dim": "#aac7ff",
-                "error": "#ffb4ab",
-                "secondary-fixed-dim": "#d1bcff",
-                "secondary-container": "#7000ff",
-                "on-error": "#690005",
-                "inverse-on-surface": "#2f3035",
-                "background": "#111318",
-                "surface-container": "#1e2024",
-                "on-secondary-fixed": "#23005b",
-                "on-secondary-container": "#ddcdff",
-                "surface-container-lowest": "#0c0e12",
-                "on-primary-fixed-variant": "#00458e",
-                "on-error-container": "#ffdad6",
-                "mesh-deep-blue": "#001B3E",
-                "surface-dim": "#111318",
-                "surface-tint": "#aac7ff",
-                "surface-bright": "#37393e",
-                "tertiary-container": "#00747b",
-                "outline-variant": "#414753",
-                "tertiary": "#00dbe7",
-                "on-primary-container": "#dfe8ff",
-                "glass-border": "rgba(255, 255, 255, 0.15)",
-                "on-surface": "#e2e2e8",
-                "glow-blue": "rgba(0, 102, 204, 0.4)",
-                "surface-container-low": "#1a1c20",
-                "on-secondary": "#3c0090",
-                "surface-container-high": "#282a2e",
-                "outline": "#8b919e",
-                "error-container": "#93000a",
-                "on-background": "#e2e2e8",
-                "on-primary": "#002f65",
-                "glass-white": "rgba(255, 255, 255, 0.08)",
-                "on-tertiary-fixed": "#002022",
-                "secondary": "#d1bcff",
-                "secondary-fixed": "#e9ddff",
-                "inverse-primary": "#005cba",
-                "primary-container": "#0066cc",
-                "on-tertiary-container": "#9bf7ff",
-                "tertiary-fixed-dim": "#00dbe7",
-                "primary": "#aac7ff",
-                "on-surface-variant": "#c1c6d5",
-                "primary-fixed": "#d7e3ff",
-                "on-tertiary-fixed-variant": "#004f54",
-                "on-primary-fixed": "#001b3e",
-                "surface-variant": "#333539",
-                "surface": "#111318"
-        },
-        "borderRadius": {
-                "DEFAULT": "1rem",
-                "lg": "2rem",
-                "xl": "3rem",
-                "full": "9999px"
-        },
-        "spacing": {
-                "gutter": "32px",
-                "container-padding-mobile": "24px",
-                "container-padding-desktop": "48px",
-                "base": "8px",
-                "glass-margin": "12px"
-        },
-        "fontFamily": {
-                "label-sm": [
-                        "Space Grotesk"
-                ],
-                "headline-lg": [
-                        "Plus Jakarta Sans"
-                ],
-                "headline-md": [
-                        "Plus Jakarta Sans"
-                ],
-                "body-lg": [
-                        "Plus Jakarta Sans"
-                ],
-                "body-md": [
-                        "Plus Jakarta Sans"
-                ],
-                "headline-xl": [
-                        "Plus Jakarta Sans"
-                ],
-                "headline-lg-mobile": [
-                        "Plus Jakarta Sans"
-                ],
-                "label-md": [
-                        "Space Grotesk"
-                ]
-        },
-        "fontSize": {
-                "label-sm": [
-                        "12px",
-                        {
-                                "lineHeight": "16px",
-                                "letterSpacing": "0.03em",
-                                "fontWeight": "600"
-                        }
-                ],
-                "headline-lg": [
-                        "32px",
-                        {
-                                "lineHeight": "38px",
-                                "letterSpacing": "-0.03em",
-                                "fontWeight": "700"
-                        }
-                ],
-                "headline-md": [
-                        "24px",
-                        {
-                                "lineHeight": "30px",
-                                "letterSpacing": "-0.02em",
-                                "fontWeight": "700"
-                        }
-                ],
-                "body-lg": [
-                        "18px",
-                        {
-                                "lineHeight": "28px",
-                                "letterSpacing": "-0.01em",
-                                "fontWeight": "500"
-                        }
-                ],
-                "body-md": [
-                        "16px",
-                        {
-                                "lineHeight": "24px",
-                                "letterSpacing": "-0.01em",
-                                "fontWeight": "400"
-                        }
-                ],
-                "headline-xl": [
-                        "48px",
-                        {
-                                "lineHeight": "52px",
-                                "letterSpacing": "-0.04em",
-                                "fontWeight": "800"
-                        }
-                ],
-                "headline-lg-mobile": [
-                        "28px",
-                        {
-                                "lineHeight": "34px",
-                                "letterSpacing": "-0.03em",
-                                "fontWeight": "700"
-                        }
-                ],
-                "label-md": [
-                        "14px",
-                        {
-                                "lineHeight": "20px",
-                                "letterSpacing": "0.02em",
-                                "fontWeight": "600"
-                        }
-                ]
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c1c6d5",
+                        "on-primary-container": "#dfe8ff",
+                        "primary-container": "#0066cc",
+                        "inverse-primary": "#aac7ff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f8",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "surface-container-low": "#f5f3f3",
+                        "inverse-surface": "#303030",
+                        "on-secondary-container": "#5e656c",
+                        "surface-variant": "#e4e2e2",
+                        "tertiary-container": "#c9a900",
+                        "primary-fixed": "#d7e3ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#dce3eb",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "surface": "#fbf9f8",
+                        "surface-tint": "#005cba",
+                        "secondary": "#585f66",
+                        "tertiary": "#705d00",
+                        "surface-container-high": "#eae8e7",
+                        "surface-bright": "#fbf9f8",
+                        "outline": "#727784",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#aac7ff",
+                        "on-secondary-fixed-variant": "#40484e",
+                        "on-primary-fixed-variant": "#00458e",
+                        "secondary-fixed-dim": "#c0c7cf",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-container": "#4c3e00",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-secondary-fixed": "#151c22",
+                        "on-surface-variant": "#414753",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-primary-fixed": "#001b3e",
+                        "surface-container": "#efeded",
+                        "surface-dim": "#dbd9d9",
+                        "secondary-fixed": "#dce3eb",
+                        "primary": "#004e9f",
+                        "on-tertiary-fixed-variant": "#544600"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        base: "8px",
+                        "container-padding-desktop": "40px",
+                        "container-padding-mobile": "20px",
+                        "section-gap": "64px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-md": ["Space Grotesk"],
+                        "label-sm": ["Space Grotesk"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "headline-xl": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }]
+                    }
+                }
+            }
         }
-},
-    },
-  }
-</script>
+    </script>
 <style>
         /* Liquid Glass Utility */
         .liquid-glass {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
         }
         .squishy:active {
             transform: scale(0.98);
@@ -199,23 +123,23 @@
     }
   </style>
 </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col md:hidden relative">
+<body class="bg-background text-on-background min-h-screen flex flex-col md:hidden">
 <!-- TopAppBar (From JSON) -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile py-4 liquid-glass !border-t-0 !border-l-0 !border-r-0 !border-b border-glass-border shadow-sm transition-all duration-300">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile py-4 bg-surface/80 backdrop-blur-md shadow-sm transition-all duration-300">
 <div class="flex items-center gap-3">
 <!-- Leading Avatar -->
-<div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-headline-md text-headline-md-mobile">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md-mobile">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
 </div>
-<h1 class="font-headline-md text-headline-md-mobile text-primary tracking-tight">Student Council</h1>
+<h1 class="font-headline-md text-headline-md-mobile text-primary dark:text-primary-fixed-dim tracking-tight">Student Council</h1>
 </div>
 <!-- Trailing Icon -->
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-100" onclick="window.location.href='perfil.html'">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-secondary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
 <span class="material-symbols-outlined">settings</span>
 </button>
 </header>
 <!-- Main Content Canvas -->
-<main class="flex-grow pt-[104px] pb-[104px] px-container-padding-mobile flex flex-col gap-6">
+<main class="flex-grow pt-[88px] pb-[104px] px-container-padding-mobile flex flex-col gap-6">
 <!-- Screen Header -->
 <div class="flex flex-col gap-2">
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Noveno Grado - Buzón de Sugerencias</h2>
@@ -224,133 +148,114 @@
 <!-- Proposal Form (Liquid Glass Container) -->
 <div class="liquid-glass rounded-xl p-6 flex flex-col gap-6 relative overflow-hidden">
 <!-- Left border accent -->
-<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
 <!-- Title Input -->
 <div class="flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface" for="proposal-title">Título de la Propuesta</label>
-<input class="w-full bg-surface-container-lowest/50 border-0 border-b-2 border-outline-variant focus:border-primary-container focus:ring-0 px-4 py-3 font-body-md text-body-md text-on-surface rounded-t-md transition-colors placeholder:text-outline" id="proposal-title" placeholder="Ej. Nuevo torneo de futsal" type="text"/>
+<input class="w-full bg-surface-container-lowest/50 border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 font-body-md text-body-md text-on-surface rounded-t-md transition-colors placeholder:text-outline" id="proposal-title" placeholder="Ej. Nuevo torneo de futsal" type="text"/>
 </div>
 <!-- Category Selector (Chips) -->
 <div class="flex flex-col gap-3">
 <label class="font-label-md text-label-md text-on-surface">Categoría</label>
-<div class="flex flex-wrap gap-2" id="category-container">
-<button class="category-btn active px-4 py-2 rounded-full bg-primary-container text-white font-label-md text-label-md squishy transition-transform border border-transparent shadow-[0_0_12px_rgba(0,102,204,0.4)]" data-value="Facilities">Facilities</button>
-<button class="category-btn px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low" data-value="Events">Events</button>
-<button class="category-btn px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low" data-value="Curriculum">Curriculum</button>
-<button class="category-btn px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-surface-variant font-label-md text-label-md squishy transition-transform border border-glass-border hover:bg-surface-container-low" data-value="General">General</button>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md squishy transition-transform border border-transparent shadow-sm">Facilities</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30">Events</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30">Curriculum</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30">General</button>
 </div>
 </div>
 <!-- Idea Text Area -->
 <div class="flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface" for="proposal-idea">Desarrolla tu idea</label>
-<textarea class="w-full bg-surface-container-lowest/50 border border-glass-border focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface resize-none transition-colors placeholder:text-outline backdrop-blur-sm" id="proposal-idea" placeholder="Describe qué quieres lograr y cómo beneficiaría al 9no grado..." rows="5"></textarea>
+<textarea class="w-full bg-surface-container-lowest/50 border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface resize-none transition-colors placeholder:text-outline backdrop-blur-sm" id="proposal-idea" placeholder="Describe qué quieres lograr y cómo beneficiaría al 9no grado..." rows="5"></textarea>
 </div>
 <!-- Submit Button -->
-<button class="w-full bg-primary-container text-white py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 squishy transition-all shadow-[0_0_16px_rgba(0,102,204,0.4)] hover:shadow-[0_0_24px_rgba(0,102,204,0.6)] mt-2" id="submit-proposal">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 squishy transition-all shadow-[0_4px_12px_rgba(0,78,159,0.2)] hover:shadow-[0_6px_16px_rgba(0,78,159,0.3)] mt-2" id="submit-proposal">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
-<span id="submit-text">Enviar Propuesta</span>
-</button>
+                Enviar Propuesta
+            </button>
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-4 pt-2 liquid-glass rounded-t-2xl !border-b-0 !border-l-0 !border-r-0">
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-4 pt-2 liquid-glass rounded-t-2xl border-t border-white/40">
 <!-- Inactive: Home -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface rounded-xl p-2 transition-colors w-1/4" href="index.html">
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 rounded-xl p-2 transition-colors w-1/4" href="#">
 <span class="material-symbols-outlined">home</span>
 <span class="font-label-sm text-label-sm mt-1">Inicio</span>
 </a>
 <!-- Active: Propose -->
-<a class="flex flex-col items-center justify-center text-primary-container rounded-2xl px-4 py-1 active:scale-[0.98] transition-transform duration-200 w-1/4 relative" href="propuesta.html">
-<div class="absolute inset-0 bg-primary-container/20 rounded-2xl blur-md"></div>
-<span class="material-symbols-outlined relative" style="font-variation-settings: 'FILL' 1;">add_circle</span>
-<span class="font-label-sm text-label-sm mt-1 relative">Propuesta</span>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 active:scale-[0.98] transition-transform duration-200 w-1/4" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-label-sm text-label-sm mt-1">Propuesta</span>
 </a>
 <!-- Inactive: Mi Perfil -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface rounded-xl p-2 transition-colors w-1/4" href="perfil.html">
+<a class="flex flex-col items-center justify-center text-on-secondary-container opacity-70 hover:bg-secondary-container/50 rounded-xl p-2 transition-colors w-1/4" href="#">
 <span class="material-symbols-outlined">person</span>
 <span class="font-label-sm text-label-sm mt-1">Mi Perfil</span>
 </a>
 <!-- Inactive: Cerrar Sesión -->
-<a class="flex flex-col items-center justify-center text-error opacity-80 hover:bg-error-container/20 rounded-xl p-2 transition-colors w-1/4" href="index.html" onclick="localStorage.clear();">
+<a class="flex flex-col items-center justify-center text-error opacity-80 hover:bg-error-container/50 rounded-xl p-2 transition-colors w-1/4" href="#">
 <span class="material-symbols-outlined">logout</span>
 <span class="font-label-sm text-[10px] mt-1 whitespace-nowrap">Cerrar Sesión</span>
 </a>
 </nav>
 <script>
-        // Initialize Supabase correctly using the global supabase object
+        // Initialize Supabase
         const supabaseUrl = 'https://onjqxbyrtaknrirqulik.supabase.co';
         const supabaseKey = 'sb_publishable_v4IUYnEKDTckE6hFIKJBcg_nb1wZjbW';
-        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+        const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
         // Simple chip selection interaction
         document.addEventListener('DOMContentLoaded', () => {
-            const chips = document.querySelectorAll('.category-btn');
+            const chips = document.querySelectorAll('.flex.flex-wrap.gap-2 button');
             chips.forEach(chip => {
                 chip.addEventListener('click', function(e) {
                     // Reset all chips
                     chips.forEach(c => {
-                        c.classList.remove('active', 'bg-primary-container', 'text-white', 'border-transparent', 'shadow-[0_0_12px_rgba(0,102,204,0.4)]');
-                        c.classList.add('bg-surface-container-lowest/50', 'text-on-surface-variant', 'border-glass-border', 'hover:bg-surface-container-low');
+                        c.classList.remove('bg-primary', 'text-on-primary', 'border-transparent', 'shadow-sm');
+                        c.classList.add('bg-surface-container-lowest/50', 'text-on-secondary-container', 'border-outline-variant/30');
                     });
                     
                     // Set clicked chip to active
-                    this.classList.remove('bg-surface-container-lowest/50', 'text-on-surface-variant', 'border-glass-border', 'hover:bg-surface-container-low');
-                    this.classList.add('active', 'bg-primary-container', 'text-white', 'border-transparent', 'shadow-[0_0_12px_rgba(0,102,204,0.4)]');
+                    this.classList.remove('bg-surface-container-lowest/50', 'text-on-secondary-container', 'border-outline-variant/30');
+                    this.classList.add('bg-primary', 'text-on-primary', 'border-transparent', 'shadow-sm');
                 });
             });
         });
 
         // Submit to Supabase
-        document.getElementById('submit-proposal').addEventListener('click', async function(e) {
-            e.preventDefault();
+        document.getElementById('submit-proposal').addEventListener('click', async function() {
             const title = document.getElementById('proposal-title').value.trim();
-            const categoryElement = document.querySelector('.category-btn.active');
-            const category = categoryElement ? categoryElement.getAttribute('data-value') : '';
+            const categoryElement = document.querySelector('.flex.flex-wrap.gap-2 button.bg-primary');
+            const category = categoryElement ? categoryElement.textContent.trim() : '';
             const description = document.getElementById('proposal-idea').value.trim();
-            const student_name = localStorage.getItem('nombre_estudiante') || localStorage.getItem('usuario_nombre') || localStorage.getItem('userName') || 'Usuario Anónimo';
-            
-            const submitBtn = document.getElementById('submit-proposal');
-            const submitText = document.getElementById('submit-text');
-            const originalText = submitText.textContent;
-            const originalIcon = submitBtn.querySelector('.material-symbols-outlined').textContent;
+            const student_name = 'Anonymous'; // Default or fetch from auth if implemented
 
             if (!title || !description) {
                 alert('Por favor, completa todos los campos.');
                 return;
             }
 
-            // Set loading state
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
-            submitBtn.querySelector('.material-symbols-outlined').textContent = 'hourglass_empty';
-            submitText.textContent = 'Enviando...';
-
             try {
-                const { data, error } = await supabaseClient
+                const { data, error } = await supabase
                     .from('propuestas')
                     .insert([
-                        { titulo: title, categoria: category, descripcion: description, estudiante_nombre: student_name }
+                        { titulo: title, categoria: category, descripcion: description, estudiante: student_name }
                     ]);
 
                 if (error) {
-                    console.error('Error al insertar los datos:', error);
+                    console.error('Error inserting data:', error);
                     alert('Hubo un error al enviar la propuesta. Detalles: ' + error.message);
-                    // Reset button state on error
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
-                    submitBtn.querySelector('.material-symbols-outlined').textContent = originalIcon;
-                    submitText.textContent = originalText;
                 } else {
-                    window.location.href = 'exito.html';
+                    alert('Propuesta enviada con éxito!');
+                    // Optionally redirect or clear form
+                    // window.location.href = 'exito.html';
+                    document.getElementById('proposal-title').value = '';
+                    document.getElementById('proposal-idea').value = '';
                 }
             } catch (err) {
-                console.error('Error inesperado:', err);
-                alert('Ocurrió un error inesperado al intentar enviar la propuesta.');
-                // Reset button state on error
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
-                submitBtn.querySelector('.material-symbols-outlined').textContent = originalIcon;
-                submitText.textContent = originalText;
+                console.error('Unexpected error:', err);
+                alert('Ocurrió un error inesperado.');
             }
         });
     </script>
