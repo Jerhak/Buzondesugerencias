@@ -5,25 +5,95 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dashboard - Student Council</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script id="tailwind-config">
         tailwind.config = {
+            darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        'brand-bg-start': '#0f172a',
-                        'brand-bg-end': '#1e1b4b',
-                        'glass-panel': 'rgba(255, 255, 255, 0.05)',
-                        'glass-border': 'rgba(255, 255, 255, 0.1)',
-                        'neon-cyan': '#06b6d4',
-                        'neon-purple': '#a855f7',
-                        'neon-blue': '#3b82f6',
-                        'text-primary': '#f8fafc',
-                        'text-secondary': '#94a3b8',
+                    "colors": {
+                        "background": "#fbf9f8",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "inverse-surface": "#303030",
+                        "on-primary-fixed-variant": "#00458e",
+                        "primary-container": "#0066cc",
+                        "tertiary-fixed": "#ffe16d",
+                        "secondary-fixed": "#dce3eb",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#dfe8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#151c22",
+                        "on-background": "#1b1c1c",
+                        "on-secondary-container": "#5e656c",
+                        "outline": "#727784",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#aac7ff",
+                        "on-secondary-fixed-variant": "#40484e",
+                        "surface": "#fbf9f8",
+                        "tertiary-container": "#c9a900",
+                        "surface-container": "#efeded",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e4e2e2",
+                        "surface-container-high": "#eae8e7",
+                        "secondary": "#585f66",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-tint": "#005cba",
+                        "on-primary-fixed": "#001b3e",
+                        "surface-container-low": "#f5f3f3",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "primary": "#004e9f",
+                        "secondary-container": "#dce3eb",
+                        "outline-variant": "#c1c6d5",
+                        "on-surface-variant": "#414753",
+                        "surface-dim": "#dbd9d9",
+                        "surface-variant": "#e4e2e2",
+                        "primary-fixed": "#d7e3ff",
+                        "on-tertiary-container": "#4c3e00",
+                        "primary-fixed-dim": "#aac7ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#705d00",
+                        "secondary-fixed-dim": "#c0c7cf"
                     },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding-mobile": "20px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-padding-desktop": "40px",
+                        "section-gap": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }]
                     }
                 }
             }
@@ -37,194 +107,213 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
+        .paper-texture {
+            /* Simulated subtle tactile feel without background images */
+            background-color: var(--color-surface-container-lowest);
+            box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(193, 198, 213, 0.3);
+        }
+        .liquid-glass {
+            background-color: rgba(251, 249, 248, 0.7);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-        .glow-border-cyan {
-            border: 1px solid rgba(6, 182, 212, 0.5);
-            box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
-        }
-        .glow-border-purple {
-            border: 1px solid rgba(168, 85, 247, 0.5);
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
     </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-br from-brand-bg-start to-brand-bg-end text-text-primary antialiased pb-28 min-h-[100dvh] font-sans">
+<body class="bg-background text-on-surface antialiased pb-28">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 glass-card border-b-0 border-glass-border px-5 py-4 h-[72px] flex justify-between items-center">
+<header class="liquid-glass fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile py-4 h-[72px]">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full overflow-hidden border border-neon-cyan/50 shadow-[0_0_10px_rgba(6,182,212,0.3)]">
-<img alt="Student Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGABCFMUhdh5nr4cRA2lMH3RsKMEUBVBPSbm4SE0iivUH1sR29Pv9bQ3U0OHOGLko2HYbxJyqcEktFWBpeLIBygRBYmvhJeAYoPEcfnEjQfIL6Y1Wv_926n47vAJhR761FBcQDobr-tu3-y499XaPrshGMui78skhesjvbZqulc1ArWtU5Ls4N7pNJoL-J15TIOwcLrKTWYiPOMoTz5CLCq2HdgdjkZT3MQUUrN0y2ebLwQFALUA"/>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30 shadow-sm">
+<img alt="Student Avatar" class="w-full h-full object-cover" data-alt="A stylized, modern 3D avatar of a diverse 9th-grade student representative. They have a friendly, confident expression, wearing a casual but neat school-appropriate outfit. The lighting is soft and energetic studio lighting, casting a gentle rim light against a pristine white background. High-quality digital render aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGABCFMUhdh5nr4cRA2lMH3RsKMEUBVBPSbm4SE0iivUH1sR29Pv9bQ3U0OHOGLko2HYbxJyqcEktFWBpeLIBygRBYmvhJeAYoPEcfnEjQfIL6Y1Wv_926n47vAJhR761FBcQDobr-tu3-y499XaPrshGMui78skhesjvbZqulc1ArWtU5Ls4N7pNJoL-J15TIOwcLrKTWYiPOMoTz5CLCq2HdgdjkZT3MQUUrN0y2ebLwQFALUA"/>
 </div>
-<div>
-<h1 class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple tracking-tight leading-tight">Admin Panel</h1>
-<p class="text-xs text-text-secondary" id="userNameDisplay">Loading...</p>
-</div>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">Panel de Administración</h1>
 </div>
 <div class="relative">
-<button class="w-10 h-10 flex items-center justify-center rounded-full text-neon-cyan hover:bg-glass-panel transition-colors active:scale-95 duration-100" id="settingsBtn">
-<span class="material-symbols-outlined">settings</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-secondary-container hover:bg-surface-container-high transition-colors active:scale-95 duration-100" id="settingsMenuBtn">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
 </button>
-<div class="hidden absolute right-0 mt-2 w-48 glass-card rounded-xl py-2 z-50 border border-neon-purple/30 shadow-[0_0_15px_rgba(168,85,247,0.15)]" id="settingsMenu">
-<a class="block px-4 py-2 text-sm text-text-primary hover:bg-glass-panel transition-colors" href="#">Mi Perfil</a>
-<a class="block px-4 py-2 text-sm text-red-400 hover:bg-glass-panel transition-colors" href="index.html">Cerrar sesión</a>
+<div class="hidden absolute right-0 mt-2 w-48 liquid-glass rounded-xl shadow-lg border border-outline-variant/30 overflow-hidden z-50" id="settingsDropdown">
+<a class="block px-4 py-3 font-label-md text-on-surface hover:bg-surface-container-high transition-colors" href="#">Mi Perfil</a>
+<a class="block px-4 py-3 font-label-md text-error hover:bg-error-container transition-colors border-t border-outline-variant/30" href="#">Cerrar Sesión</a>
 </div>
 </div>
 </header>
 <!-- Main Canvas -->
-<main class="mt-[80px] px-5 max-w-md mx-auto relative z-10">
+<main class="mt-[80px] px-container-padding-mobile max-w-md mx-auto">
 <!-- Welcome & Search -->
 <section class="mb-6">
-<h2 class="text-sm font-medium text-text-secondary mb-4 uppercase tracking-wider">Gestión de Propuestas Recibidas</h2>
+<h2 class="font-body-lg text-body-lg text-on-surface-variant mb-4">Gestión de Propuestas Recibidas</h2>
 <div class="relative group">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-secondary group-focus-within:text-neon-cyan transition-colors">search</span>
-<input class="w-full bg-glass-panel border border-glass-border focus:border-neon-cyan focus:ring-0 px-4 py-3 pl-12 rounded-xl shadow-inner text-sm text-text-primary outline-none transition-all placeholder:text-text-secondary" placeholder="Search ideas..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-lowest border-b-2 border-transparent border-b-outline-variant focus:border-b-primary focus:ring-0 px-4 py-4 pl-12 rounded-t-lg shadow-sm font-body-md text-body-md text-on-surface outline-none transition-all placeholder:text-outline/70 liquid-glass" id="searchInput" placeholder="Buscar ideas..." type="text"/>
 </div>
 </section>
 <!-- Filters (Chips) -->
 <section class="mb-6">
-<div class="flex overflow-x-auto gap-3 pb-2 no-scrollbar">
-<button class="bg-gradient-to-r from-neon-cyan to-neon-blue text-white rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap shadow-[0_0_10px_rgba(6,182,212,0.4)] transition-transform active:scale-95">All Ideas</button>
-<button class="glass-card text-neon-cyan rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap hover:bg-glass-panel hover:text-white transition-colors active:scale-95 border border-neon-cyan/30">Facilities</button>
-<button class="glass-card text-neon-purple rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap hover:bg-glass-panel hover:text-white transition-colors active:scale-95 border border-neon-purple/30">Events</button>
-<button class="glass-card text-neon-blue rounded-full px-5 py-2 text-xs font-semibold whitespace-nowrap hover:bg-glass-panel hover:text-white transition-colors active:scale-95 border border-neon-blue/30">Curriculum</button>
+<div class="flex overflow-x-auto gap-2 pb-2 no-scrollbar">
+<button class="bg-primary text-on-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-md transition-transform active:scale-95">Todas las ideas</button>
+<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Instalaciones</button>
+<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Eventos</button>
+<button class="bg-secondary-container text-primary rounded-full px-5 py-2 font-label-md text-label-md whitespace-nowrap shadow-sm hover:bg-surface-tint/10 transition-colors active:scale-95">Currículo</button>
 </div>
 </section>
 <!-- Suggestions Stack -->
-<section class="flex flex-col gap-4 relative" id="proposalsContainer">
-<p class="hidden text-center text-text-secondary text-sm py-8" id="emptyState">No hay propuestas pendientes</p>
-<!-- Dynamic cards will be injected here -->
-</section>
+<section class="flex flex-col gap-4 relative"><div class="flex flex-col gap-4" id="proposals-container"></div></section>
 </main>
 <!-- BottomNavBar -->
-<nav class="glass-card border-t-0 border-glass-border fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 rounded-t-2xl">
-<a class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200" href="index.html">
-<div class="flex flex-col items-center justify-center text-neon-cyan rounded-2xl px-4 py-1 mb-1 shadow-[0_0_15px_rgba(6,182,212,0.2)] bg-glass-panel border border-neon-cyan/20">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<nav class="liquid-glass border-t border-outline-variant/30 shadow-lg fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-xl">
+<!-- Home (Active) -->
+<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-4 py-1 mb-1 shadow-sm">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
 </div>
-<span class="text-[10px] font-semibold text-neon-cyan mt-1">Inicio</span>
-</a>
-<a class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-60 hover:opacity-100" href="#">
-<div class="flex flex-col items-center justify-center text-text-secondary rounded-2xl px-4 py-1 mb-1 group-hover:text-neon-purple transition-colors">
-<span class="material-symbols-outlined">add_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface">Inicio</span>
+</button>
+<!-- Propose (Inactive) -->
+<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-70 hover:opacity-100">
+<div class="flex flex-col items-center justify-center text-on-secondary-container rounded-2xl px-4 py-1 mb-1 group-hover:bg-secondary-container/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
 </div>
-<span class="text-[10px] font-medium text-text-secondary group-hover:text-neon-purple mt-1 transition-colors">Propuestas</span>
-</a>
-<a class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-60 hover:opacity-100" href="#">
-<div class="flex flex-col items-center justify-center text-text-secondary rounded-2xl px-4 py-1 mb-1 group-hover:text-neon-blue transition-colors">
-<span class="material-symbols-outlined">history</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Propuestas</span>
+</button>
+<!-- History (Inactive) -->
+<button class="group flex flex-col items-center justify-center w-16 active:scale-[0.98] transition-transform duration-200 opacity-70 hover:opacity-100">
+<div class="flex flex-col items-center justify-center text-on-secondary-container rounded-2xl px-4 py-1 mb-1 group-hover:bg-secondary-container/50 transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
 </div>
-<span class="text-[10px] font-medium text-text-secondary group-hover:text-neon-blue mt-1 transition-colors">Historial</span>
-</a>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Historial</span>
+</button>
 </nav>
-<!-- Ambient Background Elements -->
-<div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-neon-purple/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
-<div class="fixed bottom-[-10%] right-[-10%] w-96 h-96 bg-neon-cyan/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
 <script>
-        // Initialize User Name
-        const userName = localStorage.getItem('userName') || 'Admin User';
-        document.getElementById('userNameDisplay').textContent = userName;
+const supabaseUrl = 'https://onjqxbyrtaknrirqulik.supabase.co';
+const supabaseKey = 'sb_publishable_v4IUYnEKDTckE6hFIKJBcg_nb1wZjbW';
+const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Settings Menu Toggle
-            const settingsBtn = document.getElementById('settingsBtn');
-            const settingsMenu = document.getElementById('settingsMenu');
-            
-            settingsBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                settingsMenu.classList.toggle('hidden');
-            });
+const container = document.getElementById('proposals-container');
+const searchInput = document.getElementById('searchInput');
 
-            document.addEventListener('click', (e) => {
-                if (!settingsBtn.contains(e.target) && !settingsMenu.contains(e.target)) {
-                    settingsMenu.classList.add('hidden');
-                }
-            });
+let localProposals = [];
+let filteredProposals = [];
 
-            renderProposals();
-        });
+// Dropdown Toggle
+const settingsMenuBtn = document.getElementById('settingsMenuBtn');
+const settingsDropdown = document.getElementById('settingsDropdown');
 
-        function getProposals() {
-            const proposalsJSON = localStorage.getItem('sugerencias');
-            return proposalsJSON ? JSON.parse(proposalsJSON) : [];
-        }
+settingsMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    settingsDropdown.classList.toggle('hidden');
+});
 
-        function renderProposals() {
-            const container = document.getElementById('proposalsContainer');
-            const emptyState = document.getElementById('emptyState');
-            const proposals = getProposals();
+document.addEventListener('click', (e) => {
+    if (!settingsMenuBtn.contains(e.target) && !settingsDropdown.contains(e.target)) {
+        settingsDropdown.classList.add('hidden');
+    }
+});
 
-            Array.from(container.children).forEach(child => {
-                if (child.id !== 'emptyState') {
-                    child.remove();
-                }
-            });
+async function getProposals() {
+    try {
+        const { data, error } = await supabase
+            .from('propuestas')
+            .select('*')
+            .order('created_at', { ascending: false });
+        if (error) throw error;
+        localProposals = data || [];
+        filterAndRenderProposals();
+    } catch (error) {
+        console.error('Error fetching proposals:', error);
+    }
+}
 
-            if (proposals.length === 0) {
-                emptyState.classList.remove('hidden');
-                return;
-            }
+function filterAndRenderProposals() {
+    const query = searchInput.value.toLowerCase();
+    filteredProposals = localProposals.filter(p => 
+        (p.title && p.title.toLowerCase().includes(query)) || 
+        (p.description && p.description.toLowerCase().includes(query)) ||
+        (p.category && p.category.toLowerCase().includes(query))
+    );
+    renderProposals();
+}
 
-            emptyState.classList.add('hidden');
+searchInput.addEventListener('input', filterAndRenderProposals);
 
-            proposals.forEach((proposal, index) => {
-                const category = proposal.category || 'General';
-                const isFacilities = category.toLowerCase() === 'facilities';
-                const isEvents = category.toLowerCase() === 'events';
-                const isCurriculum = category.toLowerCase() === 'curriculum';
-                
-                let glowClass = 'glow-border-blue';
-                let tagColorClass = 'text-neon-blue border-neon-blue/40 bg-neon-blue/10';
-                
-                if (isFacilities) {
-                    glowClass = 'glow-border-cyan';
-                    tagColorClass = 'text-neon-cyan border-neon-cyan/40 bg-neon-cyan/10';
-                }
-                if (isEvents) {
-                    glowClass = 'glow-border-purple';
-                    tagColorClass = 'text-neon-purple border-neon-purple/40 bg-neon-purple/10';
-                }
+async function deleteProposal(id) {
+    try {
+        const { error } = await supabase
+            .from('propuestas')
+            .delete()
+            .eq('id', id);
+        if (error) throw error;
+        // Realtime will pick up the deletion
+    } catch (error) {
+        console.error('Error deleting proposal:', error);
+    }
+}
 
-                const card = document.createElement('article');
-                card.className = `glass-card rounded-2xl p-5 relative ${glowClass} transition-all duration-300 hover:shadow-lg backdrop-blur-md`;
-                
-                card.innerHTML = `
-                    ${proposal.pinned ? `
-                    <div class="absolute top-4 right-4 text-neon-purple drop-shadow-[0_0_5px_rgba(168,85,247,0.5)]">
-                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">push_pin</span>
-                    </div>
-                    ` : ''}
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="border rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${tagColorClass}">${category}</span>
-                        <span class="text-[11px] text-text-secondary">${proposal.time || 'Reciente'}</span>
-                    </div>
-                    <h3 class="text-lg font-bold text-text-primary mb-2 leading-tight">${proposal.title || proposal.titulo || 'Sin Título'}</h3>
-                    <p class="text-sm text-text-secondary line-clamp-2 mb-5 leading-relaxed">${proposal.description || proposal.descripcion || ''}</p>
-                    <div class="flex items-center justify-between border-t border-glass-border pt-4 mt-2">
-                        <div class="flex items-center gap-1.5 text-neon-cyan">
-                            <span class="material-symbols-outlined text-[18px]">thumb_up</span>
-                            <span class="text-sm font-semibold">${proposal.upvotes || 0}</span>
-                        </div>
-                        <div class="flex gap-3">
-                            <button class="bg-glass-panel border border-glass-border text-text-primary hover:bg-neon-cyan/20 hover:border-neon-cyan/50 px-4 py-1.5 rounded-full text-xs font-semibold transition-all">Revisar</button>
-                            <button onclick="deleteProposal(${proposal.id})" class="text-red-400 text-xs font-semibold hover:text-red-300 transition-colors">Eliminar</button>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+function reviewProposal(index) {
+    const p = filteredProposals[index];
+    if (p) {
+        alert(`Detalles de la Propuesta:\n\nCategoría: ${p.category}\nTítulo: ${p.title}\n\n${p.description}`);
+    }
+}
 
-        window.deleteProposal = function(id) {
-            let proposals = getProposals();
-            proposals = proposals.filter(p => p.id !== id);
-            localStorage.setItem('sugerencias', JSON.stringify(proposals));
-            renderProposals();
-        };
-    </script>
-</body></html>
+function renderProposals() {
+    container.innerHTML = '';
+
+    if (filteredProposals.length === 0) {
+        container.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-12 text-outline opacity-70">
+                <span class="material-symbols-outlined text-6xl mb-4">inbox</span>
+                <p class="font-body-lg">No hay propuestas pendientes</p>
+            </div>`;
+        return;
+    }
+
+    filteredProposals.forEach((p, index) => {
+        const article = document.createElement('article');
+        article.className = 'liquid-glass rounded-xl p-5 relative border-l-4 border-l-primary transition-transform duration-300';
+        
+        // Alternate rotations for aesthetic
+        const rotation = index % 2 === 0 ? '-rotate-1' : 'rotate-1';
+        article.classList.add(rotation, 'hover:rotate-0');
+
+        article.innerHTML = `
+            <div class="flex items-center gap-2 mb-3">
+                <span class="bg-secondary-container/80 text-primary rounded-full px-3 py-1 font-label-sm text-label-sm uppercase tracking-wider">${p.category || 'General'}</span>
+                <span class="font-label-sm text-label-sm text-outline">${p.created_at ? new Date(p.created_at).toLocaleDateString() : 'Reciente'}</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2 leading-tight">${p.title || 'Sin título'}</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">${p.description || ''}</p>
+            <div class="flex items-center justify-end border-t border-outline-variant/20 pt-3">
+                <div class="flex gap-2">
+                    <button onclick="reviewProposal(${index})" class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm active:scale-95 transition-transform shadow-md">Revisar</button>
+                    <button onclick="deleteProposal('${p.id}')" class="text-error font-label-sm text-label-sm hover:underline active:scale-95 transition-transform">Eliminar</button>
+                </div>
+            </div>
+        `;
+        container.appendChild(article);
+    });
+}
+
+function setupRealtime() {
+    supabase
+        .channel('public:propuestas')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'propuestas' }, payload => {
+            console.log('Cambio detectado en tiempo real', payload);
+            getProposals();
+        })
+        .subscribe();
+}
+
+// Initial fetch and setup
+document.addEventListener('DOMContentLoaded', () => {
+    getProposals();
+    setupRealtime();
+});
+</script></body></html>
