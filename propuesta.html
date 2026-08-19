@@ -210,7 +210,7 @@
 <h1 class="font-headline-md text-headline-md-mobile text-primary tracking-tight">Student Council</h1>
 </div>
 <!-- Trailing Icon -->
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-100">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-100" onclick="window.location.href='perfil.html'">
 <span class="material-symbols-outlined">settings</span>
 </button>
 </header>
@@ -255,23 +255,23 @@
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-4 pt-2 liquid-glass rounded-t-2xl !border-b-0 !border-l-0 !border-r-0">
 <!-- Inactive: Home -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface rounded-xl p-2 transition-colors w-1/4" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface rounded-xl p-2 transition-colors w-1/4" href="index.html">
 <span class="material-symbols-outlined">home</span>
 <span class="font-label-sm text-label-sm mt-1">Inicio</span>
 </a>
 <!-- Active: Propose -->
-<a class="flex flex-col items-center justify-center text-primary-container rounded-2xl px-4 py-1 active:scale-[0.98] transition-transform duration-200 w-1/4 relative" href="#">
+<a class="flex flex-col items-center justify-center text-primary-container rounded-2xl px-4 py-1 active:scale-[0.98] transition-transform duration-200 w-1/4 relative" href="propuesta.html">
 <div class="absolute inset-0 bg-primary-container/20 rounded-2xl blur-md"></div>
 <span class="material-symbols-outlined relative" style="font-variation-settings: 'FILL' 1;">add_circle</span>
 <span class="font-label-sm text-label-sm mt-1 relative">Propuesta</span>
 </a>
 <!-- Inactive: Mi Perfil -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface rounded-xl p-2 transition-colors w-1/4" href="#">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface rounded-xl p-2 transition-colors w-1/4" href="perfil.html">
 <span class="material-symbols-outlined">person</span>
 <span class="font-label-sm text-label-sm mt-1">Mi Perfil</span>
 </a>
 <!-- Inactive: Cerrar Sesión -->
-<a class="flex flex-col items-center justify-center text-error opacity-80 hover:bg-error-container/20 rounded-xl p-2 transition-colors w-1/4" href="#">
+<a class="flex flex-col items-center justify-center text-error opacity-80 hover:bg-error-container/20 rounded-xl p-2 transition-colors w-1/4" href="index.html" onclick="localStorage.clear();">
 <span class="material-symbols-outlined">logout</span>
 <span class="font-label-sm text-[10px] mt-1 whitespace-nowrap">Cerrar Sesión</span>
 </a>
