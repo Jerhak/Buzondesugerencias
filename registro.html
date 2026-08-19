@@ -154,7 +154,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+</head>
 <body class="mesh-bg min-h-screen text-on-surface antialiased flex flex-col items-center justify-center p-4 md:p-container-padding-desktop">
 <!-- Top Navigation Anchor (Suppressed nav links for transactional page, keeping brand) -->
 <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-6 py-4">
@@ -171,7 +171,7 @@
 </div>
 <!-- Registration Form Card -->
 <div class="glass-panel rounded-[2rem] p-8">
-<form action="#" class="flex flex-col gap-6" method="POST">
+<form class="flex flex-col gap-6" id="registrationForm" onsubmit="event.preventDefault(); const name = document.getElementById('fullName').value; const id = document.getElementById('studentId').value; if(name) { localStorage.setItem('userName', name); localStorage.setItem('userId', id); } window.location.href = 'seleccion.html'; return false;">
 <!-- Nombre Completo -->
 <div class="flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface-variant ml-1" for="fullName">Nombre Completo</label>
@@ -212,7 +212,7 @@
 </form>
 <div class="mt-8 text-center border-t border-glass-border pt-6">
 <p class="font-body-md text-body-md text-on-surface-variant text-sm">
-                    ¿Ya tienes una cuenta? <a class="text-primary hover:text-primary-fixed transition-colors font-medium" href="#">Inicia sesión</a>
+                    ¿Ya tienes una cuenta? <a class="text-primary hover:text-primary-fixed transition-colors font-medium" href="seleccion.html">Inicia sesión</a>
 </p>
 </div>
 </div>
@@ -220,4 +220,14 @@
 <!-- Decorative floating elements -->
 <div class="fixed top-20 left-10 w-32 h-32 bg-primary/20 rounded-full blur-[60px] -z-10 pointer-events-none"></div>
 <div class="fixed bottom-20 right-10 w-48 h-48 bg-secondary-container/20 rounded-full blur-[80px] -z-10 pointer-events-none"></div>
+<script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fullName = document.getElementById('fullName').value;
+        if(fullName) {
+            localStorage.setItem('userName', fullName);
+        }
+        window.location.href = 'seleccion.html';
+    });
+</script>
 </body></html>
