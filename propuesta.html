@@ -203,7 +203,7 @@
 <div class="w-10 h-10 rounded-full overflow-hidden border-[0.5px] border-glass-border">
 <img class="w-full h-full object-cover" data-alt="A sophisticated digital portrait of a student avatar in a sleek, glassmorphic style. The avatar features vibrant, translucent textures and a soft, luminous color palette with deep blues and crisp whites. Lighting is bright and even, giving the portrait a high-end, futuristic tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgDvSHnqXL-dQGV_Ha-CNdli2kU6G6VzkXNPNlDDic-UXBpLxn2f7TbaJs1jBbN8UaEWvmCUoduGHtQDseR7EMkc7iFF6Xb3d4AaHUIzze7TJNNbpKIDSU0ve6g1lYb87VjUHa48v5Py6pENz8oiqDR6s4KCQsyQvV8OU46xC-wWjrd3fUk8S6B7KA3drSyVLsXmckvK4sNb4unsn04KTT2a3RXz8TVZZf3QKhvfcgl-_gnlYqCmw"/>
 </div>
-<span class="font-body-lg text-body-lg text-on-surface" id="user-name-display">Estudiante</span>
+<span class="font-body-lg text-body-lg text-on-surface" id="user-name-display">Alex Santos</span>
 </div>
 <div class="font-headline-md text-headline-md-mobile md:text-headline-md font-bold text-primary">
             Perdón La Demora
@@ -262,10 +262,12 @@
 <textarea class="glass-input w-full rounded-lg px-4 py-3 font-body-md text-body-md transition-all resize-none" id="propuesta-desc" placeholder="Describe el problema y tu solución propuesta..." rows="6"></textarea>
 </div>
 <!-- Attachment/Extra (Optional visual interest) -->
-<div class="border-[1px] border-dashed border-glass-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-glass-white/20 transition-colors">
+<label class="border-[1px] border-dashed border-glass-border rounded-lg p-6 flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-glass-white/20 transition-colors relative">
+<input class="hidden" id="propuesta-archivo" type="file"/>
 <span class="material-symbols-outlined text-[32px] text-on-surface-variant">upload_file</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Adjuntar documento o imagen (Opcional)</span>
-</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-center" id="upload-text">Adjuntar documento o imagen (Opcional)</span>
+<span class="font-label-md text-label-md text-primary hidden mt-2 text-center" id="file-name-display"></span>
+</label>
 <!-- Submit Button -->
 <div class="flex justify-end mt-4">
 <button class="bg-gradient-to-r from-primary to-secondary text-on-primary-fixed rounded-full px-8 py-3 font-label-md text-label-md shadow-[0_0_20px_rgba(170,199,255,0.4)] hover:shadow-[0_0_30px_rgba(170,199,255,0.6)] transition-all scale-100 active:scale-95 flex items-center gap-2" id="submit-proposal-btn">
@@ -321,6 +323,24 @@
             });
         });
 
+        // File Upload Logic
+        const fileInput = document.getElementById('propuesta-archivo');
+        const fileNameDisplay = document.getElementById('file-name-display');
+        const uploadText = document.getElementById('upload-text');
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                fileNameDisplay.textContent = fileName;
+                fileNameDisplay.classList.remove('hidden');
+                uploadText.classList.add('hidden');
+            } else {
+                fileNameDisplay.textContent = '';
+                fileNameDisplay.classList.add('hidden');
+                uploadText.classList.remove('hidden');
+            }
+        });
+
         // Form Submission Logic
         const submitBtn = document.getElementById('submit-proposal-btn');
         submitBtn.addEventListener('click', () => {
@@ -328,6 +348,7 @@
             const category = activeChip ? activeChip.getAttribute('data-category') : 'General';
             const title = document.getElementById('propuesta-titulo').value.trim();
             const description = document.getElementById('propuesta-desc').value.trim();
+            const fileName = fileInput.files.length > 0 ? fileInput.files[0].name : null;
             
             if (!title || !description) {
                 alert('Por favor, completa el título y la descripción.');
@@ -339,13 +360,14 @@
                 category: category,
                 title: title,
                 description: description,
+                fileName: fileName,
                 author: storedUserName,
                 date: new Date().toISOString()
             };
 
             let proposals = [];
             try {
-                const existingProposals = localStorage.getItem('studentProposals');
+                const existingProposals = localStorage.getItem('sugerencias');
                 if (existingProposals) {
                     proposals = JSON.parse(existingProposals);
                 }
@@ -354,7 +376,7 @@
             }
             
             proposals.push(newProposal);
-            localStorage.setItem('studentProposals', JSON.stringify(proposals));
+            localStorage.setItem('sugerencias', JSON.stringify(proposals));
             
             window.location.href = 'exito.html';
         });
