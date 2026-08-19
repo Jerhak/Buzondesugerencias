@@ -146,35 +146,35 @@
 <p class="font-body-md text-body-md text-on-surface-variant">Propuestas de hoy: <span class="font-bold text-primary">0/2</span></p>
 </div>
 <!-- Proposal Form (Liquid Glass Container) -->
-<div class="liquid-glass rounded-xl p-6 flex flex-col gap-6 relative overflow-hidden">
+<form class="liquid-glass rounded-xl p-6 flex flex-col gap-6 relative overflow-hidden" id="proposal-form">
 <!-- Left border accent -->
 <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
 <!-- Title Input -->
 <div class="flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface" for="proposal-title">Título de la Propuesta</label>
-<input class="w-full bg-surface-container-lowest/50 border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 font-body-md text-body-md text-on-surface rounded-t-md transition-colors placeholder:text-outline" id="proposal-title" placeholder="Ej. Nuevo torneo de futsal" type="text"/>
+<input class="w-full bg-surface-container-lowest/50 border-0 border-b-2 border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 font-body-md text-body-md text-on-surface rounded-t-md transition-colors placeholder:text-outline" id="proposal-title" placeholder="Ej. Nuevo torneo de futsal" required="" type="text"/>
 </div>
 <!-- Category Selector (Chips) -->
 <div class="flex flex-col gap-3">
 <label class="font-label-md text-label-md text-on-surface">Categoría</label>
 <div class="flex flex-wrap gap-2">
-<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md squishy transition-transform border border-transparent shadow-sm">Facilities</button>
-<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30">Events</button>
-<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30">Curriculum</button>
-<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30">General</button>
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md squishy transition-transform border border-transparent shadow-sm" type="button">Facilities</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30" type="button">Events</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30" type="button">Curriculum</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-lowest/50 text-on-secondary-container font-label-md text-label-md squishy transition-transform border border-outline-variant/30" type="button">General</button>
 </div>
 </div>
 <!-- Idea Text Area -->
 <div class="flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface" for="proposal-idea">Desarrolla tu idea</label>
-<textarea class="w-full bg-surface-container-lowest/50 border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface resize-none transition-colors placeholder:text-outline backdrop-blur-sm" id="proposal-idea" placeholder="Describe qué quieres lograr y cómo beneficiaría al 9no grado..." rows="5"></textarea>
+<textarea class="w-full bg-surface-container-lowest/50 border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface resize-none transition-colors placeholder:text-outline backdrop-blur-sm" id="proposal-idea" placeholder="Describe qué quieres lograr y cómo beneficiaría al 9no grado..." required="" rows="5"></textarea>
 </div>
 <!-- Submit Button -->
-<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 squishy transition-all shadow-[0_4px_12px_rgba(0,78,159,0.2)] hover:shadow-[0_6px_16px_rgba(0,78,159,0.3)] mt-2" id="submit-proposal">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 squishy transition-all shadow-[0_4px_12px_rgba(0,78,159,0.2)] hover:shadow-[0_6px_16px_rgba(0,78,159,0.3)] mt-2" id="submit-proposal" type="submit">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
                 Enviar Propuesta
             </button>
-</div>
+</form>
 </main>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-4 pt-2 liquid-glass rounded-t-2xl border-t border-white/40">
@@ -204,6 +204,7 @@
         const supabaseUrl = 'https://onjqxbyrtaknrirqulik.supabase.co';
         const supabaseKey = 'sb_publishable_v4IUYnEKDTckE6hFIKJBcg_nb1wZjbW';
         const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+        console.log('Supabase client initialized');
 
         // Simple chip selection interaction
         document.addEventListener('DOMContentLoaded', () => {
@@ -224,19 +225,26 @@
         });
 
         // Submit to Supabase
-        document.getElementById('submit-proposal').addEventListener('click', async function() {
+        document.getElementById('proposal-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            console.log('Form submission intercepted');
+
             const title = document.getElementById('proposal-title').value.trim();
             const categoryElement = document.querySelector('.flex.flex-wrap.gap-2 button.bg-primary');
             const category = categoryElement ? categoryElement.textContent.trim() : '';
             const description = document.getElementById('proposal-idea').value.trim();
             const student_name = 'Anonymous'; // Default or fetch from auth if implemented
 
+            console.log('Validating data:', { titulo: title, categoria: category, descripcion: description, estudiante: student_name });
+
             if (!title || !description) {
-                alert('Por favor, completa todos los campos.');
+                console.warn('Validation failed: Missing title or description');
+                alert('Por favor, completa todos los campos requeridos.');
                 return;
             }
 
             try {
+                console.log('Attempting to insert into Supabase "propuestas" table...');
                 const { data, error } = await supabase
                     .from('propuestas')
                     .insert([
@@ -244,9 +252,10 @@
                     ]);
 
                 if (error) {
-                    console.error('Error inserting data:', error);
+                    console.error('Supabase insertion error:', error);
                     alert('Hubo un error al enviar la propuesta. Detalles: ' + error.message);
                 } else {
+                    console.log('Supabase insertion successful. Data:', data);
                     alert('Propuesta enviada con éxito!');
                     // Optionally redirect or clear form
                     // window.location.href = 'exito.html';
@@ -254,8 +263,8 @@
                     document.getElementById('proposal-idea').value = '';
                 }
             } catch (err) {
-                console.error('Unexpected error:', err);
-                alert('Ocurrió un error inesperado.');
+                console.error('Unexpected error during Supabase interaction:', err);
+                alert('Ocurrió un error inesperado al comunicarse con el servidor.');
             }
         });
     </script>
