@@ -19,57 +19,57 @@
     theme: {
       extend: {
         "colors": {
-                "surface-container-lowest": "#0c0e12",
-                "secondary": "#d1bcff",
-                "on-primary-container": "#dfe8ff",
-                "inverse-primary": "#005cba",
-                "outline-variant": "#414753",
-                "on-surface-variant": "#c1c6d5",
-                "surface-dim": "#111318",
-                "background": "#111318",
-                "on-secondary-container": "#ddcdff",
-                "surface": "#111318",
-                "primary-fixed": "#d7e3ff",
-                "on-tertiary-fixed": "#002022",
-                "on-tertiary": "#00363a",
-                "mesh-deep-blue": "#001B3E",
-                "primary-fixed-dim": "#aac7ff",
-                "on-error-container": "#ffdad6",
-                "surface-variant": "#333539",
-                "surface-container-highest": "#333539",
-                "on-secondary-fixed": "#23005b",
-                "glow-blue": "rgba(0, 102, 204, 0.4)",
-                "primary": "#aac7ff",
-                "primary-container": "#0066cc",
-                "surface-container": "#1e2024",
-                "on-primary-fixed": "#001b3e",
-                "tertiary-container": "#00747b",
+                "inverse-surface": "#e2e2e8",
                 "tertiary-fixed": "#74f5ff",
-                "on-background": "#e2e2e8",
+                "on-tertiary": "#00363a",
+                "surface-container-highest": "#333539",
+                "on-secondary-fixed-variant": "#5700c9",
+                "primary-fixed-dim": "#aac7ff",
+                "error": "#ffb4ab",
+                "secondary-fixed-dim": "#d1bcff",
+                "secondary-container": "#7000ff",
+                "on-error": "#690005",
+                "inverse-on-surface": "#2f3035",
+                "background": "#111318",
+                "surface-container": "#1e2024",
+                "on-secondary-fixed": "#23005b",
+                "on-secondary-container": "#ddcdff",
+                "surface-container-lowest": "#0c0e12",
+                "on-primary-fixed-variant": "#00458e",
+                "on-error-container": "#ffdad6",
+                "mesh-deep-blue": "#001B3E",
+                "surface-dim": "#111318",
+                "surface-tint": "#aac7ff",
+                "surface-bright": "#37393e",
+                "tertiary-container": "#00747b",
+                "outline-variant": "#414753",
+                "tertiary": "#00dbe7",
+                "on-primary-container": "#dfe8ff",
+                "glass-border": "rgba(255, 255, 255, 0.15)",
+                "on-surface": "#e2e2e8",
+                "glow-blue": "rgba(0, 102, 204, 0.4)",
+                "surface-container-low": "#1a1c20",
+                "on-secondary": "#3c0090",
                 "surface-container-high": "#282a2e",
                 "outline": "#8b919e",
-                "secondary-container": "#7000ff",
-                "surface-container-low": "#1a1c20",
-                "surface-tint": "#aac7ff",
-                "glass-border": "rgba(255, 255, 255, 0.15)",
-                "tertiary-fixed-dim": "#00dbe7",
-                "secondary-fixed": "#e9ddff",
                 "error-container": "#93000a",
-                "on-tertiary-fixed-variant": "#004f54",
-                "error": "#ffb4ab",
-                "inverse-on-surface": "#2f3035",
-                "on-error": "#690005",
-                "glass-white": "rgba(255, 255, 255, 0.08)",
+                "on-background": "#e2e2e8",
                 "on-primary": "#002f65",
-                "on-secondary": "#3c0090",
-                "inverse-surface": "#e2e2e8",
-                "tertiary": "#00dbe7",
-                "secondary-fixed-dim": "#d1bcff",
-                "on-secondary-fixed-variant": "#5700c9",
-                "on-surface": "#e2e2e8",
-                "surface-bright": "#37393e",
+                "glass-white": "rgba(255, 255, 255, 0.08)",
+                "on-tertiary-fixed": "#002022",
+                "secondary": "#d1bcff",
+                "secondary-fixed": "#e9ddff",
+                "inverse-primary": "#005cba",
+                "primary-container": "#0066cc",
                 "on-tertiary-container": "#9bf7ff",
-                "on-primary-fixed-variant": "#00458e"
+                "tertiary-fixed-dim": "#00dbe7",
+                "primary": "#aac7ff",
+                "on-surface-variant": "#c1c6d5",
+                "primary-fixed": "#d7e3ff",
+                "on-tertiary-fixed-variant": "#004f54",
+                "on-primary-fixed": "#001b3e",
+                "surface-variant": "#333539",
+                "surface": "#111318"
         },
         "borderRadius": {
                 "DEFAULT": "1rem",
@@ -78,69 +78,45 @@
                 "full": "9999px"
         },
         "spacing": {
-                "container-padding-desktop": "48px",
-                "glass-margin": "12px",
                 "gutter": "32px",
                 "container-padding-mobile": "24px",
-                "base": "8px"
+                "container-padding-desktop": "48px",
+                "base": "8px",
+                "glass-margin": "12px"
         },
         "fontFamily": {
-                "label-md": [
+                "label-sm": [
                         "Space Grotesk"
                 ],
-                "body-lg": [
-                        "Plus Jakarta Sans"
-                ],
-                "headline-xl": [
+                "headline-lg": [
                         "Plus Jakarta Sans"
                 ],
                 "headline-md": [
                         "Plus Jakarta Sans"
                 ],
-                "headline-lg": [
+                "body-lg": [
                         "Plus Jakarta Sans"
                 ],
                 "body-md": [
                         "Plus Jakarta Sans"
                 ],
+                "headline-xl": [
+                        "Plus Jakarta Sans"
+                ],
                 "headline-lg-mobile": [
                         "Plus Jakarta Sans"
                 ],
-                "label-sm": [
+                "label-md": [
                         "Space Grotesk"
                 ]
         },
         "fontSize": {
-                "label-md": [
-                        "14px",
+                "label-sm": [
+                        "12px",
                         {
-                                "lineHeight": "20px",
-                                "letterSpacing": "0.02em",
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.03em",
                                 "fontWeight": "600"
-                        }
-                ],
-                "body-lg": [
-                        "18px",
-                        {
-                                "lineHeight": "28px",
-                                "letterSpacing": "-0.01em",
-                                "fontWeight": "500"
-                        }
-                ],
-                "headline-xl": [
-                        "48px",
-                        {
-                                "lineHeight": "52px",
-                                "letterSpacing": "-0.04em",
-                                "fontWeight": "800"
-                        }
-                ],
-                "headline-md": [
-                        "24px",
-                        {
-                                "lineHeight": "30px",
-                                "letterSpacing": "-0.02em",
-                                "fontWeight": "700"
                         }
                 ],
                 "headline-lg": [
@@ -151,12 +127,36 @@
                                 "fontWeight": "700"
                         }
                 ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "30px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "500"
+                        }
+                ],
                 "body-md": [
                         "16px",
                         {
                                 "lineHeight": "24px",
                                 "letterSpacing": "-0.01em",
                                 "fontWeight": "400"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
                         }
                 ],
                 "headline-lg-mobile": [
@@ -167,11 +167,11 @@
                                 "fontWeight": "700"
                         }
                 ],
-                "label-sm": [
-                        "12px",
+                "label-md": [
+                        "14px",
                         {
-                                "lineHeight": "16px",
-                                "letterSpacing": "0.03em",
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
                                 "fontWeight": "600"
                         }
                 ]
@@ -277,10 +277,10 @@
 </a>
 </nav>
 <script>
-        // Initialize Supabase
+        // Initialize Supabase correctly using the global supabase object
         const supabaseUrl = 'https://onjqxbyrtaknrirqulik.supabase.co';
         const supabaseKey = 'sb_publishable_v4IUYnEKDTckE6hFIKJBcg_nb1wZjbW';
-        const supabase = supabasejs.createClient(supabaseUrl, supabaseKey);
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
         // Simple chip selection interaction
         document.addEventListener('DOMContentLoaded', () => {
@@ -307,7 +307,7 @@
             const categoryElement = document.querySelector('.category-btn.active');
             const category = categoryElement ? categoryElement.getAttribute('data-value') : '';
             const description = document.getElementById('proposal-idea').value.trim();
-            const student_name = localStorage.getItem('userName') || 'Usuario Anónimo';
+            const student_name = localStorage.getItem('nombre_estudiante') || localStorage.getItem('usuario_nombre') || localStorage.getItem('userName') || 'Usuario Anónimo';
             
             const submitBtn = document.getElementById('submit-proposal');
             const submitText = document.getElementById('submit-text');
@@ -326,15 +326,15 @@
             submitText.textContent = 'Enviando...';
 
             try {
-                const { data, error } = await supabase
+                const { data, error } = await supabaseClient
                     .from('propuestas')
                     .insert([
-                        { titulo: title, categoria: category, descripcion: description, nombre_usuario: student_name }
+                        { titulo: title, categoria: category, descripcion: description, estudiante_nombre: student_name }
                     ]);
 
                 if (error) {
-                    console.error('Error inserting data:', error);
-                    alert('Hubo un error al enviar la propuesta. Inténtalo de nuevo.');
+                    console.error('Error al insertar los datos:', error);
+                    alert('Hubo un error al enviar la propuesta. Detalles: ' + error.message);
                     // Reset button state on error
                     submitBtn.disabled = false;
                     submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
@@ -344,8 +344,8 @@
                     window.location.href = 'exito.html';
                 }
             } catch (err) {
-                console.error('Unexpected error:', err);
-                alert('Ocurrió un error inesperado.');
+                console.error('Error inesperado:', err);
+                alert('Ocurrió un error inesperado al intentar enviar la propuesta.');
                 // Reset button state on error
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
