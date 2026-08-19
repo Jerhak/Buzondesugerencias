@@ -97,7 +97,7 @@
 </section>
 <!-- Suggestions Stack -->
 <section class="flex flex-col gap-4 relative" id="proposalsContainer">
-<p class="hidden text-center text-text-secondary text-sm py-8" id="emptyState">No hay propuestas todavía</p>
+<p class="hidden text-center text-text-secondary text-sm py-8" id="emptyState">No hay propuestas pendientes</p>
 <!-- Dynamic cards will be injected here -->
 </section>
 </main>
@@ -126,16 +126,6 @@
 <div class="fixed top-[-10%] left-[-10%] w-96 h-96 bg-neon-purple/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
 <div class="fixed bottom-[-10%] right-[-10%] w-96 h-96 bg-neon-cyan/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
 <script>
-        // Mock data initialization
-        if (!localStorage.getItem('studentProposals')) {
-            const mockData = [
-                { id: 1, title: 'Fix the library AC before midterms', category: 'Facilities', time: '2h ago', description: 'The second floor is boiling and no one can study. We need maintenance to check the vents.', upvotes: 142, pinned: true },
-                { id: 2, title: 'Spring Fling Outdoor Festival Concept', category: 'Events', time: 'Yesterday', description: 'Instead of a gym dance, let\'s use the quad. Food trucks, local student bands, and carnival games. I have a rough budget spreadsheet.', upvotes: 89, pinned: false },
-                { id: 3, title: 'Requesting an Intro to Coding elective', category: 'Curriculum', time: '3 days ago', description: 'Many freshmen want to learn Python or web dev, but it\'s only offered to juniors. Can we get a basic intro class?', upvotes: 215, pinned: false }
-            ];
-            localStorage.setItem('studentProposals', JSON.stringify(mockData));
-        }
-
         // Initialize User Name
         const userName = localStorage.getItem('userName') || 'Admin User';
         document.getElementById('userNameDisplay').textContent = userName;
@@ -160,7 +150,7 @@
         });
 
         function getProposals() {
-            const proposalsJSON = localStorage.getItem('studentProposals');
+            const proposalsJSON = localStorage.getItem('sugerencias');
             return proposalsJSON ? JSON.parse(proposalsJSON) : [];
         }
 
@@ -183,9 +173,10 @@
             emptyState.classList.add('hidden');
 
             proposals.forEach((proposal, index) => {
-                const isFacilities = proposal.category.toLowerCase() === 'facilities';
-                const isEvents = proposal.category.toLowerCase() === 'events';
-                const isCurriculum = proposal.category.toLowerCase() === 'curriculum';
+                const category = proposal.category || 'General';
+                const isFacilities = category.toLowerCase() === 'facilities';
+                const isEvents = category.toLowerCase() === 'events';
+                const isCurriculum = category.toLowerCase() === 'curriculum';
                 
                 let glowClass = 'glow-border-blue';
                 let tagColorClass = 'text-neon-blue border-neon-blue/40 bg-neon-blue/10';
@@ -209,11 +200,11 @@
                     </div>
                     ` : ''}
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="border rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${tagColorClass}">${proposal.category}</span>
-                        <span class="text-[11px] text-text-secondary">${proposal.time}</span>
+                        <span class="border rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${tagColorClass}">${category}</span>
+                        <span class="text-[11px] text-text-secondary">${proposal.time || 'Reciente'}</span>
                     </div>
-                    <h3 class="text-lg font-bold text-text-primary mb-2 leading-tight">${proposal.title}</h3>
-                    <p class="text-sm text-text-secondary line-clamp-2 mb-5 leading-relaxed">${proposal.description}</p>
+                    <h3 class="text-lg font-bold text-text-primary mb-2 leading-tight">${proposal.title || proposal.titulo || 'Sin Título'}</h3>
+                    <p class="text-sm text-text-secondary line-clamp-2 mb-5 leading-relaxed">${proposal.description || proposal.descripcion || ''}</p>
                     <div class="flex items-center justify-between border-t border-glass-border pt-4 mt-2">
                         <div class="flex items-center gap-1.5 text-neon-cyan">
                             <span class="material-symbols-outlined text-[18px]">thumb_up</span>
@@ -232,7 +223,7 @@
         window.deleteProposal = function(id) {
             let proposals = getProposals();
             proposals = proposals.filter(p => p.id !== id);
-            localStorage.setItem('studentProposals', JSON.stringify(proposals));
+            localStorage.setItem('sugerencias', JSON.stringify(proposals));
             renderProposals();
         };
     </script>
